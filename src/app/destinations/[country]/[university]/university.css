@@ -1,0 +1,89 @@
+.uni-hero {
+  background-color: var(--ten-ink);
+  padding: 64px 0;
+}
+
+.uni-logo-large {
+  width: 96px;
+  height: 96px;
+  background: white;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ten-ink);
+}
+
+.text-white { color: white !important; }
+.text-light-blue { color: #A0AABF; }
+.bg-gold { background-color: var(--premium-gold-2) !important; }
+.text-navy { color: var(--ten-ink) !important; }
+.hover-bg-gold-light:hover { background-color: #ffb84d !important; }
+
+.uni-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.mb-6 { margin-bottom: 24px; }
+.bg-navy { background-color: var(--ten-ink); }
+
+.req-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.fee-row.border-b {
+  border-bottom: 1px solid var(--border);
+}
+
+.fee-row.total {
+  font-size: 1.1rem;
+}
+
+.programs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.program-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.program-row:hover {
+  border-color: var(--success);
+  box-shadow: var(--sh-card);
+}
+
+.program-row h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .uni-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,79 @@
+.footer {
+  background-color: #0A0004;
+  color: rgba(255,255,255,0.55);
+  padding-top: 64px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: space-between;
+  padding-bottom: 48px;
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--ten-white);
+}
+
+.footer-logo span {
+  color: var(--ten-red);
+}
+
+.footer-desc {
+  color: #A0AABF;
+  line-height: 1.6;
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.footer-col h3 {
+  color: var(--ten-white);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 12px;
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.footer-col a:hover {
+  color: var(--ten-white);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    padding-bottom: 64px; /* Space for mobile sticky CTA */
+  }
+  
+  .footer-links-grid {
+    gap: 32px;
+    flex-direction: column;
+  }
+}

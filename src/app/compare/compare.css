@@ -1,0 +1,156 @@
+.capsule-tabs {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.capsule-tab {
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--fg-2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.capsule-tab:hover {
+  color: var(--fg-1);
+}
+
+.capsule-tab.active {
+  background: var(--ten-ink);
+  color: var(--ten-white);
+}
+
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.select-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg-2);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.select-pill:hover {
+  border-color: var(--gray-400);
+  color: var(--fg-1);
+}
+
+.select-pill.selected {
+  background: var(--ten-red-soft);
+  border-color: var(--ten-red-soft);
+  color: var(--ten-white);
+}
+
+.pill-icon {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.empty-state-box {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--r-lg);
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--fg-3);
+  font-size: 16px;
+  background: var(--bg-muted);
+}
+
+.compare-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.routine-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  min-width: 800px;
+}
+
+.routine-table thead th {
+  background: var(--gray-50);
+  color: var(--fg-1);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  padding: 24px;
+  position: sticky; 
+  top: 0;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+
+.routine-table tbody td {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--fg-1);
+}
+
+.routine-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.feature-col {
+  width: 250px;
+  color: var(--fg-3) !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  letter-spacing: 0.5px;
+}
+
+.feature-name {
+  font-weight: 500;
+  color: var(--fg-3) !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  letter-spacing: 0.5px;
+}
+
+.btn-remove-inline {
+  background: transparent;
+  border: none;
+  color: var(--fg-3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: all var(--dur-fast);
+}
+
+.btn-remove-inline:hover {
+  color: var(--ten-red);
+}
+
+.border-none {
+  border: none !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--gray-50);
+}
