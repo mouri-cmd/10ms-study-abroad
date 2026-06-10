@@ -292,7 +292,15 @@ export const universities = [
     slug: 'mit',
     country_slug: 'united-states',
     city: 'Cambridge, MA',
-    world_ranking: 1
+    world_ranking: 1,
+    intakes: ['September', 'January'],
+    description: 'MIT is a world-leading research university renowned for its programs in science, engineering, and technology.',
+    campus_life_notes: 'A vibrant campus community with over 500 student clubs, research labs, and innovation hubs.',
+    tuition_per_year: 57986,
+    accommodation_per_year: 12000,
+    living_cost_per_month: 1200,
+    ielts_requirement: '7.0 overall',
+    min_gpa: 3.8
   },
   {
     id: 'stanford',
@@ -300,7 +308,15 @@ export const universities = [
     slug: 'stanford',
     country_slug: 'united-states',
     city: 'Stanford, CA',
-    world_ranking: 3
+    world_ranking: 3,
+    intakes: ['September'],
+    description: 'Stanford University is one of the world\'s leading research and teaching institutions, known for entrepreneurship and innovation.',
+    campus_life_notes: 'Beautiful 8,180-acre campus with strong ties to Silicon Valley and a thriving startup culture.',
+    tuition_per_year: 56169,
+    accommodation_per_year: 13500,
+    living_cost_per_month: 1400,
+    ielts_requirement: '7.0 overall',
+    min_gpa: 3.9
   },
   {
     id: 'manchester',
@@ -308,7 +324,15 @@ export const universities = [
     slug: 'university-of-manchester',
     country_slug: 'uk',
     city: 'Manchester',
-    world_ranking: 32
+    world_ranking: 32,
+    intakes: ['September', 'January'],
+    description: 'A Russell Group university with a rich history of academic excellence and a large international student community.',
+    campus_life_notes: 'Located in the heart of Manchester, a vibrant city with a thriving student life and cultural scene.',
+    tuition_per_year: 26500,
+    accommodation_per_year: 7200,
+    living_cost_per_month: 800,
+    ielts_requirement: '6.5 overall',
+    min_gpa: 3.3
   },
   {
     id: 'toronto',
@@ -316,8 +340,34 @@ export const universities = [
     slug: 'university-of-toronto',
     country_slug: 'canada',
     city: 'Toronto',
-    world_ranking: 21
+    world_ranking: 21,
+    intakes: ['September', 'January', 'May'],
+    description: 'Canada\'s top-ranked university, known for research impact, diversity, and a broad range of graduate programs.',
+    campus_life_notes: 'Three campuses across the Greater Toronto Area, with access to one of the world\'s most multicultural cities.',
+    tuition_per_year: 45000,
+    accommodation_per_year: 10000,
+    living_cost_per_month: 1100,
+    ielts_requirement: '6.5 overall',
+    min_gpa: 3.5
   }
 ];
 
-export const programs = [];
+interface Program {
+  slug: string;
+  university_slug: string;
+  degree_level: string;
+  name: string;
+  duration_years: number;
+  annual_tuition: number;
+  subjects_covered: string[];
+  avg_salary_entry: number;
+  avg_salary_5yr: number;
+  career_outcomes: string[];
+  ielts_requirement: string;
+  min_gpa: number;
+  work_experience_required: boolean;
+  related_scholarships: string[];
+}
+
+export const programs: Program[] = [];
+
