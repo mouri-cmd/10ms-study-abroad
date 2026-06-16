@@ -1,38 +1,100 @@
-export const destinations = [
+export interface Scholarship {
+  name: string;
+  amount: string;
+  desc: string;
+  level?: string;
+  deadline?: string;
+}
+
+export interface Testimonial {
+  name: string;
+  university: string;
+  quote: string;
+  avatar?: string;
+}
+
+export interface VisaOverview {
+  processing: string;
+  requirements: string[];
+}
+
+export interface Destination {
+  id: string;
+  name: string;
+  slug: string;
+  flag_emoji: string;
+  hero_image: string;
+  tuitionRange: string;
+  costOfLiving: string;
+  numUniversitiesStr: string;
+  workPermitStr: string;
+  whyStudyHere: string[];
+  popular_subjects: string[];
+  top_intakes: string[];
+  scholarships_list: Scholarship[];
+  visa_overview?: VisaOverview;
+  visa_description: string;
+  testimonials: Testimonial[];
+}
+
+export const destinations: Destination[] = [
   {
     id: "uk",
     name: "United Kingdom",
     slug: "uk",
     flag_emoji: "🇬🇧",
     hero_image: "/images/uk-hero.png",
-    tuitionRange: "£10,000 – £38,000/year",
-    costOfLiving: "£10,000 – £15,000/year",
+    tuitionRange: "$12K–$38K",
+    costOfLiving: "$1,200",
     numUniversitiesStr: "160+",
-    workPermitStr: "Graduate Route Visa — 2 years post-study",
+    workPermitStr: "2-year Graduate Route",
     whyStudyHere: [
-      "World-renowned universities with centuries of tradition",
-      "Shorter degree durations (3-year undergrad, 1-year masters)",
-      "Multicultural student community",
-      "Strong graduate employment outcomes"
+      "Globally recognized degrees",
+      "Post-study work visa of 2 years",
+      "Rich multicultural experience",
+      "Shorter program durations saving time & money"
     ],
-    popular_subjects: ["Business", "Engineering", "Medicine"],
+    popular_subjects: ["Computer Science", "Law", "Medicine", "Architecture"],
     top_intakes: ["September", "January"],
     scholarships_list: [
-      { name: "Chevening Scholarship", amount: "Full funding", desc: "UK govt merit-based" },
-      { name: "GREAT Scholarship", amount: "Partial funding", desc: "Selected universities" },
-      { name: "Commonwealth Scholarship", amount: "Full funding", desc: "Developing country students" }
-    ],
-    visa_description: "Student Visa (Tier 4) — Processing time: 3–8 weeks. Requires CAS number, proof of funds, English proficiency, and biometrics.",
-    testimonials: [
       {
-        name: "Rahim U.",
-        university: "UCL",
-        quote: "The 1-year master's program is intense but completely worth it. The career support here is excellent for international students."
+        name: "Chevening Scholarship",
+        amount: "Full funding including tuition & living allowance",
+        level: "Master",
+        desc: "The UK government's flagship scholarship program, offering full financial support for one-year master's degrees at any UK university....",
+        deadline: "Deadline: November each year"
       },
       {
-        name: "Sadia M.",
-        university: "University of Manchester",
-        quote: "Studying in the UK gives you access to top global minds. The application process was smooth thanks to the guidance."
+        name: "Commonwealth Scholarship",
+        amount: "Full tuition + stipend + airfare",
+        level: "Master, PhD",
+        desc: "Prestigious scholarships for candidates from Commonwealth countries to study at UK universities, covering all expenses....",
+        deadline: "Deadline: December each year"
+      }
+    ],
+    visa_overview: {
+      processing: "Processing: 12 weeks",
+      requirements: [
+        "Valid passport",
+        "CAS number from university",
+        "Proof of English proficiency (IELTS 6.0+)",
+        "Financial evidence (£1,334/month outside London)",
+        "Health surcharge payment"
+      ]
+    },
+    visa_description: "Student Visa (Tier 4) — Processing time: 12 weeks. Requires CAS number, valid passport, English proficiency, and financial evidence.",
+    testimonials: [
+      {
+        name: "Farhan Ahmed",
+        university: "University of Manchester — MSc Data Science",
+        quote: "Coming to the UK was the best decision of my life. The academic quality is exceptional and I got a job at a London tech firm right after graduation. The Chevening Scholarship covered everything!",
+        avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
+      },
+      {
+        name: "Nadia Islam",
+        university: "King's College London — LLM International Law",
+        quote: "London gave me opportunities I never imagined possible back home. The networking events, the multicultural environment, and the world-class faculty transformed my career entirely.",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200"
       }
     ]
   },
@@ -285,7 +347,27 @@ export const destinations = [
   }
 ];
 
-export const universities = [
+export interface University {
+  id: string;
+  name: string;
+  slug: string;
+  country_slug: string;
+  city: string;
+  world_ranking: number;
+  intakes: string[];
+  description: string;
+  campus_life_notes: string;
+  tuition_per_year: number;
+  accommodation_per_year: number;
+  living_cost_per_month: number;
+  ielts_requirement: string;
+  min_gpa: number;
+  image?: string;
+  tuitionRangeStr?: string;
+  hasScholarship?: boolean;
+}
+
+export const universities: University[] = [
   {
     id: 'mit',
     name: 'Massachusetts Institute of Technology (MIT)',
@@ -300,7 +382,8 @@ export const universities = [
     accommodation_per_year: 12000,
     living_cost_per_month: 1200,
     ielts_requirement: '7.0 overall',
-    min_gpa: 3.8
+    min_gpa: 3.8,
+    image: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=400'
   },
   {
     id: 'stanford',
@@ -316,23 +399,65 @@ export const universities = [
     accommodation_per_year: 13500,
     living_cost_per_month: 1400,
     ielts_requirement: '7.0 overall',
-    min_gpa: 3.9
+    min_gpa: 3.9,
+    image: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=400'
+  },
+  {
+    id: 'edinburgh',
+    name: 'University of Edinburgh',
+    slug: 'university-of-edinburgh',
+    country_slug: 'uk',
+    city: 'Edinburgh, Scotland',
+    world_ranking: 15,
+    intakes: ['September'],
+    description: 'The University of Edinburgh is one of the world\'s top universities, consistently ranked in the world top 50.',
+    campus_life_notes: 'Beautiful historic campus integrated into the cultural capital of Scotland.',
+    tuition_per_year: 25000,
+    accommodation_per_year: 8000,
+    living_cost_per_month: 1000,
+    ielts_requirement: '6.5+',
+    min_gpa: 3.5,
+    image: 'https://images.unsplash.com/photo-1607237138185-eedd996fe574?q=80&w=400',
+    tuitionRangeStr: '$22K–$30K/yr',
+    hasScholarship: true
   },
   {
     id: 'manchester',
     name: 'University of Manchester',
     slug: 'university-of-manchester',
     country_slug: 'uk',
-    city: 'Manchester',
-    world_ranking: 32,
+    city: 'Manchester, England',
+    world_ranking: 28,
     intakes: ['September', 'January'],
     description: 'A Russell Group university with a rich history of academic excellence and a large international student community.',
     campus_life_notes: 'Located in the heart of Manchester, a vibrant city with a thriving student life and cultural scene.',
     tuition_per_year: 26500,
     accommodation_per_year: 7200,
     living_cost_per_month: 800,
-    ielts_requirement: '6.5 overall',
-    min_gpa: 3.3
+    ielts_requirement: '6.5+',
+    min_gpa: 3.3,
+    image: 'https://images.unsplash.com/photo-1568283096533-078a24930eb8?q=80&w=400',
+    tuitionRangeStr: '$21K–$28K/yr',
+    hasScholarship: true
+  },
+  {
+    id: 'kcl',
+    name: 'King\'s College London',
+    slug: 'kings-college-london',
+    country_slug: 'uk',
+    city: 'London, England',
+    world_ranking: 37,
+    intakes: ['September'],
+    description: 'King\'s College London is an internationally renowned university delivering exceptional education and world-leading research.',
+    campus_life_notes: 'Centrally located campuses along the River Thames offering unparalleled access to London life.',
+    tuition_per_year: 28000,
+    accommodation_per_year: 10000,
+    living_cost_per_month: 1300,
+    ielts_requirement: '7+',
+    min_gpa: 3.5,
+    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=400',
+    tuitionRangeStr: '$23K–$32K/yr',
+    hasScholarship: true
   },
   {
     id: 'toronto',
@@ -348,7 +473,8 @@ export const universities = [
     accommodation_per_year: 10000,
     living_cost_per_month: 1100,
     ielts_requirement: '6.5 overall',
-    min_gpa: 3.5
+    min_gpa: 3.5,
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400'
   }
 ];
 

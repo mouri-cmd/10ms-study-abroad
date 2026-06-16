@@ -1,41 +1,692 @@
+/* Country Details Page Styling */
+
+.country-details {
+  background-color: #FAFAFA;
+  font-family: var(--font-inter, 'Inter', sans-serif);
+}
+
+/* Hero Section */
 .country-hero {
-  min-height: 400px;
+  min-height: 280px;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 60px 0;
+  padding: 40px 0;
+  background-size: cover;
+  background-position: center;
 }
 
-.geo-pattern {
+.country-hero::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
-  background-size: 30px 30px;
-  z-index: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
 }
 
-.geo-drift {
-  animation: drift 60s linear infinite;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
-@keyframes drift {
-  from { background-position: 0 0; }
-  to { background-position: 1000px 500px; }
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
 }
 
-.stats-overlap {
-  margin-top: -60px;
+.breadcrumb-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.card.hover-lift {
-  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+.breadcrumb-link:hover {
+  color: #fff;
 }
 
-.card.hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--sh-raised);
+.breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.breadcrumb-current {
+  color: #fff;
+}
+
+.hero-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero-title-area {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-flag-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.hero-flag {
+  font-size: 44px;
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 650px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hero-btn-compare {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.hero-btn-compare:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Stats Section */
+.stats-overlap-container {
+  position: relative;
+  z-index: 10;
+  margin-top: -30px;
+  margin-bottom: 40px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 991px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card-custom {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon-wrapper.tuition { background-color: #EEFBF3; color: #22C55E; }
+.stat-icon-wrapper.living { background-color: #FFF5F5; color: #EF4444; }
+.stat-icon-wrapper.universities { background-color: #FFFBEB; color: #D97706; }
+.stat-icon-wrapper.work { background-color: #FFF7ED; color: #EA580C; }
+
+.stat-info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label-custom {
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.stat-value-custom {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+/* Two-Column Layout */
+.country-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .country-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.country-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.country-sidebar-wrapper {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 20;
+}
+
+/* Section Card Blocks */
+.content-section-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+@media (max-width: 575px) {
+  .content-section-card {
+    padding: 20px;
+  }
+}
+
+.section-title-custom {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0F172A;
+  margin-top: 0;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Why Study Here List */
+.why-study-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.why-study-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.why-study-icon-check {
+  color: #22C55E;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.why-study-text {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Top Universities */
+.uni-horizontal-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  background: #fff;
+  position: relative;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.uni-horizontal-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border-color: #CBD5E1;
+}
+
+@media (max-width: 575px) {
+  .uni-horizontal-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.uni-card-thumb {
+  width: 120px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575px) {
+  .uni-card-thumb {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+.uni-card-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.uni-card-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+  padding-right: 48px; /* space for rank badge */
+}
+
+.uni-card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 10px;
+}
+
+.uni-card-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #475569;
+}
+
+.uni-scholarship-badge {
+  background: #EEFBF3;
+  color: #22C55E;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.uni-compare-btn-wrap {
+  margin-top: 14px;
+}
+
+.uni-compare-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  color: #64748B;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.uni-compare-btn:hover {
+  background: #F1F5F9;
+  color: #1E293B;
+}
+
+.uni-card-rank-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #FFFBEB;
+  color: #D97706;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.uni-card-view-link {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #22C55E;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.uni-card-view-link:hover {
+  color: #16A34A;
+}
+
+@media (max-width: 575px) {
+  .uni-card-rank-badge {
+    position: static;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+  
+  .uni-card-view-link {
+    position: static;
+    margin-top: 14px;
+    align-self: flex-start;
+  }
+}
+
+/* Scholarships */
+.schol-item-card {
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.schol-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+  padding-right: 80px; /* space for level badge */
+}
+
+.schol-level-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #FFFBEB;
+  color: #B45309;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.schol-card-amount {
+  font-size: 14px;
+  font-weight: 700;
+  color: #22C55E;
+  margin-bottom: 8px;
+}
+
+.schol-card-desc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.schol-card-deadline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+.schol-view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #22C55E;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: color 0.2s;
+}
+
+.schol-view-all-link:hover {
+  color: #16A34A;
+}
+
+/* Visa Overview */
+.visa-badge-processing {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF1F2;
+  color: #F43F5E;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.visa-req-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.visa-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visa-bullet-item {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.visa-bullet-item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #F43F5E;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+
+/* Testimonials */
+.testimonial-item-card {
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 16px;
+}
+
+.test-header-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.test-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.test-student-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+}
+
+.test-student-uni {
+  font-size: 12px;
+  color: #64748B;
+  margin: 2px 0 0 0;
+}
+
+.test-quote-text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Sidebar Components */
+.sidebar-counseling-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar-form-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+}
+
+.sidebar-form-subtitle {
+  font-size: 13px;
+  color: #64748B;
+  margin: 0 0 20px 0;
+}
+
+.counseling-fields-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-input-field {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0F172A;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.sidebar-input-field:focus {
+  border-color: #22C55E;
+}
+
+.sidebar-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #22C55E;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.sidebar-submit-btn:hover {
+  background: #16A34A;
+}
+
+.sidebar-form-disclaimer {
+  text-align: center;
+  font-size: 11px;
+  color: #94A3B8;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* Subject Chips Card */
+.sidebar-subjects-card {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.sidebar-sub-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.subjects-flex-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subject-custom-chip {
+  background: #F1F5F9;
+  color: #475569;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.subject-custom-chip:hover {
+  background: #E2E8F0;
+  color: #1E293B;
 }

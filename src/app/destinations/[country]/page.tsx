@@ -1,7 +1,20 @@
 import React from 'react';
 import { destinations, universities } from '../../../data/destinations';
 import Link from 'next/link';
-import { MapPin, DollarSign, BookOpen, Clock, ChevronRight, GraduationCap } from 'lucide-react';
+import { 
+  MapPin, 
+  DollarSign, 
+  BookOpen, 
+  Clock, 
+  ChevronRight, 
+  GraduationCap,
+  Award,
+  Calendar,
+  Briefcase,
+  Users,
+  CheckCircle2,
+  BarChart2
+} from 'lucide-react';
 import './country.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ country: string }> }) {
@@ -33,170 +46,276 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
   return (
     <div className="country-details pb-24">
-      {/* Dark Hero Section with Geo-drift */}
+      {/* Hero Section */}
       <section 
         className="country-hero relative"
         style={{
-          backgroundImage: `linear-gradient(to top, rgba(2, 14, 39, 1) 0%, rgba(2, 14, 39, 0.4) 100%), url(${country.hero_image || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000'})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: `url(${country.hero_image || 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000'})`,
         }}
       >
-        <div className="geo-pattern geo-drift opacity-10"></div>
         <div className="container relative z-10 hero-content text-white">
-          <div className="breadcrumb flex items-center gap-2 text-white/70 text-sm font-semibold mb-6 bn">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <Link href="/destinations" className="hover:text-white transition-colors">Destinations</Link>
-            <ChevronRight size={14} />
-            <span className="text-white">{country.name}</span>
+          <div className="breadcrumb-nav">
+            <Link href="/" className="breadcrumb-link">Home</Link>
+            <span className="breadcrumb-separator">&gt;</span>
+            <Link href="/destinations" className="breadcrumb-link">Destinations</Link>
+            <span className="breadcrumb-separator">&gt;</span>
+            <span className="breadcrumb-current">{country.name}</span>
           </div>
 
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-6xl drop-shadow-lg">{country.flag_emoji}</span>
+          <div className="hero-header-flex">
+            <div className="hero-title-area">
+              <div className="hero-flag-title">
+                <span className="hero-flag">{country.flag_emoji}</span>
+                <h1 className="hero-title">Study in {country.name}</h1>
+              </div>
+              <p className="hero-desc">
+                {country.slug === 'uk' 
+                  ? "The UK is home to some of the world's oldest and most prestigious universities, offering world-class education with globally recognized degrees."
+                  : `Discover world-class education, vibrant campus life, and excellent career opportunities in ${country.name}.`
+                }
+              </p>
+            </div>
+            <div>
+              <button className="hero-btn-compare">
+                <BarChart2 size={16} /> Add to Compare
+              </button>
+            </div>
           </div>
-          <h1 className="h-display mb-4 bn text-white">{country.name}</h1>
-          <p className="text-xl text-white/90 max-w-2xl bn">
-            {country.whyStudyHere && country.whyStudyHere[0] ? country.whyStudyHere[0] : "Discover world-class education and incredible opportunities."}
-          </p>
         </div>
       </section>
 
       {/* Overlapping Statistics Grid */}
-      <section className="container relative z-20 stats-overlap mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="card hover-lift bg-white shadow-xl flex items-center gap-4 p-6 border-b-4 border-[var(--ten-red)]">
-            <div className="w-12 h-12 rounded-full bg-[var(--surface-info)] flex items-center justify-center text-[var(--info-dark)] shrink-0">
-              <DollarSign size={24} />
+      <section className="container stats-overlap-container">
+        <div className="stats-grid">
+          <div className="stat-card-custom">
+            <div className="stat-icon-wrapper tuition">
+              <DollarSign size={18} />
             </div>
-            <div>
-              <div className="text-xs font-bold text-[var(--fg-3)] uppercase tracking-wider mb-1 bn">Tuition (Yearly)</div>
-              <div className="font-bold text-[var(--fg-1)] bn">{country.tuitionRange || 'N/A'}</div>
-            </div>
-          </div>
-          
-          <div className="card hover-lift bg-white shadow-xl flex items-center gap-4 p-6 border-b-4 border-[var(--premium-gold-2)]">
-            <div className="w-12 h-12 rounded-full bg-[#FFF5D6] flex items-center justify-center text-[var(--premium-gold-2)] shrink-0">
-              <MapPin size={24} />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[var(--fg-3)] uppercase tracking-wider mb-1 bn">Living Cost</div>
-              <div className="font-bold text-[var(--fg-1)] bn">{country.costOfLiving || 'N/A'}</div>
+            <div className="stat-info-wrapper">
+              <span className="stat-label-custom">Avg Tuition/yr</span>
+              <span className="stat-value-custom">{country.tuitionRange}</span>
             </div>
           </div>
 
-          <div className="card hover-lift bg-white shadow-xl flex items-center gap-4 p-6 border-b-4 border-[#2D5BFF]">
-            <div className="w-12 h-12 rounded-full bg-[#F0F4FF] flex items-center justify-center text-[#2D5BFF] shrink-0">
-              <GraduationCap size={24} />
+          <div className="stat-card-custom">
+            <div className="stat-icon-wrapper living">
+              <DollarSign size={18} />
             </div>
-            <div>
-              <div className="text-xs font-bold text-[var(--fg-3)] uppercase tracking-wider mb-1 bn">Universities</div>
-              <div className="font-bold text-[var(--fg-1)] bn">{country.numUniversitiesStr || 'N/A'}</div>
+            <div className="stat-info-wrapper">
+              <span className="stat-label-custom">Cost of Living/mo</span>
+              <span className="stat-value-custom">{country.costOfLiving}</span>
             </div>
           </div>
 
-          <div className="card hover-lift bg-white shadow-xl flex items-center gap-4 p-6 border-b-4 border-[var(--success-deep)]">
-            <div className="w-12 h-12 rounded-full bg-[#F0FBF4] flex items-center justify-center text-[var(--success-deep)] shrink-0">
-              <Clock size={24} />
+          <div className="stat-card-custom">
+            <div className="stat-icon-wrapper universities">
+              <Users size={18} />
             </div>
-            <div>
-              <div className="text-xs font-bold text-[var(--fg-3)] uppercase tracking-wider mb-1 bn">Work Permit</div>
-              <div className="font-bold text-[var(--fg-1)] bn text-sm">{country.workPermitStr || 'N/A'}</div>
+            <div className="stat-info-wrapper">
+              <span className="stat-label-custom">Universities</span>
+              <span className="stat-value-custom">{country.numUniversitiesStr}</span>
+            </div>
+          </div>
+
+          <div className="stat-card-custom">
+            <div className="stat-icon-wrapper work">
+              <Briefcase size={18} />
+            </div>
+            <div className="stat-info-wrapper">
+              <span className="stat-label-custom">Post-Study Work</span>
+              <span className="stat-value-custom">{country.workPermitStr}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Study Here */}
-      {country.whyStudyHere && country.whyStudyHere.length > 0 && (
-        <section className="container mb-20">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-2 h-8 bg-[var(--ten-red)] rounded-full"></div>
-            <h2 className="h2 bn m-0">কেন {country.name}-এ পড়বে?</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {country.whyStudyHere.map((reason, index) => (
-              <div key={index} className="flex gap-4 items-start p-4 bg-[var(--surface-subtle)] rounded-[var(--r-xl)]">
-                <div className="w-8 h-8 rounded-full bg-[var(--ten-red)] text-white flex items-center justify-center font-bold shrink-0">
-                  {index + 1}
+      {/* Two-Column Layout */}
+      <section className="container">
+        <div className="country-layout">
+          {/* LEFT COLUMN - Content */}
+          <div className="country-main-content">
+            
+            {/* Why Study Here */}
+            {country.whyStudyHere && country.whyStudyHere.length > 0 && (
+              <div className="content-section-card">
+                <h2 className="section-title-custom">Why Study in {country.name}?</h2>
+                <div className="why-study-list">
+                  {country.whyStudyHere.map((reason, index) => (
+                    <div key={index} className="why-study-item">
+                      <CheckCircle2 className="why-study-icon-check" size={20} />
+                      <p className="why-study-text">{reason}</p>
+                    </div>
+                  ))}
                 </div>
-                <p className="body m-0 bn pt-1">{reason}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Top Universities */}
-      <section className="container mb-20 bg-[var(--surface-subtle)] p-8 md:p-12 rounded-[var(--r-2xl)]">
-        <div className="flex justify-between items-center mb-8 flex-wrap gap-4">
-          <div>
-            <h2 className="h2 bn mb-2 text-[var(--ten-ink)]">Top Universities in {country.name}</h2>
-            <p className="body-sm text-[var(--fg-2)] bn m-0">Explore world-class institutions and find your perfect fit.</p>
-          </div>
-          <button className="btn btn-outline bn">View All Universities</button>
-        </div>
-
-        {countryUniversities.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-[var(--r-xl)] shadow-sm">
-            <BookOpen size={48} className="mx-auto text-[var(--fg-4)] mb-4" />
-            <h3 className="h3 bn mb-2 text-[var(--fg-2)]">Universities updating soon</h3>
-            <p className="body-sm bn text-[var(--fg-3)]">We are curating the best options for you.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {countryUniversities.map(uni => (
-              <Link href={`/destinations/${country.slug}/${uni.slug}`} key={uni.slug} className="card hover-lift flex flex-col p-6 h-full bg-white shadow-sm">
-                <div className="flex-1">
-                  <h3 className="font-bold text-lg mb-2 text-[var(--ten-ink)] bn leading-tight">{uni.name}</h3>
-                  <div className="flex items-center gap-1 text-[var(--fg-2)] text-sm mb-4 bn">
-                    <MapPin size={14} /> {uni.city}
-                  </div>
-                </div>
-                <div className="mt-auto pt-4 border-t border-[var(--border)] flex justify-between items-center">
-                  <span className="text-xs font-semibold text-[var(--fg-2)] bg-[var(--surface-subtle)] px-2 py-1 rounded">Rank: #{uni.world_ranking || 'N/A'}</span>
-                  <span className="text-[var(--success)] font-semibold text-sm bn flex items-center gap-1">Details <ChevronRight size={14}/></span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* Scholarships & Visa */}
-      <section className="container grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-        <div className="lg:col-span-2">
-          <h2 className="h2 bn mb-6">Popular Scholarships</h2>
-          <div className="flex flex-col gap-4">
-            {country.scholarships_list && country.scholarships_list.length > 0 ? (
-              country.scholarships_list.map((schol, idx) => (
-                <div key={idx} className="card p-6 border border-[var(--border)] hover:border-[var(--ten-red)] transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
-                    <h3 className="font-bold text-[var(--fg-1)] bn mb-1">{schol.name}</h3>
-                    <p className="text-sm text-[var(--fg-2)] bn m-0">{schol.desc}</p>
-                  </div>
-                  <div className="bg-[#FDF2F2] text-[var(--ten-red)] px-4 py-2 rounded-full text-sm font-bold bn whitespace-nowrap text-center">
-                    {schol.amount}
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="card p-6 border border-[var(--border)] text-center text-[var(--fg-3)] bn">
-                Scholarships information is coming soon.
               </div>
             )}
-          </div>
-        </div>
 
-        <div>
-          <h2 className="h2 bn mb-6">Visa Information</h2>
-          <div className="card bg-[var(--bg-inverse)] text-white p-8 h-[calc(100%-3rem)] rounded-[var(--r-2xl)] relative overflow-hidden">
-            <div className="geo-pattern geo-drift opacity-10"></div>
-            <Clock size={32} className="text-[var(--premium-gold-2)] mb-6 relative z-10" />
-            <p className="body bn text-white/90 leading-relaxed relative z-10 m-0">
-              {country.visa_description || "Visa requirements and processing times will be updated shortly."}
-            </p>
+            {/* Top Universities */}
+            <div className="content-section-card">
+              <h2 className="section-title-custom">Top Universities</h2>
+              
+              {countryUniversities.length === 0 ? (
+                <div className="text-center py-12 bg-white rounded-xl shadow-sm border border-slate-100">
+                  <BookOpen size={48} className="mx-auto text-slate-300 mb-4" />
+                  <h3 className="text-lg font-bold mb-2 text-slate-700">Universities updating soon</h3>
+                  <p className="text-sm text-slate-500">We are curating the best options for you.</p>
+                </div>
+              ) : (
+                <div className="uni-list-container">
+                  {countryUniversities.map(uni => (
+                    <div key={uni.slug} className="uni-horizontal-card">
+                      {uni.image && (
+                        <img src={uni.image} alt={uni.name} className="uni-card-thumb" />
+                      )}
+                      <div className="uni-card-details">
+                        <div>
+                          <h3 className="uni-card-name">{uni.name}</h3>
+                          <div className="uni-card-location">
+                            <MapPin size={14} /> {uni.city}
+                          </div>
+                          <div className="uni-card-row-meta">
+                            <span>Tuition: <strong>{uni.tuitionRangeStr || `$${uni.tuition_per_year.toLocaleString()}/yr`}</strong></span>
+                            <span>IELTS: <strong>{uni.ielts_requirement}</strong></span>
+                            {uni.hasScholarship && (
+                              <span className="uni-scholarship-badge">Scholarship available</span>
+                            )}
+                          </div>
+                        </div>
+                        <div className="uni-compare-btn-wrap">
+                          <button className="uni-compare-btn">+ Compare</button>
+                        </div>
+                      </div>
+                      
+                      <span className="uni-card-rank-badge">#{uni.world_ranking}</span>
+                      <Link href={`/destinations/${country.slug}/${uni.slug}`} className="uni-card-view-link">
+                        View <ChevronRight size={14} />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Available Scholarships */}
+            {country.scholarships_list && country.scholarships_list.length > 0 && (
+              <div className="content-section-card">
+                <h2 className="section-title-custom">
+                  <Award className="text-amber-500 shrink-0" size={22} /> Available Scholarships
+                </h2>
+                <div className="schol-list-container">
+                  {country.scholarships_list.map((schol, idx) => (
+                    <div key={idx} className="schol-item-card">
+                      <h3 className="schol-card-title">{schol.name}</h3>
+                      {schol.level && (
+                        <span className="schol-level-tag">{schol.level}</span>
+                      )}
+                      <div className="schol-card-amount">{schol.amount}</div>
+                      <p className="schol-card-desc">{schol.desc}</p>
+                      {schol.deadline && (
+                        <div className="schol-card-deadline">
+                          <Calendar size={14} /> {schol.deadline}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                
+                <Link href="/scholarships" className="schol-view-all-link">
+                  View all scholarships <ChevronRight size={14} />
+                </Link>
+              </div>
+            )}
+
+            {/* Visa Overview */}
+            {country.visa_overview ? (
+              <div className="content-section-card">
+                <h2 className="section-title-custom">Visa Overview</h2>
+                <div className="visa-badge-processing">
+                  <Clock size={16} /> {country.visa_overview.processing}
+                </div>
+                <h3 className="visa-req-title">Key Requirements</h3>
+                <ul className="visa-bullets-list">
+                  {country.visa_overview.requirements.map((req, idx) => (
+                    <li key={idx} className="visa-bullet-item">{req}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div className="content-section-card">
+                <h2 className="section-title-custom">Visa Overview</h2>
+                <p className="text-sm text-slate-600 leading-relaxed">{country.visa_description}</p>
+              </div>
+            )}
+
+            {/* Student Testimonials */}
+            {country.testimonials && country.testimonials.length > 0 && (
+              <div className="content-section-card">
+                <h2 className="section-title-custom">Student Testimonials</h2>
+                <div>
+                  {country.testimonials.map((test, idx) => (
+                    <div key={idx} className="testimonial-item-card">
+                      <div className="test-header-wrap">
+                        {test.avatar && (
+                          <img src={test.avatar} alt={test.name} className="test-avatar-img" />
+                        )}
+                        <div>
+                          <h4 className="test-student-name">{test.name}</h4>
+                          <p className="test-student-uni">{test.university}</p>
+                        </div>
+                      </div>
+                      <p className="test-quote-text">"{test.quote}"</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+          </div>
+
+          {/* RIGHT COLUMN - Sticky Sidebar */}
+          <div className="country-sidebar-wrapper">
+            {/* Counseling Form */}
+            <div className="sidebar-counseling-card">
+              <h3 className="sidebar-form-title">Book a Free Counseling Session</h3>
+              <p className="sidebar-form-subtitle">Our expert counselors are ready to guide you.</p>
+              
+              <form className="counseling-fields-form">
+                <input 
+                  type="text" 
+                  placeholder="Your full name" 
+                  className="sidebar-input-field" 
+                  required 
+                />
+                <input 
+                  type="tel" 
+                  placeholder="Phone number" 
+                  className="sidebar-input-field" 
+                  required 
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email address (optional)" 
+                  className="sidebar-input-field" 
+                />
+                <button type="button" className="sidebar-submit-btn">
+                  Get Free Counseling
+                </button>
+              </form>
+              
+              <p className="sidebar-form-disclaimer">Free, no obligation. We respect your privacy.</p>
+            </div>
+
+            {/* Popular Subjects */}
+            {country.popular_subjects && country.popular_subjects.length > 0 && (
+              <div className="sidebar-subjects-card">
+                <h3 className="sidebar-sub-title">Popular Subjects</h3>
+                <div className="subjects-flex-chips">
+                  {country.popular_subjects.map((subject, idx) => (
+                    <span key={idx} className="subject-custom-chip">{subject}</span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
