@@ -1,10 +1,10 @@
 .hero {
-  background-image: linear-gradient(to right, rgba(11, 17, 23, 0.95) 35%, rgba(11, 17, 23, 0.6) 70%, rgba(11, 17, 23, 0.95) 100%), url('/images/home_hero_banner.jpg');
+  background-image: linear-gradient(rgba(11, 17, 23, 0.4), rgba(11, 17, 23, 0.45)), url('/images/home_hero_banner.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   position: relative;
   overflow: hidden;
-  padding: 120px 0;
+  padding: 140px 0 80px;
 }
 
 .hero-container {
