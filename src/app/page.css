@@ -24,13 +24,15 @@
 .hero-title {
   color: var(--ten-white);
   font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.25;
   margin-bottom: 24px;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
-  color: #A0AABF;
-  margin-bottom: 40px;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 36px;
   line-height: 1.6;
 }
 
@@ -38,23 +40,35 @@
   display: flex;
   align-items: center;
   background: white;
-  padding: 8px 8px 8px 24px;
-  border-radius: var(--r-lg);
-  margin-bottom: 24px;
+  padding: 6px 6px 6px 24px;
+  border-radius: 9999px;
+  margin-bottom: 28px;
+  max-width: 580px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .search-input {
   flex: 1;
   border: none;
   padding: 12px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--fg-1);
   outline: none;
 }
 
 .search-btn {
-  padding: 14px 32px;
-  border-radius: var(--r-lg);
+  padding: 12px 32px;
+  border-radius: 9999px;
+  background-color: var(--success);
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--success-dark);
 }
 
 .quick-filters {
@@ -63,15 +77,19 @@
   gap: 12px;
   flex-wrap: wrap;
   font-size: 0.9rem;
-  color: #A0AABF;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .quick-filters .badge {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--ten-white);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.85rem;
   cursor: pointer;
-  transition: all var(--dur-base) var(--ease-out);
+  transition: all 0.2s ease;
 }
 
 .quick-filters .badge:hover {

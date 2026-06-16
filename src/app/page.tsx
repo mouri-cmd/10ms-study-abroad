@@ -11,10 +11,10 @@ export default function Home() {
         <div className="container hero-container">
           <div className="hero-content">
             <h1 className="hero-title bn h-display">
-              বিদেশে পড়ার স্বপ্ন পূরণের পথ এখান থেকেই শুরু
+              বিদেশে পড়ার স্বপ্ন পূরণের <br /> পথ এখান থেকেই শুরু
             </h1>
             <p className="hero-subtitle bn">
-              বিশ্বসেরা সব বিশ্ববিদ্যালয় এক্সপ্লোর করো, তুলনা করো এবং ফ্রি গাইডেন্স নাও — দেশের হাজারো শিক্ষার্থীর আস্থার জায়গা
+              বিশ্বসেরা সব বিশ্ববিদ্যালয় এক্সপ্লোর করো, তুলনা করো এবং ফ্রি গাইডেন্স নাও — <br /> দেশের হাজারো শিক্ষার্থীর আস্থার জায়গা
             </p>
             
             <div className="search-box card">
