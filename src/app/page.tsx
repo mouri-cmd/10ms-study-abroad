@@ -37,15 +37,11 @@ export default function Home() {
           </div>
 
           <div className="hero-visual">
-            <div className="globe-container">
-              {/* Simplified animated globe/map visual */}
-              <div className="globe">
-                <div className="pin pin-1"><MapPin size={24} color="var(--premium-gold-2)" fill="var(--premium-gold-2)"/></div>
-                <div className="pin pin-2"><MapPin size={24} color="var(--premium-gold-2)" fill="var(--premium-gold-2)"/></div>
-                <div className="pin pin-3"><MapPin size={24} color="var(--premium-gold-2)" fill="var(--premium-gold-2)"/></div>
-                <div className="globe-orbit"></div>
-              </div>
-            </div>
+            <img 
+              src="/images/home_hero_banner.jpg" 
+              alt="10MS Study Abroad Hero" 
+              className="home-hero-image"
+            />
           </div>
         </div>
       </section>
