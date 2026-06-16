@@ -36,13 +36,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-visual">
-            <img 
-              src="/images/home_hero_banner.jpg" 
-              alt="10MS Study Abroad Hero" 
-              className="home-hero-image"
-            />
-          </div>
+
         </div>
       </section>
 
