@@ -485,17 +485,7 @@ export default function ArticleDetailPage({ params }: { params: Promise<{ slug: 
               </React.Fragment>
             ))}
 
-            {/* Bottom CTA Banner */}
-            <div className="bottom-cta-banner">
-              <h2 className="bottom-cta-title">Ready to Start Your Study Abroad Journey?</h2>
-              <p className="bottom-cta-subtitle">
-                Our expert counselors have helped 500+ students get admitted to top universities worldwide. Let's make your dream a reality.
-              </p>
-              <button onClick={() => setShowModal(true)} className="bottom-cta-btn">
-                Book Your Free Session Now
-              </button>
-              <p className="bottom-cta-disclaimer">No obligation. Free. Confidential.</p>
-            </div>
+
           </div>
 
           {/* Right Column: Sidebar */}
