@@ -231,9 +231,6 @@ const scholarshipsData: Scholarship[] = [
 ];
 
 export default function ScholarshipsPage() {
-  // Fallback View Toggle (defaults to false - new sidebar filter panel is active)
-  const [fallbackView, setFallbackView] = useState(false);
-
   // Filter States
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
@@ -242,10 +239,6 @@ export default function ScholarshipsPage() {
   const [selectedMonths, setSelectedMonths] = useState<string[]>([]);
   const [selectedEligibilities, setSelectedEligibilities] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-
-  // Original Layout Dropdown States
-  const [origCountry, setOrigCountry] = useState('সব দেশ (All Countries)');
-  const [origDegree, setOrigDegree] = useState('সব ডিগ্রি (All Degrees)');
 
   // Collapsible sections toggle states
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
@@ -260,31 +253,16 @@ export default function ScholarshipsPage() {
   // Mobile Drawer Toggle state
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
-  // Toggle Collapse
-  const toggleSection = (section: string) => {
-    setCollapsedSections(prev => ({
-      ...prev,
-      [section]: !prev[section]
-    }));
-  };
-
-  // Helper backward compat toggleSection alias to match state name
-  const setCollapsedSections = (fn: (prev: Record<string, boolean>) => Record<string, boolean>) => {
-    setExpandedSections(prev => {
-      const inverse = fn(Object.fromEntries(Object.entries(prev).map(([k, v]) => [k, !v])));
-      return Object.fromEntries(Object.entries(inverse).map(([k, v]) => [k, !v]));
-    });
-  };
-
-  const isCollapsed = (section: string) => {
-    return !expandedSections[section];
-  };
-
+  // Toggle Collapse helper
   const toggleSectionExpanded = (section: string) => {
     setExpandedSections(prev => ({
       ...prev,
       [section]: !prev[section]
     }));
+  };
+
+  const isCollapsed = (section: string) => {
+    return !expandedSections[section];
   };
 
   // Handle single check/uncheck
@@ -327,19 +305,6 @@ export default function ScholarshipsPage() {
       if (!matchName && !matchCountry && !matchDesc) return false;
     }
 
-    // Fallback logic check if fallbackView is true
-    if (fallbackView) {
-      if (origCountry !== 'সব দেশ (All Countries)' && schol.countryCategory !== origCountry) {
-        return false;
-      }
-      if (origDegree !== 'সব ডিগ্রি (All Degrees)') {
-        const hasDeg = schol.degrees.some(d => d === origDegree);
-        if (!hasDeg) return false;
-      }
-      return true;
-    }
-
-    // Left Sidebar Filters Logic
     // 2. Country Category
     if (selectedCountries.length > 0) {
       if (!selectedCountries.includes(schol.countryCategory)) {
@@ -350,7 +315,6 @@ export default function ScholarshipsPage() {
     // 3. Degree Level
     if (selectedDegrees.length > 0) {
       const hasDegreeMatch = schol.degrees.some(d => {
-        // Map degrees values correctly: 'Bachelor' matches 'Undergraduate'
         const normalized = d === 'Bachelor' ? 'Undergraduate' : d;
         return selectedDegrees.includes(normalized);
       });
@@ -403,385 +367,301 @@ export default function ScholarshipsPage() {
   ];
 
   return (
-    <div className="scholarships-page bg-light min-h-screen">
-      {/* Dark Hero Section with Geo Watermarks */}
-      <section className="dark-hero-style text-center relative pt-20 pb-32">
-        <svg className="geo-watermark geo-drift w-64 h-64" style={{ top: '10%', left: '5%' }} viewBox="0 0 100 100">
-          <polygon points="50,10 90,90 10,90" />
-        </svg>
-        <svg className="geo-watermark geo-drift w-48 h-48" style={{ top: '30%', right: '10%', animationDelay: '2s' }} viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" />
-        </svg>
-        <svg className="geo-watermark geo-drift w-32 h-32" style={{ bottom: '10%', left: '25%', animationDelay: '4s' }} viewBox="0 0 100 100">
-          <rect x="20" y="20" width="60" height="60" />
-        </svg>
+    <div className="scholarships-page bg-light-upgrade min-h-screen">
+      {/* Dark Gradient Hero Section with Geo Watermarks */}
+      <section className="dark-hero-style-upgrade text-center relative pt-20 pb-36">
+        <div className="announcement-shimmer mb-6 mx-auto inline-flex items-center gap-2">
+          <Sparkles size={14} className="sparkle-anim" /> 💰 ১০০% ফ্রি ফান্ডিং সুযোগ
+        </div>
+        <h1 className="h-display-upgrade text-white mb-6">
+          সেরা স্কলারশিপ <span className="highlight-green">খুঁজে নাও</span>
+        </h1>
+        <p className="body-upgrade text-white max-w-600 mx-auto mb-10" style={{ opacity: 0.85 }}>
+          বাংলাদেশি শিক্ষার্থীদের জন্য বিশ্বজুড়ে ছড়িয়ে থাকা সেরা ফান্ডিং ও স্কলারশিপের সুযোগগুলো এক্সপ্লোর করো।
+        </p>
 
-        <div className="container relative z-10">
-          <div className="badge-eyebrow mb-6 mx-auto inline-flex items-center gap-2 bn">
-            <Sparkles size={14} /> ১০০% ফ্রি ফান্ডিং সুযোগ
+        {/* 2. Prominent Search Bar sitting inside Hero */}
+        <div className="search-bar-hero-container">
+          <div className="search-input-wrapper-upgrade">
+            <Search size={22} className="search-icon-upgrade" color="#22C55E" />
+            <input 
+              type="text" 
+              placeholder="স্কলারশিপ, দেশ বা প্রোগ্রামের নাম দিয়ে খোঁজো..." 
+              className="input-search-upgrade" 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
-          <h1 className="h-display text-white mb-4 bn animate-fade-in">
-            স্বপ্নের স্কলারশিপ খুঁজে নাও
-          </h1>
-          <p className="body text-white max-w-600 mx-auto bn" style={{ opacity: 0.85 }}>
-            বাংলাদেশি শিক্ষার্থীদের জন্য বিশ্বজুড়ে ছড়িয়ে থাকা সেরা ফান্ডিং ও স্কলারশিপের সুযোগগুলো এক্সপ্লোর করো।
-          </p>
         </div>
       </section>
 
-      <section className="container relative z-20" style={{ marginTop: '-60px' }}>
-        
-        {/* ============================================================== */}
-        {/* FALLBACK ORIGINAL HORIZONTAL FILTER VIEW                       */}
-        {/* ============================================================== */}
-        {fallbackView ? (
-          <>
-            <div className="search-hub-card card flex flex-col md:flex-row gap-4 mb-12 p-6 bg-white shadow-[var(--sh-raised)]">
-              <div className="search-input-wrapper flex-1">
-                <Search size={20} className="search-icon" color="var(--fg-3)" />
-                <input 
-                  type="text" 
-                  placeholder="স্কলারশিপ, দেশ বা প্রোগ্রামের নাম দিয়ে খোঁজো..." 
-                  className="input pl-12 h-full bn text-lg" 
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              
-              <div className="flex gap-4">
-                <select 
-                  className="input filter-select bn h-full"
-                  value={origCountry}
-                  onChange={(e) => setOrigCountry(e.target.value)}
-                >
-                  <option>সব দেশ (All Countries)</option>
-                  <option value="United Kingdom">United Kingdom</option>
-                  <option value="United States">United States</option>
-                  <option value="Canada">Canada</option>
-                  <option value="Australia">Australia</option>
-                  <option value="Germany">Germany</option>
-                  <option value="Others">Others</option>
-                </select>
-                <select 
-                  className="input filter-select bn h-full"
-                  value={origDegree}
-                  onChange={(e) => setOrigDegree(e.target.value)}
-                >
-                  <option>সব ডিগ্রি (All Degrees)</option>
-                  <option value="Undergraduate">Bachelor/Undergraduate</option>
-                  <option value="Master">Master</option>
-                  <option value="PhD">PhD</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="h2 bn">মোট {filteredScholarships.length} টি স্কলারশিপ পাওয়া গেছে</h2>
-              <button 
-                onClick={() => setFallbackView(false)} 
-                className="btn btn-secondary text-sm flex items-center gap-1.5 px-4 py-2"
-                style={{ background: '#F1F5F9', border: '1px solid #E2E8F0', color: '#475569' }}
-              >
-                <SlidersHorizontal size={14} /> Switch to Sidebar Filters
-              </button>
-            </div>
-
-            <div className="scholarships-grid mb-16">
-              {filteredScholarships.map((schol, idx) => (
-                <ScholarshipCard key={idx} schol={schol} />
-              ))}
-            </div>
-          </>
-        ) : (
-          /* ============================================================== */
-          /* NEW LEFT SIDEBAR FILTER PANEL VIEW                             */
-          /* ============================================================== */
-          <div className="scholarships-layout-wrapper">
+      <section className="container relative z-20" style={{ marginTop: '-40px' }}>
+        <div className="scholarships-layout-wrapper">
+          <div className="layout-grid-sidebar">
             
-            {/* Desktop and Mobile Search Bar Hub */}
-            <div className="search-hub-card card mb-8 p-4 bg-white shadow-sm flex items-center justify-between gap-4">
-              <div className="search-input-wrapper flex-1">
-                <Search size={18} className="search-icon" color="var(--fg-3)" />
-                <input 
-                  type="text" 
-                  placeholder="স্কলারশিপ, দেশ বা প্রোগ্রামের নাম দিয়ে খোঁজো..." 
-                  className="input pl-12 h-full bn text-base" 
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-              
-              {/* Mobile Filter Toggle Button */}
-              <button 
-                className="mobile-filter-toggle-btn btn btn-primary flex md:hidden items-center gap-2"
-                onClick={() => setMobileDrawerOpen(true)}
-              >
-                <SlidersHorizontal size={16} /> Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
-              </button>
-
-              <button 
-                onClick={() => setFallbackView(true)} 
-                className="desktop-fallback-btn btn btn-secondary text-sm flex items-center gap-1.5 px-4 py-2"
-                style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', color: '#64748B' }}
-              >
-                Original Style (Horizontal)
-              </button>
-            </div>
-
-            <div className="layout-grid-sidebar">
-              {/* Left Sidebar filter panel */}
-              <aside className={`filter-sidebar-wrapper ${mobileDrawerOpen ? 'drawer-open' : ''}`}>
-                <div className="filter-sidebar-inner">
+            {/* Left Sidebar filter panel */}
+            <aside className={`filter-sidebar-wrapper ${mobileDrawerOpen ? 'drawer-open' : ''}`}>
+              <div className="filter-sidebar-inner">
+                
+                {/* Sidebar Header */}
+                <div className="filter-sidebar-header">
+                  <div className="flex items-center gap-2">
+                    <SlidersHorizontal size={18} className="text-emerald-500" />
+                    <span className="font-bold text-slate-800 text-base">
+                      Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+                    </span>
+                  </div>
                   
-                  {/* Sidebar Header */}
-                  <div className="filter-sidebar-header">
-                    <div className="flex items-center gap-2">
-                      <SlidersHorizontal size={18} className="text-emerald-500" />
-                      <span className="font-bold text-slate-800 text-base">
-                        Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
-                      </span>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      {activeFiltersCount > 0 && (
-                        <button 
-                          onClick={handleClearAll}
-                          className="clear-all-btn text-xs font-semibold text-red-500 flex items-center gap-1 hover:text-red-600 transition-colors"
-                        >
-                          <RotateCcw size={12} /> Clear All
-                        </button>
-                      )}
+                  <div className="flex items-center gap-2">
+                    {activeFiltersCount > 0 && (
                       <button 
-                        className="mobile-drawer-close-x md:hidden" 
-                        onClick={() => setMobileDrawerOpen(false)}
+                        onClick={handleClearAll}
+                        className="clear-all-btn text-xs font-semibold text-red-500 flex items-center gap-1 hover:text-red-600 transition-colors"
                       >
-                        <X size={20} />
+                        <RotateCcw size={12} /> Clear All
                       </button>
-                    </div>
-                  </div>
-
-                  {/* Sidebar Filter Lists */}
-                  <div className="filter-scroll-area">
-                    
-                    {/* Section 1: Country */}
-                    <div className="filter-section-block">
-                      <button 
-                        className="filter-section-header"
-                        onClick={() => toggleSectionExpanded('country')}
-                      >
-                        <span>🌍 Country / Destination</span>
-                        {isCollapsed('country') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
-                      </button>
-                      
-                      {!isCollapsed('country') && (
-                        <div className="filter-section-body">
-                          {['United Kingdom', 'United States', 'Canada', 'Australia', 'Germany', 'Others'].map((c, i) => (
-                            <label key={i} className="filter-checkbox-label">
-                              <input 
-                                type="checkbox"
-                                checked={selectedCountries.includes(c)}
-                                onChange={() => handleToggle(selectedCountries, setSelectedCountries, c)}
-                                className="filter-checkbox-input"
-                              />
-                              <span className="checkbox-text-custom">{c}</span>
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Section 2: Degree Level */}
-                    <div className="filter-section-block">
-                      <button 
-                        className="filter-section-header"
-                        onClick={() => toggleSectionExpanded('degree')}
-                      >
-                        <span>🎓 Degree Level</span>
-                        {isCollapsed('degree') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
-                      </button>
-                      
-                      {!isCollapsed('degree') && (
-                        <div className="filter-section-body">
-                          {['Undergraduate', 'Master', 'PhD', 'Diploma'].map((deg, i) => (
-                            <label key={i} className="filter-checkbox-label">
-                              <input 
-                                type="checkbox"
-                                checked={selectedDegrees.includes(deg)}
-                                onChange={() => handleToggle(selectedDegrees, setSelectedDegrees, deg)}
-                                className="filter-checkbox-input"
-                              />
-                              <span className="checkbox-text-custom">{deg}</span>
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Section 3: Funding Type */}
-                    <div className="filter-section-block">
-                      <button 
-                        className="filter-section-header"
-                        onClick={() => toggleSectionExpanded('funding')}
-                      >
-                        <span>💰 Funding Type</span>
-                        {isCollapsed('funding') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
-                      </button>
-                      
-                      {!isCollapsed('funding') && (
-                        <div className="filter-section-body">
-                          {[
-                            { label: 'Fully Funded (tuition + stipend + airfare)', val: 'Fully Funded' },
-                            { label: 'Partial Funding (tuition only)', val: 'Partial Funding' },
-                            { label: 'Stipend Only', val: 'Stipend Only' },
-                            { label: 'Living Allowance Only', val: 'Living Allowance Only' }
-                          ].map((fund, i) => (
-                            <label key={i} className="filter-checkbox-label">
-                              <input 
-                                type="checkbox"
-                                checked={selectedFundingTypes.includes(fund.val)}
-                                onChange={() => handleToggle(selectedFundingTypes, setSelectedFundingTypes, fund.val)}
-                                className="filter-checkbox-input"
-                              />
-                              <span className="checkbox-text-custom">{fund.label}</span>
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Section 4: Deadline Month */}
-                    <div className="filter-section-block">
-                      <button 
-                        className="filter-section-header"
-                        onClick={() => toggleSectionExpanded('deadline')}
-                      >
-                        <span>📅 Deadline Month</span>
-                        {isCollapsed('deadline') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
-                      </button>
-                      
-                      {!isCollapsed('deadline') && (
-                        <div className="filter-section-body">
-                          <div className="months-grid-chips">
-                            {monthsList.map((m, i) => {
-                              const active = selectedMonths.includes(m);
-                              return (
-                                <button
-                                  key={i}
-                                  type="button"
-                                  onClick={() => handleToggle(selectedMonths, setSelectedMonths, m)}
-                                  className={`month-chip-button ${active ? 'active' : ''}`}
-                                >
-                                  {m.substring(0, 3)}
-                                </button>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Section 5: Eligibility */}
-                    <div className="filter-section-block">
-                      <button 
-                        className="filter-section-header"
-                        onClick={() => toggleSectionExpanded('eligibility')}
-                      >
-                        <span>✅ Eligibility</span>
-                        {isCollapsed('eligibility') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
-                      </button>
-                      
-                      {!isCollapsed('eligibility') && (
-                        <div className="filter-section-body">
-                          {eligibilityOptions.map((opt, i) => (
-                            <label key={i} className="filter-checkbox-label">
-                              <input 
-                                type="checkbox"
-                                checked={selectedEligibilities.includes(opt.key)}
-                                onChange={() => handleToggle(selectedEligibilities, setSelectedEligibilities, opt.key)}
-                                className="filter-checkbox-input"
-                              />
-                              <span className="checkbox-text-custom">{opt.label}</span>
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Section 6: Scholarship Type */}
-                    <div className="filter-section-block">
-                      <button 
-                        className="filter-section-header"
-                        onClick={() => toggleSectionExpanded('type')}
-                      >
-                        <span>🔍 Scholarship Type</span>
-                        {isCollapsed('type') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
-                      </button>
-                      
-                      {!isCollapsed('type') && (
-                        <div className="filter-section-body">
-                          {[
-                            { label: 'Government Scholarship', val: 'Government' },
-                            { label: 'University Scholarship', val: 'University' },
-                            { label: 'Private/NGO Scholarship', val: 'Private/NGO' }
-                          ].map((t, i) => (
-                            <label key={i} className="filter-checkbox-label">
-                              <input 
-                                type="checkbox"
-                                checked={selectedTypes.includes(t.val)}
-                                onChange={() => handleToggle(selectedTypes, setSelectedTypes, t.val)}
-                                className="filter-checkbox-input"
-                              />
-                              <span className="checkbox-text-custom">{t.label}</span>
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                  </div>
-                </div>
-              </aside>
-
-              {/* Mobile Drawer Overlay Backdrop */}
-              {mobileDrawerOpen && (
-                <div 
-                  className="mobile-drawer-backdrop md:hidden"
-                  onClick={() => setMobileDrawerOpen(false)}
-                ></div>
-              )}
-
-              {/* Right Side: Content Area */}
-              <div className="filtered-content-area">
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="filtered-results-count h3 bn text-slate-800">
-                    মোট {filteredScholarships.length} টি স্কলারশিপ পাওয়া গেছে
-                  </h2>
-                </div>
-
-                {filteredScholarships.length === 0 ? (
-                  <div className="card text-center p-12 bg-white border border-slate-200 rounded-2xl">
-                    <SlidersHorizontal size={48} className="mx-auto text-slate-300 mb-4" />
-                    <h3 className="h3 mb-2">কোন স্কলারশিপ পাওয়া যায়নি</h3>
-                    <p className="text-slate-500 mb-6">আপনার সিলেক্ট করা ফিল্টারের সাথে মিলে যায় এমন কোন স্কলারশিপ পাওয়া যায়নি।</p>
+                    )}
                     <button 
-                      onClick={handleClearAll}
-                      className="btn btn-primary px-6 py-2.5 mx-auto"
+                      className="mobile-drawer-close-x md:hidden" 
+                      onClick={() => setMobileDrawerOpen(false)}
                     >
-                      Clear All Filters
+                      <X size={20} />
                     </button>
                   </div>
-                ) : (
-                  <div className="scholarships-two-col-grid">
-                    {filteredScholarships.map((schol, idx) => (
-                      <ScholarshipCard key={idx} schol={schol} />
-                    ))}
+                </div>
+
+                {/* Sidebar Filter Lists */}
+                <div className="filter-scroll-area">
+                  
+                  {/* Section 1: Country */}
+                  <div className="filter-section-block">
+                    <button 
+                      className="filter-section-header"
+                      onClick={() => toggleSectionExpanded('country')}
+                    >
+                      <span>🌍 Country / Destination</span>
+                      {isCollapsed('country') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                    </button>
+                    
+                    {!isCollapsed('country') && (
+                      <div className="filter-section-body">
+                        {['United Kingdom', 'United States', 'Canada', 'Australia', 'Germany', 'Others'].map((c, i) => (
+                          <label key={i} className="filter-checkbox-label">
+                            <input 
+                              type="checkbox"
+                              checked={selectedCountries.includes(c)}
+                              onChange={() => handleToggle(selectedCountries, setSelectedCountries, c)}
+                              className="filter-checkbox-input"
+                            />
+                            <span className="checkbox-text-custom">{c}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
+
+                  {/* Section 2: Degree Level */}
+                  <div className="filter-section-block">
+                    <button 
+                      className="filter-section-header"
+                      onClick={() => toggleSectionExpanded('degree')}
+                    >
+                      <span>🎓 Degree Level</span>
+                      {isCollapsed('degree') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                    </button>
+                    
+                    {!isCollapsed('degree') && (
+                      <div className="filter-section-body">
+                        {['Undergraduate', 'Master', 'PhD', 'Diploma'].map((deg, i) => (
+                          <label key={i} className="filter-checkbox-label">
+                            <input 
+                              type="checkbox"
+                              checked={selectedDegrees.includes(deg)}
+                              onChange={() => handleToggle(selectedDegrees, setSelectedDegrees, deg)}
+                              className="filter-checkbox-input"
+                            />
+                            <span className="checkbox-text-custom">{deg}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Section 3: Funding Type */}
+                  <div className="filter-section-block">
+                    <button 
+                      className="filter-section-header"
+                      onClick={() => toggleSectionExpanded('funding')}
+                    >
+                      <span>💰 Funding Type</span>
+                      {isCollapsed('funding') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                    </button>
+                    
+                    {!isCollapsed('funding') && (
+                      <div className="filter-section-body">
+                        {[
+                          { label: 'Fully Funded (tuition + stipend + airfare)', val: 'Fully Funded' },
+                          { label: 'Partial Funding (tuition only)', val: 'Partial Funding' },
+                          { label: 'Stipend Only', val: 'Stipend Only' },
+                          { label: 'Living Allowance Only', val: 'Living Allowance Only' }
+                        ].map((fund, i) => (
+                          <label key={i} className="filter-checkbox-label">
+                            <input 
+                              type="checkbox"
+                              checked={selectedFundingTypes.includes(fund.val)}
+                              onChange={() => handleToggle(selectedFundingTypes, setSelectedFundingTypes, fund.val)}
+                              className="filter-checkbox-input"
+                            />
+                            <span className="checkbox-text-custom">{fund.label}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Section 4: Deadline Month */}
+                  <div className="filter-section-block">
+                    <button 
+                      className="filter-section-header"
+                      onClick={() => toggleSectionExpanded('deadline')}
+                    >
+                      <span>📅 Deadline Month</span>
+                      {isCollapsed('deadline') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                    </button>
+                    
+                    {!isCollapsed('deadline') && (
+                      <div className="filter-section-body">
+                        <div className="months-grid-chips">
+                          {monthsList.map((m, i) => {
+                            const active = selectedMonths.includes(m);
+                            return (
+                              <button
+                                key={i}
+                                type="button"
+                                onClick={() => handleToggle(selectedMonths, setSelectedMonths, m)}
+                                className={`month-chip-button ${active ? 'active' : ''}`}
+                              >
+                                {m.substring(0, 3)}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Section 5: Eligibility */}
+                  <div className="filter-section-block">
+                    <button 
+                      className="filter-section-header"
+                      onClick={() => toggleSectionExpanded('eligibility')}
+                    >
+                      <span>✅ Eligibility</span>
+                      {isCollapsed('eligibility') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                    </button>
+                    
+                    {!isCollapsed('eligibility') && (
+                      <div className="filter-section-body">
+                        {eligibilityOptions.map((opt, i) => (
+                          <label key={i} className="filter-checkbox-label">
+                            <input 
+                              type="checkbox"
+                              checked={selectedEligibilities.includes(opt.key)}
+                              onChange={() => handleToggle(selectedEligibilities, setSelectedEligibilities, opt.key)}
+                              className="filter-checkbox-input"
+                            />
+                            <span className="checkbox-text-custom">{opt.label}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Section 6: Scholarship Type */}
+                  <div className="filter-section-block">
+                    <button 
+                      className="filter-section-header"
+                      onClick={() => toggleSectionExpanded('type')}
+                    >
+                      <span>🔍 Scholarship Type</span>
+                      {isCollapsed('type') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                    </button>
+                    
+                    {!isCollapsed('type') && (
+                      <div className="filter-section-body">
+                        {[
+                          { label: 'Government Scholarship', val: 'Government' },
+                          { label: 'University Scholarship', val: 'University' },
+                          { label: 'Private/NGO Scholarship', val: 'Private/NGO' }
+                        ].map((t, i) => (
+                          <label key={i} className="filter-checkbox-label">
+                            <input 
+                              type="checkbox"
+                              checked={selectedTypes.includes(t.val)}
+                              onChange={() => handleToggle(selectedTypes, setSelectedTypes, t.val)}
+                              className="filter-checkbox-input"
+                            />
+                            <span className="checkbox-text-custom">{t.label}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                </div>
+              </div>
+            </aside>
+
+            {/* Mobile Drawer Overlay Backdrop */}
+            {mobileDrawerOpen && (
+              <div 
+                className="mobile-drawer-backdrop md:hidden"
+                onClick={() => setMobileDrawerOpen(false)}
+              ></div>
+            )}
+
+            {/* Right Side: Content Area */}
+            <div className="filtered-content-area">
+              <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+                <div className="results-heading-with-line">
+                  <h2 className="filtered-results-count-upgrade">
+                    মোট {filteredScholarships.length} টি স্কলারশিপ পাওয়া গেছে
+                  </h2>
+                  <div className="heading-green-line"></div>
+                </div>
+                
+                {/* Mobile Filter Toggle Button */}
+                <button 
+                  className="mobile-filter-toggle-btn btn btn-primary flex md:hidden items-center gap-2"
+                  onClick={() => setMobileDrawerOpen(true)}
+                >
+                  <SlidersHorizontal size={16} /> Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+                </button>
               </div>
 
+              {filteredScholarships.length === 0 ? (
+                <div className="card text-center p-12 bg-white border border-slate-200 rounded-2xl animate-fade-in-up">
+                  <SlidersHorizontal size={48} className="mx-auto text-slate-300 mb-4" />
+                  <h3 className="h3 mb-2">কোন স্কলারশিপ পাওয়া যায়নি</h3>
+                  <p className="text-slate-500 mb-6">আপনার সিলেক্ট করা ফিল্টারের সাথে মিলে যায় এমন কোন স্কলারশিপ পাওয়া যায়নি।</p>
+                  <button 
+                    onClick={handleClearAll}
+                    className="btn btn-primary px-6 py-2.5 mx-auto"
+                  >
+                    Clear All Filters
+                  </button>
+                </div>
+              ) : (
+                <div className="scholarships-two-col-grid">
+                  {filteredScholarships.map((schol, idx) => (
+                    <ScholarshipCard key={idx} schol={schol} />
+                  ))}
+                </div>
+              )}
             </div>
+
           </div>
-        )}
+        </div>
 
         {/* Lead Generation Bottom Banner */}
         <div className="card bg-inverse text-white p-12 dark-hero-style flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
@@ -802,59 +682,78 @@ export default function ScholarshipsPage() {
   );
 }
 
+// Helper: Calculate if the deadline month is within 3 months of current date
+function isWithin3Months(deadlineMonthStr: string) {
+  if (!deadlineMonthStr) return false;
+  const months = [
+    'january', 'february', 'march', 'april', 'may', 'june',
+    'july', 'august', 'september', 'october', 'november', 'december'
+  ];
+  
+  const currentMonthIdx = new Date().getMonth(); // 0 to 11
+  const deadlineIdx = months.indexOf(deadlineMonthStr.toLowerCase());
+  if (deadlineIdx === -1) return false;
+
+  // calculate difference in circular calendar months
+  const diff = (deadlineIdx - currentMonthIdx + 12) % 12;
+  return diff >= 0 && diff <= 3;
+}
+
 // Subcomponent: Scholarship Card for animation and isolation
 function ScholarshipCard({ schol }: { schol: Scholarship }) {
+  const isNear = isWithin3Months(schol.deadlineMonth);
+
   return (
-    <div className="card scholarship-card hover-lift animate-fade-in-up">
-      <div className="flex justify-between items-start">
-        <h3 className="h3 pr-4 text-gray-900 leading-tight">{schol.name}</h3>
+    <div className="card scholarship-card-upgrade hover-lift-upgrade animate-fade-in-up">
+      <div className="flex justify-between items-start mb-2">
+        <h3 className="scholarship-card-title-upgrade">{schol.name}</h3>
         <div className="flex flex-col gap-2 shrink-0">
           {schol.degrees.map((degree, i) => (
-            <span key={i} className="degree-pill flex items-center gap-1 justify-center">
+            <span key={i} className="degree-pill-upgrade flex items-center gap-1 justify-center">
               <GraduationCap size={12}/> {degree}
             </span>
           ))}
         </div>
       </div>
       
-      <div className="flex items-center gap-2">
-        <div className="flex items-center gap-1.5 px-3 py-1 bg-[var(--surface-subtle)] rounded-full text-[var(--ten-ink)] font-semibold text-sm">
+      <div className="flex items-center gap-2 mb-3">
+        <div className="country-pill-upgrade">
           <span className="text-base leading-none">{schol.flag}</span>
           <span>{schol.country}</span>
         </div>
       </div>
 
-      <div className="funding-box flex items-start gap-2">
-        <div className="mt-0.5"><Sparkles size={16} className="text-[var(--success)]" /></div>
-        <div>{schol.funding}</div>
+      <div className="funding-box-upgrade flex items-start gap-2 mb-4">
+        <div className="mt-0.5"><Sparkles size={16} className="text-emerald-500 sparkle-icon-pill" /></div>
+        <div className="funding-text-p">{schol.funding}</div>
       </div>
 
-      <p className="body-sm text-[var(--fg-2)] line-clamp-2">
+      <p className="description-text-upgrade text-[var(--fg-2)] line-clamp-2 mb-4">
         {schol.description}
       </p>
 
-      <div className="divider"></div>
+      <div className="divider mb-4"></div>
 
-      <div className="eligibility-section flex-1">
-        <h4 className="meta text-[var(--fg-3)] uppercase tracking-wider mb-3">Eligibility</h4>
+      <div className="eligibility-section-upgrade flex-1 mb-4">
+        <h4 className="meta text-slate-400 uppercase tracking-wider mb-3 text-xs font-bold">Eligibility</h4>
         <ul className="flex flex-col gap-2.5">
           {schol.eligibility.map((item, i) => (
-            <li key={i} className="flex items-start gap-2.5 body-sm text-[var(--fg-1)]">
-              <CheckCircle size={16} color="var(--success)" className="mt-0.5 shrink-0"/>
-              <span>{item}</span>
+            <li key={i} className="flex items-start gap-2 body-sm text-[var(--fg-1)]">
+              <CheckCircle size={16} className="text-emerald-500 mt-0.5 shrink-0"/>
+              <span className="eligibility-item-text">{item}</span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Card Footer */}
-      <div className="card-footer mt-auto pt-4 flex items-center justify-between border-t border-[var(--border)]">
-        <div className="flex items-center gap-2 text-[var(--warn-deep)] font-semibold text-sm bg-[var(--premium-gold-1)] px-3 py-1.5 rounded-full">
+      <div className="card-footer-upgrade mt-auto pt-4 flex items-center justify-between border-t border-slate-100">
+        <div className={`deadline-badge-upgrade ${isNear ? 'deadline-danger' : 'deadline-normal'}`}>
           <Calendar size={14}/>
           <span>{schol.deadline}</span>
         </div>
-        <Link href={`/destinations/${schol.countryId}`} className="view-country-link flex items-center gap-1 font-bold text-[var(--success)] text-sm transition-all hover:text-[var(--success-deep)] group">
-          {schol.country} দেখুন <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+        <Link href={`/destinations/${schol.countryId}`} className="view-country-link-upgrade">
+          {schol.country} দেখুন <ChevronRight size={14} className="arrow-icon" />
         </Link>
       </div>
     </div>
