@@ -4,7 +4,7 @@ export const destinations = [
     name: "United Kingdom",
     slug: "uk",
     flag_emoji: "🇬🇧",
-    hero_image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000",
+    hero_image: "/images/uk-hero.png",
     tuitionRange: "£10,000 – £38,000/year",
     costOfLiving: "£10,000 – £15,000/year",
     numUniversitiesStr: "160+",
