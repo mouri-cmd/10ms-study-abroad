@@ -4,7 +4,8 @@
   background-position: center bottom;
   position: relative;
   overflow: hidden;
-  padding: 140px 0 80px;
+  padding: 140px 0 100px;
+  clip-path: ellipse(140% 100% at 50% 0%);
 }
 
 .hero-container {
