@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { MapPin, Trophy, GraduationCap, Clock, FileCheck } from 'lucide-react';
 import './university.css';
 
-export default function UniversityPage({ params }: { params: { country: string, university: string } }) {
-  const uni = universities.find(u => u.slug === params.university && u.country_slug === params.country);
+export default async function UniversityPage({ params }: { params: Promise<{ country: string, university: string }> }) {
+  const { country, university } = await params;
+  const uni = universities.find(u => u.slug === university && u.country_slug === country);
   
   if (!uni) {
     return <div className="container py-12">University not found</div>;
@@ -24,7 +25,7 @@ export default function UniversityPage({ params }: { params: { country: string, 
               <div>
                 <h1 className="text-white mb-2">{uni.name}</h1>
                 <div className="flex gap-4 text-light-blue text-sm">
-                  <span className="flex items-center gap-1"><MapPin size={16} /> {uni.city}, {params.country.toUpperCase()}</span>
+                  <span className="flex items-center gap-1"><MapPin size={16} /> {uni.city}, {country.toUpperCase()}</span>
                   <span className="flex items-center gap-1"><Trophy size={16} /> World Rank: #{uni.world_ranking}</span>
                 </div>
               </div>
@@ -58,7 +59,7 @@ export default function UniversityPage({ params }: { params: { country: string, 
                 <h2 className="mb-6">Programs Offered</h2>
                 <div className="programs-list">
                   {uniPrograms.map(prog => (
-                    <Link href={`/destinations/${params.country}/${params.university}/${prog.slug}`} key={prog.slug} className="program-row">
+                    <Link href={`/destinations/${country}/${university}/${prog.slug}`} key={prog.slug} className="program-row">
                       <div className="prog-info">
                         <h3>{prog.name}</h3>
                         <div className="flex gap-4 text-sm text-light mt-2">

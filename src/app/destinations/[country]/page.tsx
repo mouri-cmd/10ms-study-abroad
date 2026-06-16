@@ -4,16 +4,18 @@ import Link from 'next/link';
 import { MapPin, DollarSign, BookOpen, Clock, ChevronRight, GraduationCap } from 'lucide-react';
 import './country.css';
 
-export function generateMetadata({ params }: { params: { country: string } }) {
-  const country = destinations.find(d => d.slug === params.country);
+export async function generateMetadata({ params }: { params: Promise<{ country: string }> }) {
+  const { country: countrySlug } = await params;
+  const country = destinations.find(d => d.slug === countrySlug);
   if (country) {
     return { title: `Study in ${country.name} | 10 Minute School Study Abroad` };
   }
   return { title: 'Destination Coming Soon | 10 Minute School Study Abroad' };
 }
 
-export default function CountryPage({ params }: { params: { country: string } }) {
-  const country = destinations.find(d => d.slug === params.country);
+export default async function CountryPage({ params }: { params: Promise<{ country: string }> }) {
+  const { country: countrySlug } = await params;
+  const country = destinations.find(d => d.slug === countrySlug);
 
   if (!country) {
     return (

@@ -4,9 +4,10 @@ import Link from 'next/link';
 import { Clock, BookOpen, Briefcase, Award, ArrowLeft } from 'lucide-react';
 import './program.css';
 
-export default function ProgramPage({ params }: { params: { country: string, university: string, program: string } }) {
-  const prog = programs.find(p => p.slug === params.program && p.university_slug === params.university);
-  const uni = universities.find(u => u.slug === params.university);
+export default async function ProgramPage({ params }: { params: Promise<{ country: string, university: string, program: string }> }) {
+  const { country, university, program } = await params;
+  const prog = programs.find(p => p.slug === program && p.university_slug === university);
+  const uni = universities.find(u => u.slug === university);
   
   if (!prog || !uni) {
     return <div className="container py-12">Program not found</div>;
@@ -17,7 +18,7 @@ export default function ProgramPage({ params }: { params: { country: string, uni
       {/* 1. Header */}
       <section className="prog-hero section pb-0">
         <div className="container">
-          <Link href={`/destinations/${params.country}/${params.university}`} className="text-teal flex items-center gap-1 mb-6 text-sm font-semibold">
+          <Link href={`/destinations/${country}/${university}`} className="text-teal flex items-center gap-1 mb-6 text-sm font-semibold">
             <ArrowLeft size={16} /> Back to {uni.name}
           </Link>
           
