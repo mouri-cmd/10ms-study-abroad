@@ -15,7 +15,7 @@ export default function Footer() {
         
         <div className="footer-links-grid">
           <div className="footer-col">
-            <h3>Destinations</h3>
+            <h3>Destinations </h3>
             <Link href="/destinations/united-kingdom">UK</Link>
             <Link href="/destinations/united-states">USA</Link>
             <Link href="/destinations/canada">Canada</Link>
