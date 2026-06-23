@@ -1,10 +1,261 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, MapPin, Award, Users, FileText, ChevronRight, CheckCircle, Globe, MessageSquare } from 'lucide-react';
 import { destinations } from '../data/destinations';
 import './page.css';
 
+// Coordinates for the interactive map pins matching dest.id in destinations.ts
+const mapPins: Record<string, { x: number; y: number; label: string; enLabel: string }> = {
+  'canada': { x: 180, y: 110, label: 'কানাডা', enLabel: 'Canada' },
+  'usa': { x: 210, y: 160, label: 'ইউএসএ', enLabel: 'USA' },
+  'uk': { x: 470, y: 125, label: 'ইউকে', enLabel: 'UK' },
+  'germany': { x: 505, y: 135, label: 'জার্মানি', enLabel: 'Germany' },
+  'sweden': { x: 515, y: 95, label: 'সুইডেন', enLabel: 'Sweden' },
+  'ireland': { x: 445, y: 125, label: 'আয়ারল্যান্ড', enLabel: 'Ireland' },
+  'malaysia': { x: 725, y: 265, label: 'মালয়েশিয়া', enLabel: 'Malaysia' },
+  'japan': { x: 805, y: 165, label: 'জাপান', enLabel: 'Japan' },
+  'australia': { x: 810, y: 350, label: 'অস্ট্রেলিয়া', enLabel: 'Australia' },
+  'newzealand': { x: 885, y: 395, label: 'নিউজিল্যান্ড', enLabel: 'New Zealand' },
+};
+
+interface InteractiveMapSectionProps {
+  destinations: any[];
+  lang: string;
+}
+
+function InteractiveMapSection({ destinations, lang }: InteractiveMapSectionProps) {
+  // Filter destinations to only those mapped in mapPins
+  const validDestinations = destinations.filter(dest => mapPins[dest.id]);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const activeDest = validDestinations[activeIdx] || validDestinations[0];
+  const activeKey = activeDest ? activeDest.id : 'usa';
+  const activePin = mapPins[activeKey];
+
+  const handleNext = () => {
+    setActiveIdx((prev) => (prev + 1) % validDestinations.length);
+  };
+
+  const handlePrev = () => {
+    setActiveIdx((prev) => (prev - 1 + validDestinations.length) % validDestinations.length);
+  };
+
+  const t = {
+    bn: {
+      mapHeading: "একটাই পথ, ",
+      mapHeadingHighlight: "একাধিক গন্তব্য",
+      mapSubheading: "10 Minute School-এর গাইডেন্স নিয়ে শুরু করো বাংলাদেশ থেকে, পছন্দের দেশ ও বিশ্ববিদ্যালয় বেছে নিয়ে নিশ্চিন্তে পড়তে যাও বিদেশে।",
+      mercator: "Mercator projection ব্যবহার করে দেখানো হয়েছে।",
+      topChoice: "জনপ্রিয়",
+      countryGuide: "কান্ট্রি গাইড",
+      explore: "এক্সপ্লোর",
+      popularSubjects: "জনপ্রিয় বিষয়",
+      workPermit: "ওয়ার্ক পারমিট",
+    },
+    en: {
+      mapHeading: "One path, ",
+      mapHeadingHighlight: "multiple destinations",
+      mapSubheading: "Start from Bangladesh with 10 Minute School's guidance, select your preferred country and university, and study abroad with confidence.",
+      mercator: "Displayed using Mercator projection.",
+      topChoice: "Top Choice",
+      countryGuide: "Country Guide",
+      explore: "Explore",
+      popularSubjects: "Popular Subjects",
+      workPermit: "Work Permit",
+    }
+  };
+
+  const currentTranslations = lang === 'bn' ? t.bn : t.en;
+
+  // Origin point: Bangladesh
+  const origin = { x: 685, y: 235 };
+
+  return (
+    <section className="map-section">
+      <div className="container">
+        <div className="map-section-heading">
+          <h2 className="bn">
+            {currentTranslations.mapHeading}
+            <span>{currentTranslations.mapHeadingHighlight}</span>
+          </h2>
+          <p className="bn">{currentTranslations.mapSubheading}</p>
+        </div>
+
+        <div className="map-grid-container">
+          {/* Left Column: World Map */}
+          <div className="map-left-col">
+            <div className="svg-map-wrapper">
+              <svg viewBox="0 0 1000 450" className="world-map-svg">
+                {/* Abstract Stylized World Continents */}
+                {/* Greenland */}
+                <path d="M 260,40 C 290,40 310,50 300,70 C 280,85 250,80 230,70 C 225,65 240,45 260,40 Z" className="map-landmass" />
+                {/* North America */}
+                <path d="M 120,80 C 140,80 180,70 240,80 C 260,90 280,100 290,120 C 260,130 250,150 220,160 C 200,165 190,180 180,200 C 170,220 150,225 140,210 C 130,190 120,185 110,180 C 100,170 95,150 90,130 C 90,110 100,90 120,80 Z" className="map-landmass" />
+                {/* South America */}
+                <path d="M 210,215 C 230,220 250,240 255,260 C 260,285 240,320 220,360 C 210,380 200,410 190,430 C 185,440 180,440 175,430 C 170,410 170,390 172,360 C 175,320 170,290 165,270 C 160,250 165,240 175,230 C 190,220 200,215 210,215 Z" className="map-landmass" />
+                {/* Eurasia */}
+                <path d="M 350,120 C 370,100 420,80 480,85 C 530,90 580,75 640,80 C 700,85 750,70 820,80 C 860,90 890,100 910,120 C 920,140 910,165 890,180 C 870,195 860,215 870,230 C 850,240 820,250 780,245 C 750,255 720,270 700,265 C 690,260 680,255 675,250 C 650,250 635,270 610,275 C 570,270 540,250 520,240 C 490,235 470,240 450,250 C 430,240 410,220 395,215 C 380,210 375,200 375,190 C 375,170 360,150 350,120 Z" className="map-landmass" />
+                {/* Africa */}
+                <path d="M 435,225 C 455,220 480,230 500,240 C 520,250 540,270 550,290 C 560,320 540,360 520,390 C 500,410 490,420 485,415 C 475,400 470,370 468,340 C 465,310 450,290 435,280 C 420,270 415,255 425,240 C 430,230 432,225 435,225 Z" className="map-landmass" />
+                {/* Australia */}
+                <path d="M 760,340 C 790,335 830,340 850,350 C 870,370 860,400 840,420 C 810,430 780,415 765,395 C 750,375 750,350 760,340 Z" className="map-landmass" />
+
+                {/* Curved Connection Lines */}
+                {validDestinations.map((dest, idx) => {
+                  const pin = mapPins[dest.id];
+                  if (!pin) return null;
+
+                  const isActive = idx === activeIdx;
+                  const controlX = (origin.x + pin.x) / 2;
+                  const controlY = Math.min(origin.y, pin.y) - 50;
+
+                  return (
+                    <path
+                      key={`line-${dest.id}`}
+                      d={`M ${origin.x} ${origin.y} Q ${controlX} ${controlY} ${pin.x} ${pin.y}`}
+                      className={`map-curve-line ${isActive ? 'active' : ''}`}
+                    />
+                  );
+                })}
+
+                {/* Bangladesh Origin Pin */}
+                <circle cx={origin.x} cy={origin.y} r={10} className="map-origin-ring" />
+                <circle cx={origin.x} cy={origin.y} r={5} className="map-origin-pin" />
+
+                {/* Destination Pins */}
+                {validDestinations.map((dest, idx) => {
+                  const pin = mapPins[dest.id];
+                  if (!pin) return null;
+
+                  const isActive = idx === activeIdx;
+
+                  return (
+                    <g
+                      key={`pin-${dest.id}`}
+                      onClick={() => setActiveIdx(idx)}
+                      className={`map-dest-pin ${isActive ? 'active' : ''}`}
+                    >
+                      {isActive && (
+                        <circle cx={pin.x} cy={pin.y} r={14} fill="none" stroke="var(--success)" strokeWidth={1} strokeDasharray="2 2" />
+                      )}
+                      <circle cx={pin.x} cy={pin.y} r={isActive ? 8 : 6} className="map-dest-pin-circle" />
+                      {isActive && (
+                        <polygon
+                          points={`${pin.x},${pin.y - 3} ${pin.x + 1},${pin.y - 1} ${pin.x + 3},${pin.y - 1} ${pin.x + 1.5},${pin.y + 0.5} ${pin.x + 2},${pin.y + 3} ${pin.x},${pin.y + 1.5} ${pin.x - 2},${pin.y + 3} ${pin.x - 1.5},${pin.y + 0.5} ${pin.x - 3},${pin.y - 1} ${pin.x - 1},${pin.y - 1}`}
+                          fill="var(--ten-white)"
+                        />
+                      )}
+                      <text x={pin.x} y={pin.y - 12} textAnchor="middle" fill="var(--fg-1)" fontSize="10px" fontWeight="600" className="bn" style={{ pointerEvents: 'none' }}>
+                        {lang === 'bn' ? pin.label : pin.enLabel}
+                      </text>
+                    </g>
+                  );
+                })}
+              </svg>
+            </div>
+            <span className="map-caption">{currentTranslations.mercator}</span>
+          </div>
+
+          {/* Right Column: Country Card */}
+          <div className="map-right-col">
+            {activeDest && (
+              <div className="country-card-container">
+                <div className="country-map-card">
+                  <div className="country-card-image-box">
+                    <img
+                      src={activeDest.hero_image}
+                      alt={activeDest.name}
+                      className="country-card-img"
+                    />
+                    {(activeDest.id === 'uk' || activeDest.id === 'usa') && (
+                      <span className="country-card-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        {currentTranslations.topChoice}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="country-card-info-box">
+                    <div className="country-card-title-row">
+                      <h3 className="bn">{activeDest.name}</h3>
+                      <span className="country-card-flag-emoji">{activeDest.flag_emoji}</span>
+                    </div>
+
+                    <div className="country-card-detail-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 18.8v-4L2 13v6a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1z"/><path d="M21.5 12v6"/></svg>
+                      <div className="country-card-detail-text">
+                        <strong>{currentTranslations.popularSubjects}: </strong>
+                        {activeDest.popular_subjects.slice(0, 3).join(', ')}
+                      </div>
+                    </div>
+
+                    <div className="country-card-detail-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 2H9a2 2 0 0 0-2 2v2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4V4a2 2 0 0 0-2-2z"/><path d="M7 6h10"/></svg>
+                      <div className="country-card-detail-text">
+                        <strong>{currentTranslations.workPermit}: </strong>
+                        {activeDest.workPermitStr}
+                      </div>
+                    </div>
+
+                    <div className="country-card-buttons-row">
+                      <button className="country-card-btn-outline bn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        {currentTranslations.countryGuide}
+                      </button>
+                      <Link href={`/destinations/${activeDest.slug}`} className="country-card-btn-filled bn">
+                        {currentTranslations.explore}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="carousel-controls-row">
+                  <button className="carousel-arrow-btn" onClick={handlePrev}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  </button>
+
+                  <div className="carousel-progress-wrapper">
+                    <div
+                      className="carousel-progress-bar"
+                      style={{ width: `${((activeIdx + 1) / validDestinations.length) * 100}%` }}
+                    />
+                  </div>
+
+                  <button className="carousel-arrow-btn" onClick={handleNext}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
+  const [lang, setLang] = useState('en');
+
+  // Initialize lang from localStorage and listen to language toggles
+  useEffect(() => {
+    const saved = localStorage.getItem('lang');
+    if (saved) setLang(saved);
+
+    const handleLangChange = () => {
+      const updated = localStorage.getItem('lang');
+      if (updated) setLang(updated);
+    };
+
+    window.addEventListener('langChange', handleLangChange);
+    return () => {
+      window.removeEventListener('langChange', handleLangChange);
+    };
+  }, []);
+
   // Extract existing testimonials from the codebase
   const homeTestimonials = destinations
     .flatMap((dest) =>
@@ -90,6 +341,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Interactive World Map Section (NEW) */}
+      <InteractiveMapSection destinations={destinations} lang={lang} />
 
       {/* 2. "THE SMARTEST WAY TO STUDY ABROAD" SECTION */}
       <section className="smart-way-section">
@@ -196,7 +450,7 @@ export default function Home() {
               <div className="why-us-card-number">03</div>
               <h3 className="why-us-card-title bn">শিক্ষার্থীদের আস্থা</h3>
               <p className="why-us-card-desc bn">
-                সফলভাবে ৫০০+ শিক্ষার্থীকে তাদের স্বপ্নের বিশ্ববিদ্যালয়ে পৌঁছাতে এবং ভিসা প্রসেসিংয়ে সহায়তা করেছি।
+                সফলভাবে ৫০০+ শিক্ষার্থীকে তাদের স্বপ্নের বিশ্ববিদ্যালয়ে পৌঁছাতে এবং visa processing-এ সহায়তা করেছি।
               </p>
             </div>
           </div>

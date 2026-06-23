@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Globe, Heart } from 'lucide-react';
 import './Navbar.css';
@@ -9,7 +9,19 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [lang, setLang] = useState('en');
 
-  const toggleLang = () => setLang(lang === 'en' ? 'bn' : 'en');
+  useEffect(() => {
+    const saved = localStorage.getItem('lang');
+    if (saved) {
+      setLang(saved);
+    }
+  }, []);
+
+  const toggleLang = () => {
+    const nextLang = lang === 'en' ? 'bn' : 'en';
+    setLang(nextLang);
+    localStorage.setItem('lang', nextLang);
+    window.dispatchEvent(new Event('langChange'));
+  };
 
   return (
     <header className="navbar">
