@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { X } from 'lucide-react';
 import './compare.css';
 
@@ -313,6 +314,18 @@ export default function ComparePage() {
                     const data = activeTab === 'country' 
                       ? countriesList.find(c => c.id === id)
                       : universitiesList.find(u => u.id === id);
+                    
+                    if (activeTab === 'country' && data) {
+                      const slug = data.name.toLowerCase().replace(/\s+/g, '-');
+                      return (
+                        <td key={id} className="border-none py-6">
+                          <Link href={`/destinations/${slug}`} className="btn btn-primary bn w-full">
+                            Interested in {data.name}?
+                          </Link>
+                        </td>
+                      );
+                    }
+
                     return (
                       <td key={id} className="border-none py-6">
                         <button className="btn btn-primary bn w-full">
