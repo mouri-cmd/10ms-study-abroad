@@ -24,6 +24,7 @@ export default function Footer() {
           
           <div className="footer-col">
             <h3>Resources</h3>
+            <Link href="/programs">Explore Programs</Link>
             <Link href="/scholarships">Scholarships</Link>
             <Link href="/compare">Compare Universities</Link>
             <Link href="/quiz">Study Abroad Quiz</Link>

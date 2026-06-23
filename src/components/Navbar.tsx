@@ -34,6 +34,7 @@ export default function Navbar() {
           <Link href="/destinations" className="nav-link bn">দেশসমূহ</Link>
           <Link href="/compare" className="nav-link bn">তুলনা করো</Link>
           <Link href="/scholarships" className="nav-link bn">স্কলারশিপ</Link>
+          <Link href="/programs" className="nav-link bn">প্রোগ্রামসমূহ</Link>
           <Link href="/resources" className="nav-link bn">রিসোর্স</Link>
           
           <div className="nav-actions">
