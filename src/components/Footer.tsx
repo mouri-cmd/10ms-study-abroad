@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { LogoFullWhite } from './Logo';
 import './Footer.css';
 
 export default function Footer() {
@@ -7,7 +8,14 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <h2 className="footer-logo"><span>10MS</span> Study Abroad</h2>
+          <Link href="/">
+            <img 
+              src="/logo-dark.png" 
+              alt="10 Minute School Study Abroad" 
+              className="footer-logo"
+              style={{ height: '36px', width: 'auto', display: 'block', marginBottom: '16px' }}
+            />
+          </Link>
           <p className="footer-desc">
             Your trusted partner in navigating the path to higher education overseas.
           </p>
@@ -28,7 +36,6 @@ export default function Footer() {
             <Link href="/scholarships">Scholarships</Link>
             <Link href="/compare">Compare Universities</Link>
             <Link href="/quiz">Study Abroad Quiz</Link>
-            <Link href="/resources">Blog & Guides</Link>
           </div>
           
           <div className="footer-col">

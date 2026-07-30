@@ -23,7 +23,7 @@
 
 .capsule-tab.active {
   background: var(--ten-ink);
-  color: var(--ten-white);
+  color: var(--on-solid);
 }
 
 .pill-container {
@@ -53,9 +53,12 @@
 }
 
 .select-pill.selected {
-  background: var(--ten-red-soft);
-  border-color: var(--ten-red-soft);
-  color: var(--ten-white);
+  /* Fixed brand red rather than the toggling --ten-red-soft: that token
+     lightens considerably in dark mode, which would leave the white text
+     below hard to read. */
+  background: #E5322D;
+  border-color: #E5322D;
+  color: #fff;
 }
 
 .pill-icon {

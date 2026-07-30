@@ -2,21 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  Search, 
-  ChevronRight, 
-  GraduationCap, 
-  Sparkles,
-  ChevronDown,
-  ChevronUp,
-  X,
-  SlidersHorizontal,
-  RotateCcw,
-  BookOpen,
-  MapPin,
-  Clock,
-  Briefcase
-} from 'lucide-react';
+import { MagnifyingGlass, CaretRight, GraduationCap, Sparkle, CaretDown, CaretUp, X, SlidersHorizontal, ArrowCounterClockwise, BookOpen, MapPin, Clock, Briefcase } from '@phosphor-icons/react';
 import { destinations, universities, programs } from '../../data/destinations';
 import './programs.css';
 
@@ -111,7 +97,7 @@ export default function ProgramsPage() {
 
   // Filter logic
   const filteredPrograms = enrichedPrograms.filter(prog => {
-    // 1. Search Query
+    // 1. MagnifyingGlass Query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       const matchName = prog.name.toLowerCase().includes(q);
@@ -211,7 +197,7 @@ export default function ProgramsPage() {
       {/* Dark Gradient Hero Header */}
       <section className="dark-hero-style-upgrade text-center relative pt-20 pb-36">
         <div className="announcement-shimmer mb-6 mx-auto inline-flex items-center gap-2">
-          <Sparkles size={14} className="sparkle-anim" /> 🎓 {currentTranslations.allFunding}
+          <Sparkle size={14} className="sparkle-anim" /> 🎓 {currentTranslations.allFunding}
         </div>
         <h1 className="h-display-upgrade text-white mb-6 bn">
           {currentTranslations.title}
@@ -220,10 +206,10 @@ export default function ProgramsPage() {
           {currentTranslations.subtitle}
         </p>
 
-        {/* Search Box in Hero */}
+        {/* MagnifyingGlass Box in Hero */}
         <div className="search-bar-hero-container">
           <div className="search-input-wrapper-upgrade">
-            <Search size={22} className="search-icon-upgrade" color="#22C55E" />
+            <MagnifyingGlass size={22} className="search-icon-upgrade" color="#22C55E" />
             <input 
               type="text" 
               placeholder={currentTranslations.searchPlaceholder} 
@@ -274,7 +260,7 @@ export default function ProgramsPage() {
                         onClick={handleClearAll}
                         className="clear-all-btn text-xs font-semibold text-red-500 flex items-center gap-1 hover:text-red-600 transition-colors"
                       >
-                        <RotateCcw size={12} /> {currentTranslations.clearAll}
+                        <ArrowCounterClockwise size={12} /> {currentTranslations.clearAll}
                       </button>
                     )}
                     <button 
@@ -295,7 +281,7 @@ export default function ProgramsPage() {
                       onClick={() => toggleSection('country')}
                     >
                       <span className="bn">{currentTranslations.countryFilter}</span>
-                      {isCollapsed('country') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('country') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
 
                     {!isCollapsed('country') && (
@@ -322,7 +308,7 @@ export default function ProgramsPage() {
                       onClick={() => toggleSection('degree')}
                     >
                       <span className="bn">{currentTranslations.degreeFilter}</span>
-                      {isCollapsed('degree') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('degree') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
 
                     {!isCollapsed('degree') && (
@@ -349,7 +335,7 @@ export default function ProgramsPage() {
                       onClick={() => toggleSection('subject')}
                     >
                       <span className="bn">{currentTranslations.subjectFilter}</span>
-                      {isCollapsed('subject') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('subject') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
 
                     {!isCollapsed('subject') && (
@@ -475,7 +461,7 @@ function ProgramCard({ program, lang, currentTranslations }: { program: any; lan
         </div>
 
         <Link href={`/destinations/${program.countryId}/${program.university_slug}`} className="program-details-link-btn bn">
-          {currentTranslations.viewDetails} <ChevronRight size={14} />
+          {currentTranslations.viewDetails} <CaretRight size={14} />
         </Link>
       </div>
     </div>

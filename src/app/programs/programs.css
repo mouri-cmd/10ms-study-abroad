@@ -1,12 +1,12 @@
 /* Programs Page Stylesheet */
 
 .bg-light-upgrade {
-  background-color: #F9FAFB;
+  background-color: var(--surface-subtle);
   font-family: var(--font-sans);
 }
 
 .dark-hero-style-upgrade {
-  background: linear-gradient(135deg, #022C22 0%, #064E3B 40%, #0F172A 100%);
+  background: linear-gradient(135deg, #16181C 0%, #2A1512 45%, #101114 100%);
   position: relative;
   overflow: hidden;
   padding: 80px 0 120px 0;
@@ -20,14 +20,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 50%);
+  background: radial-gradient(circle at 80% 20%, rgba(235, 100, 60, 0.18) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .announcement-shimmer {
-  background: rgba(34, 197, 94, 0.15);
-  border: 1px solid rgba(34, 197, 94, 0.4);
-  color: #4ADE80;
+  background: rgba(255, 98, 89, 0.15);
+  border: 1px solid rgba(255, 98, 89, 0.4);
+  color: #FF8079;
   font-size: 13px;
   font-weight: 700;
   padding: 8px 18px;
@@ -37,7 +37,7 @@
   gap: 8px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 98, 89, 0.12);
 }
 
 .h-display-upgrade {
@@ -48,7 +48,7 @@
 }
 
 .highlight-green {
-  color: #22C55E;
+  color: #4FD3A5;
 }
 
 .body-upgrade {
@@ -65,7 +65,7 @@
 .search-input-wrapper-upgrade {
   position: relative;
   width: 100%;
-  background: #ffffff;
+  background: var(--surface-card);
   border-radius: 14px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
   border: 2px solid transparent;
@@ -77,8 +77,8 @@
 }
 
 .search-input-wrapper-upgrade:focus-within {
-  border-color: #22C55E;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2), 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  border-color: var(--success);
+  box-shadow: 0 0 0 4px rgba(28, 171, 85, 0.2), 0 10px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
 .search-icon-upgrade {
@@ -97,11 +97,11 @@
   padding-right: 24px;
   font-size: 15px;
   font-weight: 500;
-  color: #1E293B;
+  color: var(--fg-1);
 }
 
 .input-search-upgrade::placeholder {
-  color: #94A3B8;
+  color: var(--fg-muted);
 }
 
 /* Category Tabs */
@@ -118,13 +118,13 @@
 }
 
 .category-tab-button {
-  background: #ffffff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 50px;
   padding: 10px 20px;
   font-size: 13.5px;
   font-weight: 600;
-  color: #475569;
+  color: var(--fg-2);
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -132,16 +132,16 @@
 }
 
 .category-tab-button:hover {
-  background: #F8FAFC;
-  color: #1E293B;
-  border-color: #CBD5E1;
+  background: var(--gray-50);
+  color: var(--fg-1);
+  border-color: var(--border-strong);
 }
 
 .category-tab-button.active {
-  background: #22C55E;
+  background: var(--success);
   color: #ffffff;
-  border-color: #22C55E;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+  border-color: var(--success);
+  box-shadow: 0 4px 12px rgba(28, 171, 85, 0.2);
 }
 
 /* Sidebar Layout */
@@ -164,8 +164,8 @@
 }
 
 .filter-sidebar-inner {
-  background: #fff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
   max-height: calc(100vh - 140px);
@@ -179,7 +179,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid var(--gray-100);
   margin-bottom: 16px;
 }
 
@@ -202,12 +202,12 @@
   width: 4px;
 }
 .filter-scroll-area::-webkit-scrollbar-thumb {
-  background-color: #E2E8F0;
+  background-color: var(--border);
   border-radius: 4px;
 }
 
 .filter-section-block {
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid var(--gray-100);
   padding-bottom: 16px;
   margin-bottom: 16px;
 }
@@ -227,7 +227,7 @@
   border: none;
   font-weight: 700;
   font-size: 14px;
-  color: #1E293B;
+  color: var(--fg-1);
   padding: 8px 0;
   cursor: pointer;
   text-align: left;
@@ -251,21 +251,21 @@
   width: 16px;
   height: 16px;
   border-radius: 4px;
-  border: 1px solid #CBD5E1;
-  accent-color: #22C55E;
+  border: 1px solid var(--border-strong);
+  accent-color: var(--success);
   margin-top: 2px;
   flex-shrink: 0;
 }
 
 .checkbox-text-custom {
   font-size: 13px;
-  color: #475569;
+  color: var(--fg-2);
   line-height: 1.4;
   font-weight: 500;
 }
 
 .checkbox-text-custom:hover {
-  color: #1E293B;
+  color: var(--fg-1);
 }
 
 .filtered-content-area {
@@ -280,7 +280,7 @@
 .filtered-results-count-upgrade {
   font-size: 20px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--fg-1);
   margin: 0;
 }
 
@@ -290,7 +290,7 @@
   left: 0;
   width: 48px;
   height: 3.5px;
-  background-color: #22C55E;
+  background-color: var(--success);
   border-radius: 20px;
 }
 
@@ -303,8 +303,8 @@
 
 /* Card Design */
 .program-card-upgrade {
-  background: #ffffff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
@@ -316,8 +316,8 @@
 
 .program-card-upgrade:hover {
   transform: translateY(-6px);
-  border-color: #22C55E;
-  box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.08);
+  border-color: var(--success);
+  box-shadow: 0 20px 25px -5px rgba(28, 171, 85, 0.08);
 }
 
 .program-card-top-row {
@@ -330,21 +330,21 @@
 .uni-logo-box-square {
   width: 48px;
   height: 48px;
-  background-color: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background-color: var(--gray-50);
+  border: 1px solid var(--border);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #22C55E;
+  color: var(--success);
   font-weight: 700;
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 
 .degree-level-badge {
-  background: #FEF3C7;
-  color: #D97706;
+  background: rgba(164, 104, 12, 0.12);
+  color: var(--warn);
   font-size: 11px;
   font-weight: 700;
   padding: 4px 10px;
@@ -366,13 +366,13 @@
 .uni-name-text-sm {
   font-size: 12px;
   font-weight: 600;
-  color: #64748B;
+  color: var(--fg-3);
 }
 
 .program-card-title-heading {
   font-size: 18px;
   font-weight: 800;
-  color: #1E293B;
+  color: var(--fg-1);
   line-height: 1.35;
   margin-bottom: 14px;
   display: -webkit-box;
@@ -388,17 +388,17 @@
   gap: 8px;
   margin-bottom: 8px;
   font-size: 13px;
-  color: #475569;
+  color: var(--fg-2);
 }
 
 .program-card-detail-item svg {
-  color: #22C55E;
+  color: var(--success);
   flex-shrink: 0;
 }
 
 .program-card-divider {
   height: 1px;
-  background-image: linear-gradient(to right, #E2E8F0 50%, transparent 50%);
+  background-image: linear-gradient(to right, var(--border) 50%, transparent 50%);
   background-size: 8px 1px;
   background-repeat: repeat-x;
   margin: 16px 0;
@@ -410,7 +410,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: auto;
-  border-top: 1px solid #F1F5F9;
+  border-top: 1px solid var(--gray-100);
   padding-top: 16px;
 }
 
@@ -422,12 +422,12 @@
 .tuition-cost-val {
   font-size: 14px;
   font-weight: 800;
-  color: #1E293B;
+  color: var(--fg-1);
 }
 
 .tuition-label-text {
   font-size: 11px;
-  color: #94A3B8;
+  color: var(--fg-muted);
   font-weight: 600;
 }
 
@@ -435,7 +435,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #22C55E;
+  color: var(--success);
   font-weight: 700;
   font-size: 13px;
   padding: 6px 14px;
@@ -446,9 +446,9 @@
 }
 
 .program-details-link-btn:hover {
-  background-color: #ECFDF5;
-  border-color: #22C55E;
-  color: #047857;
+  background-color: rgba(28, 171, 85, 0.09);
+  border-color: var(--success);
+  color: var(--success-dark);
 }
 
 .program-details-link-btn svg {
@@ -461,8 +461,8 @@
 
 /* Empty State */
 .empty-state-container {
-  background: #ffffff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 48px;
   text-align: center;
@@ -471,7 +471,7 @@
 }
 
 .empty-state-icon {
-  color: #CBD5E1;
+  color: var(--border-strong);
   margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
@@ -480,13 +480,13 @@
 .empty-state-title {
   font-size: 18px;
   font-weight: 800;
-  color: #1E293B;
+  color: var(--fg-1);
   margin-bottom: 8px;
 }
 
 .empty-state-desc {
   font-size: 14px;
-  color: #64748B;
+  color: var(--fg-3);
   line-height: 1.5;
 }
 
@@ -515,7 +515,7 @@
     left: 0;
     width: 300px;
     height: 100vh;
-    background: #fff;
+    background: var(--surface-card);
     z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);

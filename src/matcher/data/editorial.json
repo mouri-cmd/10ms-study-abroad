@@ -1,0 +1,25 @@
+{
+  "_comment": "Editorial judgment, kept separate from researched fact. Everything here is a counsellor decision, not something a research pass produces. `rankingTier` feeds the 'university ranking' priority; `priorityOverride` lets you force a strength or weakness when the derived value is wrong for your students. `offeredLevels` limits which study levels a destination is shown for; omit it to offer every level.",
+  "_rankingTiers": "top | high | mid | low — strength when top or high, weakness when low",
+  "countries": {
+    "australia": { "flag": "🇦🇺", "nameBn": "অস্ট্রেলিয়া", "rankingTier": "high" },
+    "uk": { "flag": "🇬🇧", "nameBn": "যুক্তরাজ্য", "rankingTier": "top" },
+    "canada": { "flag": "🇨🇦", "nameBn": "কানাডা", "rankingTier": "high" },
+    "new_zealand": { "flag": "🇳🇿", "nameBn": "নিউজিল্যান্ড", "rankingTier": "mid" },
+    "usa": { "flag": "🇺🇸", "nameBn": "যুক্তরাষ্ট্র", "rankingTier": "top" },
+    "malta": { "flag": "🇲🇹", "nameBn": "মাল্টা", "rankingTier": "low", "offeredLevels": ["masters"] },
+    "malaysia": { "flag": "🇲🇾", "nameBn": "মালয়েশিয়া", "rankingTier": "low" }
+  },
+  "priorityOverride": {
+    "_example": { "strengths": ["lowest_cost"], "weaknesses": ["pr_pathway"] }
+  },
+  "thresholds": {
+    "_comment": "Where the derived priority strengths and weaknesses switch over. Tune here rather than in code.",
+    "lowCostStrengthBDT": 2000000,
+    "highCostWeaknessBDT": 4000000,
+    "fastProcessingStrengthWeeks": 10,
+    "slowProcessingWeaknessWeeks": 16,
+    "pswStrengthMonths": 24,
+    "pswWeaknessMonths": 12
+  }
+}

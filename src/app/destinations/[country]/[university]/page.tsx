@@ -1,7 +1,7 @@
 import React from 'react';
 import { universities, programs } from '../../../../data/destinations';
 import Link from 'next/link';
-import { MapPin, Trophy, GraduationCap, Clock, FileCheck } from 'lucide-react';
+import { MapPin, Trophy, GraduationCap, Clock, CheckSquare } from '@phosphor-icons/react/ssr';
 import './university.css';
 
 export default async function UniversityPage({ params }: { params: Promise<{ country: string, university: string }> }) {
@@ -80,7 +80,7 @@ export default async function UniversityPage({ params }: { params: Promise<{ cou
             <div className="uni-sidebar">
               {/* 3. Admission Requirements */}
               <div className="card mb-6 bg-navy text-white">
-                <h3 className="text-white mb-4 flex items-center gap-2"><FileCheck size={20}/> Requirements</h3>
+                <h3 className="text-white mb-4 flex items-center gap-2"><CheckSquare size={20}/> Requirements</h3>
                 <ul className="req-list">
                   <li>
                     <span className="text-light-blue block text-sm">IELTS</span>

@@ -2,15 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  Search, 
-  SlidersHorizontal, 
-  ChevronRight, 
-  X, 
-  RotateCcw, 
-  ChevronDown, 
-  ChevronUp 
-} from 'lucide-react';
+import { MagnifyingGlass, SlidersHorizontal, CaretRight, X, ArrowCounterClockwise, CaretDown, CaretUp } from '@phosphor-icons/react';
 import './destinations.css';
 
 // Region helper mapping
@@ -117,7 +109,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
 
   // Filter application logic
   const filteredDestinations = enrichedDestinations.filter(country => {
-    // 1. Search Query
+    // 1. MagnifyingGlass Query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       const matchName = country.name?.toLowerCase().includes(q);
@@ -208,7 +200,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
         <div className="container">
           <div className="breadcrumb-nav bn">
             <Link href="/" className="breadcrumb-link">Home</Link>
-            <ChevronRight size={14} className="breadcrumb-separator" />
+            <CaretRight size={14} className="breadcrumb-separator" />
             <span className="breadcrumb-current">Destinations</span>
           </div>
         </div>
@@ -225,10 +217,10 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
           </p>
         </div>
 
-        {/* 3. Search and Filters Row */}
+        {/* 3. MagnifyingGlass and Filters Row */}
         <div className="filters-row">
           <div className="search-input-wrapper">
-            <Search size={18} className="search-icon" />
+            <MagnifyingGlass size={18} className="search-icon" />
             <input 
               type="text" 
               placeholder={currentTranslations.searchPlaceholder} 
@@ -250,7 +242,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
                 <div className="filter-sidebar-header">
                   <div className="flex items-center gap-2">
                     <SlidersHorizontal size={18} className="text-emerald-500" />
-                    <span className="font-bold text-slate-800 text-base bn">
+                    <span className="font-bold text-[var(--fg-1)] text-base bn">
                       {currentTranslations.filters} {activeFiltersCount > 0 && `(${activeFiltersCount})`}
                     </span>
                   </div>
@@ -261,7 +253,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
                         onClick={handleClearAll}
                         className="clear-all-btn text-xs font-semibold text-red-500 flex items-center gap-1 hover:text-red-600 transition-colors bn"
                       >
-                        <RotateCcw size={12} /> {currentTranslations.clearAll}
+                        <ArrowCounterClockwise size={12} /> {currentTranslations.clearAll}
                       </button>
                     )}
                     <button 
@@ -282,7 +274,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
                       onClick={() => toggleSection('region')}
                     >
                       <span className="bn">{currentTranslations.regionFilter}</span>
-                      {isCollapsed('region') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('region') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
 
                     {!isCollapsed('region') && (
@@ -309,7 +301,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
                       onClick={() => toggleSection('intake')}
                     >
                       <span className="bn">{currentTranslations.intakeFilter}</span>
-                      {isCollapsed('intake') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('intake') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
 
                     {!isCollapsed('intake') && (
@@ -336,7 +328,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
                       onClick={() => toggleSection('subject')}
                     >
                       <span className="bn">{currentTranslations.subjectFilter}</span>
-                      {isCollapsed('subject') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('subject') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
 
                     {!isCollapsed('subject') && (
@@ -387,10 +379,10 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
               </div>
 
               {filteredDestinations.length === 0 ? (
-                <div className="card text-center p-12 bg-white border border-slate-200 rounded-2xl animate-fade-in-up">
-                  <SlidersHorizontal size={48} className="mx-auto text-slate-300 mb-4" />
+                <div className="card text-center p-12 animate-fade-in-up">
+                  <SlidersHorizontal size={48} className="mx-auto text-[var(--border-strong)] mb-4" />
                   <h3 className="h3 mb-2 bn">{currentTranslations.emptyTitle}</h3>
-                  <p className="text-slate-500 mb-6 bn">{currentTranslations.emptyDesc}</p>
+                  <p className="text-[var(--fg-3)] mb-6 bn">{currentTranslations.emptyDesc}</p>
                   <button 
                     onClick={handleClearAll}
                     className="btn btn-primary px-6 py-2.5 mx-auto bn"
@@ -442,7 +434,7 @@ export default function DestinationsClient({ destinations }: DestinationsClientP
                           <div className="card-footer">
                             <span className="card-intakes bn">{currentTranslations.intakesLabel}: <span className="card-intakes-val">{country.top_intakes?.join(', ')}</span></span>
                             <div className="card-arrow-circle">
-                              <ChevronRight size={14} className="card-arrow-icon" />
+                              <CaretRight size={14} className="card-arrow-icon" />
                             </div>
                           </div>
                         </div>

@@ -1,8 +1,8 @@
 /* Country Details Page Styling */
 
 .country-details {
-  background-color: #FAFAFA;
-  font-family: var(--font-inter, 'Inter', sans-serif);
+  background-color: var(--bg);
+  font-family: var(--font-sans);
 }
 
 /* Hero Section */
@@ -147,8 +147,8 @@
 }
 
 .stat-card-custom {
-  background: #fff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.02);
@@ -166,10 +166,10 @@
   justify-content: center;
 }
 
-.stat-icon-wrapper.tuition { background-color: #EEFBF3; color: #22C55E; }
-.stat-icon-wrapper.living { background-color: #FFF5F5; color: #EF4444; }
-.stat-icon-wrapper.universities { background-color: #FFFBEB; color: #D97706; }
-.stat-icon-wrapper.work { background-color: #FFF7ED; color: #EA580C; }
+.stat-icon-wrapper.tuition { background-color: rgba(229, 50, 45, 0.09); color: var(--success); }
+.stat-icon-wrapper.living { background-color: rgba(229, 50, 45, 0.08); color: var(--ten-red); }
+.stat-icon-wrapper.universities { background-color: rgba(164, 104, 12, 0.1); color: var(--warn); }
+.stat-icon-wrapper.work { background-color: rgba(164, 104, 12, 0.08); color: var(--warn-deep); }
 
 .stat-info-wrapper {
   display: flex;
@@ -178,7 +178,7 @@
 
 .stat-label-custom {
   font-size: 12px;
-  color: #64748B;
+  color: var(--fg-3);
   font-weight: 500;
   margin-bottom: 2px;
 }
@@ -186,7 +186,7 @@
 .stat-value-custom {
   font-size: 16px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--fg-1);
 }
 
 /* Two-Column Layout */
@@ -221,8 +221,8 @@
 
 /* Section Card Blocks */
 .content-section-card {
-  background: #fff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.02);
@@ -237,7 +237,7 @@
 .section-title-custom {
   font-size: 20px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--fg-1);
   margin-top: 0;
   margin-bottom: 24px;
   display: flex;
@@ -259,14 +259,14 @@
 }
 
 .why-study-icon-check {
-  color: #22C55E;
+  color: var(--success);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .why-study-text {
   font-size: 15px;
-  color: #334155;
+  color: var(--fg-2);
   line-height: 1.5;
   margin: 0;
 }
@@ -276,9 +276,9 @@
   display: flex;
   gap: 20px;
   padding: 20px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background: #fff;
+  background: var(--surface-card);
   position: relative;
   margin-bottom: 16px;
   transition: box-shadow 0.2s, border-color 0.2s;
@@ -286,7 +286,7 @@
 
 .uni-horizontal-card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-  border-color: #CBD5E1;
+  border-color: var(--border-strong);
 }
 
 @media (max-width: 575px) {
@@ -321,7 +321,7 @@
 .uni-card-name {
   font-size: 18px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--fg-1);
   margin: 0 0 6px 0;
   padding-right: 48px; /* space for rank badge */
 }
@@ -331,7 +331,7 @@
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: #64748B;
+  color: var(--fg-3);
   margin-bottom: 10px;
 }
 
@@ -341,12 +341,12 @@
   gap: 16px;
   flex-wrap: wrap;
   font-size: 13px;
-  color: #475569;
+  color: var(--fg-2);
 }
 
 .uni-scholarship-badge {
-  background: #EEFBF3;
-  color: #22C55E;
+  background: rgba(229, 50, 45, 0.09);
+  color: var(--success);
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 4px;
@@ -361,9 +361,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  color: #64748B;
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  color: var(--fg-3);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 13px;
@@ -373,16 +373,16 @@
 }
 
 .uni-compare-btn:hover {
-  background: #F1F5F9;
-  color: #1E293B;
+  background: var(--gray-100);
+  color: var(--fg-1);
 }
 
 .uni-card-rank-badge {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: #FFFBEB;
-  color: #D97706;
+  background: rgba(164, 104, 12, 0.1);
+  color: var(--warn);
   padding: 3px 8px;
   border-radius: 8px;
   font-size: 12px;
@@ -393,7 +393,7 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  color: #22C55E;
+  color: var(--success);
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
@@ -404,7 +404,7 @@
 }
 
 .uni-card-view-link:hover {
-  color: #16A34A;
+  color: var(--success-dark);
 }
 
 @media (max-width: 575px) {
@@ -424,18 +424,18 @@
 
 /* Scholarships */
 .schol-item-card {
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
   position: relative;
   margin-bottom: 16px;
-  background: #fff;
+  background: var(--surface-card);
 }
 
 .schol-card-title {
   font-size: 16px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--fg-1);
   margin: 0 0 6px 0;
   padding-right: 80px; /* space for level badge */
 }
@@ -444,8 +444,8 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: #FFFBEB;
-  color: #B45309;
+  background: rgba(164, 104, 12, 0.1);
+  color: var(--warn-deep);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 11px;
@@ -455,13 +455,13 @@
 .schol-card-amount {
   font-size: 14px;
   font-weight: 700;
-  color: #22C55E;
+  color: var(--success);
   margin-bottom: 8px;
 }
 
 .schol-card-desc {
   font-size: 14px;
-  color: #475569;
+  color: var(--fg-2);
   line-height: 1.5;
   margin: 0 0 16px 0;
 }
@@ -471,14 +471,14 @@
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: #94A3B8;
+  color: var(--fg-muted);
 }
 
 .schol-view-all-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #22C55E;
+  color: var(--success);
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
@@ -487,7 +487,7 @@
 }
 
 .schol-view-all-link:hover {
-  color: #16A34A;
+  color: var(--success-dark);
 }
 
 /* Visa Overview */
@@ -495,8 +495,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #FFF1F2;
-  color: #F43F5E;
+  background: rgba(229, 50, 45, 0.08);
+  color: var(--ten-red);
   padding: 6px 12px;
   border-radius: 6px;
   font-weight: 700;
@@ -507,7 +507,7 @@
 .visa-req-title {
   font-size: 14px;
   font-weight: 700;
-  color: #475569;
+  color: var(--fg-2);
   margin-bottom: 12px;
 }
 
@@ -524,7 +524,7 @@
   position: relative;
   padding-left: 16px;
   font-size: 14px;
-  color: #334155;
+  color: var(--fg-2);
   line-height: 1.4;
 }
 
@@ -533,7 +533,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #F43F5E;
+  background-color: var(--ten-red);
   position: absolute;
   left: 0;
   top: 7px;
@@ -541,10 +541,10 @@
 
 /* Testimonials */
 .testimonial-item-card {
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
-  background: #fff;
+  background: var(--surface-card);
   margin-bottom: 16px;
 }
 
@@ -565,19 +565,19 @@
 .test-student-name {
   font-size: 14px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--fg-1);
   margin: 0;
 }
 
 .test-student-uni {
   font-size: 12px;
-  color: #64748B;
+  color: var(--fg-3);
   margin: 2px 0 0 0;
 }
 
 .test-quote-text {
   font-size: 14px;
-  color: #475569;
+  color: var(--fg-2);
   line-height: 1.6;
   font-style: italic;
   margin: 0;
@@ -585,8 +585,8 @@
 
 /* Sidebar Components */
 .sidebar-counseling-card {
-  background: #fff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
@@ -595,13 +595,13 @@
 .sidebar-form-title {
   font-size: 18px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--fg-1);
   margin: 0 0 4px 0;
 }
 
 .sidebar-form-subtitle {
   font-size: 13px;
-  color: #64748B;
+  color: var(--fg-3);
   margin: 0 0 20px 0;
 }
 
@@ -614,22 +614,22 @@
 .sidebar-input-field {
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 14px;
-  color: #0F172A;
+  color: var(--fg-1);
   outline: none;
   transition: border-color 0.2s;
 }
 
 .sidebar-input-field:focus {
-  border-color: #22C55E;
+  border-color: var(--success);
 }
 
 .sidebar-submit-btn {
   width: 100%;
   padding: 12px;
-  background: #22C55E;
+  background: var(--success);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -642,21 +642,21 @@
 }
 
 .sidebar-submit-btn:hover {
-  background: #16A34A;
+  background: var(--success-dark);
 }
 
 .sidebar-form-disclaimer {
   text-align: center;
   font-size: 11px;
-  color: #94A3B8;
+  color: var(--fg-muted);
   margin-top: 12px;
   margin-bottom: 0;
 }
 
 /* Subject Chips Card */
 .sidebar-subjects-card {
-  background: #fff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
 }
@@ -664,7 +664,7 @@
 .sidebar-sub-title {
   font-size: 14px;
   font-weight: 700;
-  color: #475569;
+  color: var(--fg-2);
   margin-top: 0;
   margin-bottom: 14px;
 }
@@ -676,8 +676,8 @@
 }
 
 .subject-custom-chip {
-  background: #F1F5F9;
-  color: #475569;
+  background: var(--gray-100);
+  color: var(--fg-2);
   padding: 6px 12px;
   border-radius: 16px;
   font-size: 12px;
@@ -687,6 +687,6 @@
 }
 
 .subject-custom-chip:hover {
-  background: #E2E8F0;
-  color: #1E293B;
+  background: var(--border);
+  color: var(--fg-1);
 }

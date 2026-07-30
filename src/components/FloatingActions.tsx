@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { MessageCircle } from 'lucide-react';
+import { ChatCircleDots } from '@phosphor-icons/react';
 import './FloatingActions.css';
 
 export default function FloatingActions() {
@@ -21,7 +21,7 @@ export default function FloatingActions() {
         className="whatsapp-float"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle size={28} />
+        <ChatCircleDots size={28} weight="fill" />
       </a>
     </>
   );

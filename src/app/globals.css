@@ -1,49 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&display=swap');
+/* ============================================================
+   Fonts — self-hosted, matching study-abroad-matcher's theme.
+   Inter Tight for Latin, Anek Bangla for Bangla.
+   ============================================================ */
+@font-face { font-family: 'Inter Tight'; src: url('/fonts/inter-tight-300.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Inter Tight'; src: url('/fonts/inter-tight-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Inter Tight'; src: url('/fonts/inter-tight-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Inter Tight'; src: url('/fonts/inter-tight-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Inter Tight'; src: url('/fonts/inter-tight-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Anek Bangla'; src: url('/fonts/anek-bangla-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Anek Bangla'; src: url('/fonts/anek-bangla-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Anek Bangla'; src: url('/fonts/anek-bangla-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Anek Bangla'; src: url('/fonts/anek-bangla-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 
 :root {
-  /* ---------- Brand ---------- */
-  --ten-red:        #E8001D;   /* primary identity red — logo only */
-  --ten-red-dark:   #931212;   /* deep header / banner red */
-  --ten-red-deep:   #721111;   /* deepest red — long shadows / strokes */
-  --ten-red-accent: #A51E35;   /* supporting crimson */
-  --ten-red-soft:   #F14545;   /* bright avatar-chip red */
-  --ten-black:      #000000;
+  /* ---------- Brand (study-abroad-matcher palette) ---------- */
+  --ten-red:        #E5322D;   /* == matcher --brand */
+  --ten-red-dark:   #B3211D;   /* == matcher --brand-ink */
+  --ten-red-deep:   #8F1A17;   /* deeper still — long shadows / strokes */
+  --ten-red-accent: #B3211D;   /* supporting crimson, same as brand-ink */
+  --ten-red-soft:   #FF6259;   /* bright avatar-chip red (matcher's dark-mode brand, used as the "soft" tint) */
+  --ten-black:      #16181C;   /* matcher --ink, near-black */
   --ten-white:      #FFFFFF;
-  --ten-ink:        #111827;   /* near-black for body text — never pure #000 */
+  --ten-ink:        #16181C;   /* == matcher --ink */
 
   /* ---------- Semantic ---------- */
-  --success:        #1CAB55;   /* CTA green */
-  --success-dark:   #0E7B4F;   /* CTA border */
-  --success-deep:   #149353;   /* secondary green */
-  --success-text:   #1B9E66;   /* pill / label green */
-  --warn:           #EA580C;   /* orange */
-  --warn-deep:      #A23F00;   /* darker orange text */
-  --info:           #274FE3;   /* link / info blue */
+  --success:        #0F7A57;   /* == matcher --good */
+  --success-dark:   #0C5F44;   /* CTA border */
+  --success-deep:   #0A4D38;   /* secondary green */
+  --success-text:   #0F7A57;   /* pill / label green */
+  --warn:           #A4680C;   /* == matcher --warn */
+  --warn-deep:      #7A4D09;   /* darker orange text */
+  --info:           #274FE3;   /* link / info blue (matcher has no equivalent — kept) */
   --info-soft:      #AFC3E6;   /* pale info blue tint */
   --premium-gold-1: #FFEAB4;
   --premium-gold-2: #E7B946;
 
-  /* ---------- Neutrals (Tailwind-gray aligned) ---------- */
-  --gray-50:  #F9FAFB;
-  --gray-100: #F3F4F6;
-  --gray-200: #E5E7EB;
-  --gray-300: #D1D5DB;
-  --gray-400: #9CA3AF;
-  --gray-500: #6B7280;
-  --gray-600: #4B5563;
-  --gray-700: #374151;
-  --gray-800: #1F2937;
-  --gray-900: #111827;
+  /* ---------- Neutrals (matcher's warm-cream scale) ---------- */
+  --gray-50:  #F6F4F0;
+  --gray-100: #EFECE6;
+  --gray-200: #E8E4DC;
+  --gray-300: #D9D4C9;
+  --gray-400: #B3AEA3;
+  --gray-500: #8A8F96;
+  --gray-600: #55595F;
+  --gray-700: #3A3D42;
+  --gray-800: #24262B;
+  --gray-900: #16181C;
 
   /* ---------- Surfaces ---------- */
-  --bg:             var(--ten-white);
-  --bg-muted:       var(--gray-100);
-  --bg-inverse:     #0B1117;   /* dark hero / video player */
+  --bg:             #EFECE6;   /* == matcher --canvas (warm page background) */
+  --bg-muted:       var(--gray-200);
+  --bg-inverse:     #101114;   /* dark hero / video player — == matcher dark --canvas */
   --surface-card:   var(--ten-white);
-  --surface-subtle: #EEF2F4;   /* LX background */
+  --surface-subtle: var(--gray-50);
   --surface-info:   #D8F3FF;   /* subject top-card tint */
-  --border:         var(--gray-200);
-  --border-strong:  var(--gray-300);
+  --border:         rgba(22, 24, 28, 0.09);   /* == matcher --line */
+  --border-strong:  rgba(22, 24, 28, 0.16);   /* == matcher --line-2 */
 
   /* ---------- Foreground roles ---------- */
   --fg-1: var(--gray-900);   /* primary text */
@@ -52,11 +64,16 @@
   --fg-muted: var(--gray-400);
   --fg-on-brand: var(--ten-white);
   --fg-link: var(--info);
+  /* Text on a solid --ten-ink surface (e.g. an "active" filled pill/tab).
+     Flips opposite to --ten-ink so it stays readable in both themes,
+     instead of a hardcoded white that goes invisible once --ten-ink
+     itself turns light in dark mode. */
+  --on-solid: #F6F4F0;
 
   /* ---------- Typography ---------- */
-  --font-sans:    'Inter', 'Hind Siliguri', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
-  --font-bangla:  'Noto Sans Bengali', 'Hind Siliguri', 'Anek Bangla', 'Inter', sans-serif;
-  --font-display: 'Inter', 'Hind Siliguri', sans-serif;
+  --font-sans:    'Inter Tight', 'Anek Bangla', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+  --font-bangla:  'Anek Bangla', 'Noto Sans Bengali', 'Inter Tight', sans-serif;
+  --font-display: 'Inter Tight', 'Anek Bangla', sans-serif;
   --font-mono:    ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --fs-display:  28px;
@@ -112,6 +129,67 @@
   --dur-slow: 260ms;
 }
 
+:root[data-theme='dark'] {
+  /* ---------- Brand ---------- */
+  --ten-red:        #FF6259;   /* == matcher dark --brand */
+  --ten-red-dark:   #FF8079;   /* == matcher dark --brand-ink */
+  --ten-red-deep:   #FFA39D;
+  --ten-red-accent: #FF8079;
+  --ten-red-soft:   #FFA39D;
+  --ten-black:      #F4F2EE;
+  --ten-white:      #FFFFFF;
+  --ten-ink:        #F4F2EE;   /* == matcher dark --ink */
+
+  /* ---------- Semantic ---------- */
+  --success:        #4FD3A5;   /* == matcher dark --good */
+  --success-dark:   #38B98C;
+  --success-deep:   #2B9A73;
+  --success-text:   #4FD3A5;
+  --warn:           #E7B15C;   /* == matcher dark --warn */
+  --warn-deep:      #C99640;
+  --info:           #7C9CFF;
+  --info-soft:      #33406B;
+  --premium-gold-1: #4A3E22;
+  --premium-gold-2: #E7B946;
+
+  /* ---------- Neutrals ---------- */
+  --gray-50:  #16181C;
+  --gray-100: #1B1E23;
+  --gray-200: #24262B;
+  --gray-300: #3A3D42;
+  --gray-400: #55595F;
+  --gray-500: #767C85;
+  --gray-600: #A7ACB4;
+  --gray-700: #C8CBD1;
+  --gray-800: #E4E6E9;
+  --gray-900: #F4F2EE;
+
+  /* ---------- Surfaces ---------- */
+  --bg:             #101114;   /* == matcher dark --canvas */
+  --bg-muted:       #16181C;   /* == matcher dark --canvas-2 */
+  --bg-inverse:     #EFECE6;
+  --surface-card:   #1B1E23;   /* == matcher dark --surface */
+  --surface-subtle: #16181C;
+  --surface-info:   #133A47;
+  --border:         rgba(255, 255, 255, 0.09);   /* == matcher dark --line */
+  --border-strong:  rgba(255, 255, 255, 0.17);   /* == matcher dark --line-2 */
+
+  /* ---------- Foreground roles ---------- */
+  --fg-1: var(--gray-900);
+  --fg-2: var(--gray-600);
+  --fg-3: var(--gray-500);
+  --fg-muted: var(--gray-400);
+  --fg-on-brand: var(--ten-white);
+  --fg-link: var(--info);
+  --on-solid: #101114;
+
+  /* ---------- Shadows (light-based shadows read as invisible on dark) ---------- */
+  --sh-card:      0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px -12px rgba(0, 0, 0, 0.7);
+  --sh-raised:    0 4px 16px rgba(0, 0, 0, 0.6);
+  --sh-nav:       0 -4px 20px rgba(0, 0, 0, 0.4);
+  --sh-inset-btn: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -140,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 .body-sm { font: 400 var(--fs-body-sm)/var(--lh-normal) var(--font-sans); color: var(--fg-2); }
 .caption { font: 400 var(--fs-caption)/var(--lh-normal) var(--font-sans); color: var(--fg-3); }
 .meta { font: 500 var(--fs-caption)/var(--lh-normal) var(--font-sans); color: var(--fg-3); }
-.bn { font-family: var(--font-bangla); letter-spacing: var(--tracking-wide); line-height: 1.5; }
+.bn { font-family: var(--font-bangla); letter-spacing: var(--tracking-wide); line-height: 1.65; }
 
 a {
   color: inherit;
@@ -166,6 +244,7 @@ button, input, select, textarea {
 
 /* Utilities */
 .text-center { text-align: center; }
+.text-white { color: #fff; }
 .flex { display: flex; }
 .flex-col { display: flex; flex-direction: column; }
 .items-center { align-items: center; }
@@ -196,11 +275,11 @@ button, input, select, textarea {
   box-shadow: var(--sh-inset-btn);
   color: var(--ten-white);
   font-weight: 700;
-  border-radius: var(--r-sm);
-  padding: 14px 20px;
+  border-radius: var(--r-pill);
+  padding: 14px 28px;
   transition: background var(--dur-base) var(--ease-out), transform var(--dur-base);
 }
-.btn-primary:hover { background: #17994B; }
+.btn-primary:hover { background: #0C6349; }
 .btn-primary:active { transform: scale(0.98); }
 
 .btn-secondary {
@@ -208,8 +287,8 @@ button, input, select, textarea {
   color: var(--fg-1);
   border: 1px solid var(--border-strong);
   font-weight: 600;
-  border-radius: var(--r-sm);
-  padding: 14px 20px;
+  border-radius: var(--r-pill);
+  padding: 14px 28px;
   transition: all var(--dur-base) var(--ease-out);
 }
 .btn-secondary:hover { background: var(--gray-50); }
@@ -219,8 +298,8 @@ button, input, select, textarea {
   border: 1.5px solid rgba(255,255,255,0.75);
   color: #fff;
   font-weight: 600;
-  border-radius: var(--r-sm);
-  padding: 14px 20px;
+  border-radius: var(--r-pill);
+  padding: 14px 28px;
   transition: all var(--dur-base) var(--ease-out);
 }
 .btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
@@ -231,8 +310,8 @@ button, input, select, textarea {
   font-weight: 700;
   border: 1px solid var(--ten-red-dark);
   box-shadow: var(--sh-inset-btn);
-  border-radius: var(--r-sm);
-  padding: 12px 24px;
+  border-radius: var(--r-pill);
+  padding: 12px 28px;
   transition: background var(--dur-base);
 }
 .btn-red:hover { background: #C70019; }
@@ -249,7 +328,7 @@ button, input, select, textarea {
 }
 .card:hover {
   border-color: var(--ten-red);
-  box-shadow: 0 4px 14px rgba(232, 0, 29, 0.08);
+  box-shadow: 0 4px 14px rgba(229, 50, 45, 0.08);
   transform: translateY(-1px);
 }
 
@@ -274,16 +353,17 @@ button, input, select, textarea {
   width: 100%;
   padding: 12px 14px;
   border: 1px solid var(--border);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   font-size: 15px;
   font-family: var(--font-sans);
-  background: #fff;
+  background: var(--surface-card);
+  color: var(--fg-1);
   transition: border-color var(--dur-base), box-shadow var(--dur-base);
   outline: none;
 }
 .input:focus {
-  border-color: var(--ten-red);
-  box-shadow: 0 0 0 3px rgba(232, 0, 29, 0.12);
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(15, 122, 87, 0.15);
 }
 
 /* Layout Utilities */
@@ -299,7 +379,7 @@ button, input, select, textarea {
 .bg-alt { background-color: var(--surface-subtle); }
 
 @keyframes glow-pulse {
-  0%,100% { box-shadow: 0 0 0 0 rgba(28,171,85,0.55), 0 10px 30px rgba(0,0,0,0.35); }
-  50%     { box-shadow: 0 0 0 14px rgba(28,171,85,0),    0 10px 30px rgba(0,0,0,0.35); }
+  0%,100% { box-shadow: 0 0 0 0 rgba(15,122,87,0.55), 0 10px 30px rgba(0,0,0,0.35); }
+  50%     { box-shadow: 0 0 0 14px rgba(15,122,87,0),    0 10px 30px rgba(0,0,0,0.35); }
 }
 .btn-pulse { animation: glow-pulse 2.4s ease-out infinite; }

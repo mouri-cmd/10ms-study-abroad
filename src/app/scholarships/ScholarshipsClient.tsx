@@ -2,19 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { 
-  Search, 
-  Calendar, 
-  CheckCircle, 
-  ChevronRight, 
-  GraduationCap, 
-  Sparkles,
-  ChevronDown,
-  ChevronUp,
-  X,
-  SlidersHorizontal,
-  RotateCcw
-} from 'lucide-react';
+import { MagnifyingGlass, Calendar, CheckCircle, CaretRight, GraduationCap, Sparkle, CaretDown, CaretUp, X, SlidersHorizontal, ArrowCounterClockwise } from '@phosphor-icons/react';
 import './scholarships.css';
 
 interface Scholarship {
@@ -105,7 +93,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
 
   // Filter application logic
   const filteredScholarships = scholarshipsData.filter(schol => {
-    // 1. Search Query
+    // 1. MagnifyingGlass Query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       const matchName = schol.name?.toLowerCase().includes(q);
@@ -180,7 +168,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
       {/* Dark Gradient Hero Section with Geo Watermarks */}
       <section className="dark-hero-style-upgrade text-center relative pt-20 pb-36">
         <div className="announcement-shimmer mb-6 mx-auto inline-flex items-center gap-2">
-          <Sparkles size={14} className="sparkle-anim" /> 💰 ১০০% ফ্রি ফান্ডিং সুযোগ
+          <Sparkle size={14} className="sparkle-anim" /> 💰 ১০০% ফ্রি ফান্ডিং সুযোগ
         </div>
         <h1 className="h-display-upgrade text-white mb-6">
           সেরা স্কলারশিপ <span className="highlight-green">খুঁজে নাও</span>
@@ -189,10 +177,10 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
           বাংলাদেশি শিক্ষার্থীদের জন্য বিশ্বজুড়ে ছড়িয়ে থাকা সেরা ফান্ডিং ও স্কলারশিপের সুযোগগুলো এক্সপ্লোর করো।
         </p>
 
-        {/* 2. Prominent Search Bar sitting inside Hero */}
+        {/* 2. Prominent MagnifyingGlass Bar sitting inside Hero */}
         <div className="search-bar-hero-container">
           <div className="search-input-wrapper-upgrade">
-            <Search size={22} className="search-icon-upgrade" color="#22C55E" />
+            <MagnifyingGlass size={22} className="search-icon-upgrade" color="#22C55E" />
             <input 
               type="text" 
               placeholder="স্কলারশিপ, দেশ বা প্রোগ্রামের নাম দিয়ে খোঁজো..." 
@@ -216,7 +204,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                 <div className="filter-sidebar-header">
                   <div className="flex items-center gap-2">
                     <SlidersHorizontal size={18} className="text-emerald-500" />
-                    <span className="font-bold text-slate-800 text-base">
+                    <span className="font-bold text-[var(--fg-1)] text-base">
                       Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
                     </span>
                   </div>
@@ -227,7 +215,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                         onClick={handleClearAll}
                         className="clear-all-btn text-xs font-semibold text-red-500 flex items-center gap-1 hover:text-red-600 transition-colors"
                       >
-                        <RotateCcw size={12} /> Clear All
+                        <ArrowCounterClockwise size={12} /> Clear All
                       </button>
                     )}
                     <button 
@@ -249,7 +237,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                       onClick={() => toggleSectionExpanded('country')}
                     >
                       <span>🌍 Country / Destination</span>
-                      {isCollapsed('country') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('country') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
                     
                     {!isCollapsed('country') && (
@@ -276,7 +264,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                       onClick={() => toggleSectionExpanded('degree')}
                     >
                       <span>🎓 Degree Level</span>
-                      {isCollapsed('degree') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('degree') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
                     
                     {!isCollapsed('degree') && (
@@ -303,7 +291,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                       onClick={() => toggleSectionExpanded('funding')}
                     >
                       <span>💰 Funding Type</span>
-                      {isCollapsed('funding') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('funding') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
                     
                     {!isCollapsed('funding') && (
@@ -335,7 +323,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                       onClick={() => toggleSectionExpanded('deadline')}
                     >
                       <span>📅 Deadline Month</span>
-                      {isCollapsed('deadline') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('deadline') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
                     
                     {!isCollapsed('deadline') && (
@@ -366,7 +354,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                       onClick={() => toggleSectionExpanded('eligibility')}
                     >
                       <span>✅ Eligibility</span>
-                      {isCollapsed('eligibility') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('eligibility') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
                     
                     {!isCollapsed('eligibility') && (
@@ -393,7 +381,7 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
                       onClick={() => toggleSectionExpanded('type')}
                     >
                       <span>🔍 Scholarship Type</span>
-                      {isCollapsed('type') ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+                      {isCollapsed('type') ? <CaretDown size={16} /> : <CaretUp size={16} />}
                     </button>
                     
                     {!isCollapsed('type') && (
@@ -449,10 +437,10 @@ export default function ScholarshipsClient({ scholarships: scholarshipsData }: S
               </div>
 
               {filteredScholarships.length === 0 ? (
-                <div className="card text-center p-12 bg-white border border-slate-200 rounded-2xl animate-fade-in-up">
-                  <SlidersHorizontal size={48} className="mx-auto text-slate-300 mb-4" />
+                <div className="card text-center p-12 animate-fade-in-up">
+                  <SlidersHorizontal size={48} className="mx-auto text-[var(--border-strong)] mb-4" />
                   <h3 className="h3 mb-2">কোন স্কলারশিপ পাওয়া যায়নি</h3>
-                  <p className="text-slate-500 mb-6">আপনার সিলেক্ট করা ফিল্টারের সাথে মিলে যায় এমন কোন স্কলারশিপ পাওয়া যায়নি।</p>
+                  <p className="text-[var(--fg-3)] mb-6">আপনার সিলেক্ট করা ফিল্টারের সাথে মিলে যায় এমন কোন স্কলারশিপ পাওয়া যায়নি।</p>
                   <button 
                     onClick={handleClearAll}
                     className="btn btn-primary px-6 py-2.5 mx-auto"
@@ -533,7 +521,7 @@ function ScholarshipCard({ schol }: { schol: Scholarship }) {
       </div>
 
       <div className="funding-box-upgrade flex items-start gap-2 mb-4">
-        <div className="mt-0.5"><Sparkles size={16} className="text-emerald-500 sparkle-icon-pill" /></div>
+        <div className="mt-0.5"><Sparkle size={16} className="text-emerald-500 sparkle-icon-pill" /></div>
         <div className="funding-text-p">{schol.funding}</div>
       </div>
 
@@ -544,7 +532,7 @@ function ScholarshipCard({ schol }: { schol: Scholarship }) {
       <div className="divider mb-4"></div>
 
       <div className="eligibility-section-upgrade flex-1 mb-4">
-        <h4 className="meta text-slate-400 uppercase tracking-wider mb-3 text-xs font-bold">Eligibility</h4>
+        <h4 className="meta text-[var(--fg-3)] uppercase tracking-wider mb-3 text-xs font-bold">Eligibility</h4>
         <ul className="flex flex-col gap-2.5">
           {schol.eligibility?.map((item, i) => (
             <li key={i} className="flex items-start gap-2 body-sm text-[var(--fg-1)]">
@@ -563,7 +551,7 @@ function ScholarshipCard({ schol }: { schol: Scholarship }) {
         </div>
         {schol.countryId && (
           <Link href={`/destinations/${schol.countryId}`} className="view-country-link-upgrade">
-            {schol.country} দেখুন <ChevronRight size={14} className="arrow-icon" />
+            {schol.country} দেখুন <CaretRight size={14} className="arrow-icon" />
           </Link>
         )}
       </div>

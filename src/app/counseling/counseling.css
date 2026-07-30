@@ -22,7 +22,7 @@
 .step-col {
   position: relative;
   z-index: 1;
-  background: var(--ten-white);
+  background: var(--bg);
   padding: 0 16px;
   flex: 1;
 }
@@ -39,7 +39,7 @@
   font-size: 1.25rem;
   font-weight: bold;
   margin: 0 auto 16px;
-  box-shadow: 0 0 0 4px var(--ten-white);
+  box-shadow: 0 0 0 4px var(--bg);
 }
 
 .step-col h4 {

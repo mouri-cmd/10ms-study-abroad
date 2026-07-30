@@ -1,0 +1,275 @@
+{
+  "id": "australia",
+  "name": {
+    "en": "Australia",
+    "bn": ""
+  },
+  "lastVerified": "2026-07-27",
+  "levels": {
+    "bachelors": {
+      "ieltsMinOverall": 6.0,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Direct entry from HSC accepted by select Tier 2/3 universities with high GPA (>=4.5); Go8 and Tier 1 institutions require 1 year of university study in Bangladesh or entry via Foundation/Diploma pathways.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "masters": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 2.5,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Requires a recognized 4-year Bachelor degree from a UGC-approved institution in Bangladesh.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    },
+    "diploma": {
+      "ieltsMinOverall": 6,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 6.5,
+      "academicIndexMin": 2.5,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "1 year diploma then directly enrollment to Bachelors",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "phd": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 7.0,
+      "ieltsCompetitive": 7.5,
+      "academicIndexMin": 3.2,
+      "academicIndexCompetitive": 3.6,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Requires Bachelor Honours (2nd Class Upper equivalent) or Master by Research with published research output.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    }
+  },
+  "englishAlternatives": {
+    "pte": {
+      "bachelors": 50,
+      "masters": 58
+    },
+    "toefl": {
+      "bachelors": null,
+      "masters": null
+    },
+    "duolingo": {
+      "bachelors": null,
+      "masters": null
+    },
+    "moiAccepted": false,
+    "moiConditions": {
+      "en": "MOI is broadly rejected for visa and professional registration purposes. Select universities consider MOI for prior tertiary degrees under institutional assessment, excluding healthcare fields.",
+      "bn": ""
+    },
+    "ukviRequired": false,
+    "pathwayAvailable": false,
+    "pathwayMinIelts": 5.0
+  },
+  "gapTolerance": {
+    "bachelorsYears": 2,
+    "mastersYears": 4,
+    "documentationRequired": true,
+    "notes": {
+      "en": "Study gaps 2 months during an academic year require formal evidence including employment letters, salary statements, and tax documents under GS rules.",
+      "bn": ""
+    },
+    "diplomaYears": 0
+  },
+  "cost": {
+    "currency": "AUD",
+    "exchangeRateToBDT": 86,
+    "exchangeRateDate": "2026-03-31",
+    "tuitionPerYearBDT": {
+      "bachelors": {
+        "low": 3500000,
+        "typical": 4000000,
+        "high": 4500000
+      },
+      "masters": {
+        "low": 3500000,
+        "typical": 4000000,
+        "high": 4500000
+      }
+    },
+    "livingPerYearBDT": {
+      "low": 1020000,
+      "typical": 1275000,
+      "high": 2125000
+    },
+    "visaMandatedFundsBDT": 2500000,
+    "upfrontDepositBDT": 1500000,
+    "upfrontDepositLabel": "First Semester Tuition Deposit for CoE",
+    "visaFeeBDT": 216000,
+    "healthCoverPerYearBDT": 160000,
+    "otherApplicationFeesBDT": 50000,
+    "airfareOneWayBDT": 120000,
+    "firstYearTotalBDT": {
+      "minimumViable": 2646000,
+      "typical": 4171000
+    }
+  },
+  "scholarships": {
+    "rating": "limited",
+    "typicalMeritWaiverPercent": {
+      "min": 10,
+      "max": 30
+    },
+    "meritThresholdNote": {
+      "en": "Automatic 10-25% tuition fee reduction for HSC GPA >= 4.5 or Bachelor CGPA >= 3.3.",
+      "bn": ""
+    },
+    "needBasedAvailable": false,
+    "assistantshipsAvailable": true,
+    "named": [
+      {
+        "name": "Australia Awards Scholarship",
+        "level": "masters",
+        "coverage": "100% tuition, living stipend, airfare, OSHC",
+        "minIelts": 6.5,
+        "minAcademic": "CGPA 3.0 / 4.0 with 2 years work experience",
+        "deadlineWindow": "February - April annually",
+        "competitiveness": "Extremely high",
+        "url": "https://www.dfat.gov.au/people-to-people/australia-awards"
+      },
+      {
+        "name": "Destination Australia Scholarship",
+        "level": "both",
+        "coverage": "AUD 15,000 per year",
+        "minIelts": 6.5,
+        "minAcademic": "Academic merit for regional campus study",
+        "deadlineWindow": "October - January",
+        "competitiveness": "High",
+        "url": "https://www.education.gov.au/destination-australia"
+      }
+    ],
+    "notes": {
+      "en": "Full funding is primarily limited to PhD research students via RTP stipends or government awards.",
+      "bn": ""
+    }
+  },
+  "work": {
+    "termTimeHoursPerWeek": 20,
+    "holidayHoursPerWeek": 40,
+    "typicalHourlyWageLocal": 28,
+    "realisticMonthlyEarningsBDT": 380800,
+    "coversWhatShareOfLivingCost": "Part-time work covers basic day-to-day living expenses but cannot cover tuition fees.",
+    "dependantsAllowed": true,
+    "dependantWorkRights": "48 hours per fortnight for Masters coursework/Bachelors dependants; unlimited work rights for Masters by Research/PhD dependants."
+  },
+  "postStudy": {
+    "visaName": "Temporary Graduate visa (subclass 485) Post-Higher Education Work stream",
+    "monthsByLevel": {
+      "bachelors": 24,
+      "masters": 24,
+      "phd": 36
+    },
+    "restrictions": {
+      "en": "Age limit reduced to 35 years for Bachelor and Master coursework applicants; must complete CRICOS study of at least 2 academic years.",
+      "bn": null
+    }
+  },
+  "pr": {
+    "rating": "strong",
+    "pathwaySteps": [
+      "Subclass 500 Student Visa",
+      "Subclass 485 Temporary Graduate Visa",
+      "Skill Assessment & EOI Points Test",
+      "Subclass 189/190/491 Skilled Visa or Employer Sponsor"
+    ],
+    "realisticYearsToPR": {
+      "min": 5,
+      "max": 8
+    },
+    "mainRisk": {
+      "en": "Enrolling in generic non-demand business degrees without regional study points or high-demand skill list alignment.",
+      "bn": ""
+    },
+    "recentChanges": "Age limit capped at 35 for Subclass 485; post-COVID visa extensions revoked; Ministerial Direction 115 prioritization introduced."
+  },
+  "visa": {
+    "name": "Student visa",
+    "code": "subclass 500",
+    "processingWeeks": {
+      "min": 4,
+      "max": 8
+    },
+    "interviewRequired": true,
+    "fundsHeldMonths": 6,
+    "priorRefusalImpact": "moderate",
+    "priorRefusalNote": {
+      "en": "All prior visa refusals to Australia or third countries must be declared; failure to disclose results in a 10-year ban under PIC 4020.",
+      "bn": ""
+    },
+    "commonRefusalReasons": [
+      "Failure to satisfy Genuine Student (GS) criteria",
+      "Inability to verify source or liquid balance of financial capacity funds",
+      "Unexplained or undocumented academic or study gaps"
+    ],
+    "bangladeshApprovalRate": 65.0
+  },
+  "intakes": [
+    {
+      "month": "February",
+      "applyByMonth": "October"
+    },
+    {
+      "month": "July",
+      "applyByMonth": "March"
+    },
+    {
+      "month": "November",
+      "applyByMonth": "July"
+    }
+  ],
+  "bangladeshNotes": {
+    "en": "High Commission in Dhaka performs rigorous audits on bank accounts, FDRs, biometrics, and income tax records. Third-party sponsorship outside immediate family is heavily scrutinized.",
+    "bn": ""
+  },
+  "sources": [
+    {
+      "field": "Financial Capacity Requirement",
+      "url": "https://immi.homeaffairs.gov.au/news-media/archive/article?itemId=1196",
+      "publishedOrUpdated": "2024-05-10"
+    },
+    {
+      "field": "Genuine Student Requirement",
+      "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+      "publishedOrUpdated": "2024-03-23"
+    },
+    {
+      "field": "Visa Application Charge & Rules",
+      "url": "https://immi.homeaffairs.gov.au/programs-subsite/files/administration-immigration-programs-16th-edition.pdf",
+      "publishedOrUpdated": "2025-12-31"
+    },
+    {
+      "field": "Academic Entry Guidelines",
+      "url": "https://www.uts.edu.au/for-students/admissions-entry/how-to-apply/international-applicants/academic-entry-requirements",
+      "publishedOrUpdated": "2025-08-01"
+    },
+    {
+      "field": "OSHC Pricing",
+      "url": "https://www.student-insurance.com/blog/oshc-comparison-2026-best-provider-international-students-australia/",
+      "publishedOrUpdated": "2026-01-01"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { X } from 'lucide-react';
+import { X } from '@phosphor-icons/react';
 import './compare.css';
 
 // --- Data ---
@@ -174,7 +174,7 @@ export default function ComparePage() {
 
       {/* Selectors */}
       <div className="mb-8">
-        <p className="meta mb-4 font-semibold text-gray-900">
+        <p className="meta mb-4 font-semibold text-[var(--fg-1)]">
           Add {activeTab === 'country' ? 'Countries' : 'Universities'} to Compare (max 3)
         </p>
         <div className="pill-container">
@@ -230,7 +230,7 @@ export default function ComparePage() {
                         <div className="compare-header-item flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             {activeTab === 'country' && <span>{(data as any).flag}</span>}
-                            <h3 className="h3 text-gray-900 m-0 p-0 leading-tight">{(data as any).name}</h3>
+                            <h3 className="h3 text-[var(--fg-1)] m-0 p-0 leading-tight">{(data as any).name}</h3>
                           </div>
                           <button 
                             className="btn-remove-inline"
@@ -308,7 +308,7 @@ export default function ComparePage() {
                     </tr>
                   </>
                 )}
-                <tr className="bg-gray-50">
+                <tr className="bg-[var(--surface-subtle)]">
                   <td className="feature-name border-none"></td>
                   {currentSelection.map(id => {
                     const data = activeTab === 'country' 

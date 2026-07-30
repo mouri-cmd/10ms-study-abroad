@@ -1,0 +1,491 @@
+{
+  "_comment": "DRAFT university suggestion data — indicative only, not verified. Tiers: 'competitive' needs a strong profile, 'moderate' a solid one, 'accessible' has realistic entry for most qualified applicants. strongFields uses the form's field keys (business, engineering, cs, health, arts, law, science, social). tuitionPerYearBDT is an indicative typical figure converted at mid-2026 rates (AUD 80, GBP 155, CAD 88, NZD 73, USD 122, EUR 132, MYR 28). Verify each list with a senior counsellor and refresh figures alongside the destination cost reviews. Universities here should be ones the counselling team can actually place students in — replace freely.",
+  "lastVerified": null,
+  "universities": {
+    "australia": [
+      {
+        "name": "University of Melbourne",
+        "city": "Melbourne",
+        "tier": "competitive",
+        "strongFields": [
+          "business",
+          "cs",
+          "law",
+          "health",
+          "science"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 3600000,
+          "masters": 3700000
+        }
+      },
+      {
+        "name": "Monash University",
+        "city": "Melbourne",
+        "tier": "competitive",
+        "strongFields": [
+          "engineering",
+          "business",
+          "health",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 3300000,
+          "masters": 3400000
+        }
+      },
+      {
+        "name": "Deakin University",
+        "city": "Melbourne / Geelong",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "health",
+          "cs",
+          "arts"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2800000,
+          "masters": 2900000
+        }
+      },
+      {
+        "name": "Western Sydney University",
+        "city": "Sydney",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "social",
+          "health"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2600000,
+          "masters": 2700000
+        }
+      },
+      {
+        "name": "Charles Sturt University",
+        "city": "Regional NSW",
+        "tier": "accessible",
+        "strongFields": [
+          "business",
+          "cs",
+          "social",
+          "science"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2250000,
+          "masters": 2350000
+        }
+      }
+    ],
+    "uk": [
+      {
+        "name": "University of Manchester",
+        "city": "Manchester",
+        "tier": "competitive",
+        "strongFields": [
+          "business",
+          "engineering",
+          "cs",
+          "law",
+          "science"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 4300000,
+          "masters": 4200000
+        }
+      },
+      {
+        "name": "Coventry University",
+        "city": "Coventry",
+        "tier": "moderate",
+        "strongFields": [
+          "engineering",
+          "business",
+          "health"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2500000,
+          "masters": 2600000
+        }
+      },
+      {
+        "name": "Birmingham City University",
+        "city": "Birmingham",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "arts",
+          "engineering"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2550000,
+          "masters": 2650000
+        }
+      },
+      {
+        "name": "University of Greenwich",
+        "city": "London",
+        "tier": "accessible",
+        "strongFields": [
+          "business",
+          "cs",
+          "engineering"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2400000,
+          "masters": 2550000
+        }
+      },
+      {
+        "name": "Ulster University",
+        "city": "Belfast",
+        "tier": "accessible",
+        "strongFields": [
+          "business",
+          "health",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2450000,
+          "masters": 2500000
+        }
+      }
+    ],
+    "canada": [
+      {
+        "name": "University of Toronto",
+        "city": "Toronto",
+        "tier": "competitive",
+        "strongFields": [
+          "cs",
+          "business",
+          "science",
+          "health",
+          "law"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 5300000,
+          "masters": 4000000
+        }
+      },
+      {
+        "name": "University of Windsor",
+        "city": "Windsor",
+        "tier": "moderate",
+        "strongFields": [
+          "engineering",
+          "cs",
+          "business"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2800000,
+          "masters": 2400000
+        }
+      },
+      {
+        "name": "University of Manitoba",
+        "city": "Winnipeg",
+        "tier": "moderate",
+        "strongFields": [
+          "engineering",
+          "business",
+          "science"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1850000,
+          "masters": 1700000
+        }
+      },
+      {
+        "name": "Memorial University of Newfoundland",
+        "city": "St. John's",
+        "tier": "accessible",
+        "strongFields": [
+          "science",
+          "engineering",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1760000,
+          "masters": 800000
+        }
+      },
+      {
+        "name": "University of Regina",
+        "city": "Regina",
+        "tier": "accessible",
+        "strongFields": [
+          "business",
+          "cs",
+          "social"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1600000,
+          "masters": 1500000
+        }
+      }
+    ],
+    "new_zealand": [
+      {
+        "name": "University of Auckland",
+        "city": "Auckland",
+        "tier": "competitive",
+        "strongFields": [
+          "cs",
+          "engineering",
+          "business",
+          "health",
+          "science"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 3350000,
+          "masters": 3500000
+        }
+      },
+      {
+        "name": "Auckland University of Technology",
+        "city": "Auckland",
+        "tier": "moderate",
+        "strongFields": [
+          "health",
+          "business",
+          "arts"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2770000,
+          "masters": 2900000
+        }
+      },
+      {
+        "name": "University of Waikato",
+        "city": "Hamilton",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "cs",
+          "law"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2480000,
+          "masters": 2600000
+        }
+      },
+      {
+        "name": "Massey University",
+        "city": "Palmerston North / Auckland",
+        "tier": "accessible",
+        "strongFields": [
+          "business",
+          "science",
+          "social"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2550000,
+          "masters": 2650000
+        }
+      },
+      {
+        "name": "Lincoln University",
+        "city": "Christchurch",
+        "tier": "accessible",
+        "strongFields": [
+          "science",
+          "business"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2260000,
+          "masters": 2400000
+        }
+      }
+    ],
+    "usa": [
+      {
+        "name": "Purdue University",
+        "city": "West Lafayette, IN",
+        "tier": "competitive",
+        "strongFields": [
+          "engineering",
+          "cs",
+          "science"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 5300000,
+          "masters": 4400000
+        }
+      },
+      {
+        "name": "Arizona State University",
+        "city": "Tempe, AZ",
+        "tier": "moderate",
+        "strongFields": [
+          "engineering",
+          "business",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 4270000,
+          "masters": 3800000
+        }
+      },
+      {
+        "name": "University of Texas at Arlington",
+        "city": "Arlington, TX",
+        "tier": "moderate",
+        "strongFields": [
+          "engineering",
+          "cs",
+          "health"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 3540000,
+          "masters": 2900000
+        }
+      },
+      {
+        "name": "Texas State University",
+        "city": "San Marcos, TX",
+        "tier": "accessible",
+        "strongFields": [
+          "business",
+          "cs",
+          "science"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 2640000,
+          "masters": 2200000
+        }
+      }
+    ],
+    "malta": [
+      {
+        "name": "University of Malta",
+        "city": "Msida",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "health",
+          "law",
+          "science",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1430000,
+          "masters": 1600000
+        }
+      },
+      {
+        "name": "American University of Malta",
+        "city": "Cospicua",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "engineering"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1190000,
+          "masters": 1300000
+        }
+      },
+      {
+        "name": "MCAST",
+        "city": "Paola",
+        "tier": "accessible",
+        "strongFields": [
+          "engineering",
+          "cs",
+          "arts"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 990000,
+          "masters": 1100000
+        }
+      },
+      {
+        "name": "Global College Malta",
+        "city": "SmartCity",
+        "tier": "accessible",
+        "strongFields": [
+          "business"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1060000,
+          "masters": 1200000
+        }
+      }
+    ],
+    "malaysia": [
+      {
+        "name": "Universiti Malaya",
+        "city": "Kuala Lumpur",
+        "tier": "competitive",
+        "strongFields": [
+          "science",
+          "engineering",
+          "business",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1120000,
+          "masters": 1000000
+        }
+      },
+      {
+        "name": "Taylor's University",
+        "city": "Subang Jaya",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "arts",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1260000,
+          "masters": 1150000
+        }
+      },
+      {
+        "name": "Sunway University",
+        "city": "Kuala Lumpur",
+        "tier": "moderate",
+        "strongFields": [
+          "business",
+          "cs",
+          "health"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 1180000,
+          "masters": 1100000
+        }
+      },
+      {
+        "name": "UCSI University",
+        "city": "Kuala Lumpur",
+        "tier": "accessible",
+        "strongFields": [
+          "health",
+          "business",
+          "cs"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 840000,
+          "masters": 800000
+        }
+      },
+      {
+        "name": "Multimedia University (MMU)",
+        "city": "Cyberjaya",
+        "tier": "accessible",
+        "strongFields": [
+          "cs",
+          "engineering"
+        ],
+        "tuitionPerYearBDT": {
+          "bachelors": 780000,
+          "masters": 750000
+        }
+      }
+    ]
+  }
+}

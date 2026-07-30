@@ -1,7 +1,7 @@
 import React from 'react';
 import { programs, universities } from '../../../../../data/destinations';
 import Link from 'next/link';
-import { Clock, BookOpen, Briefcase, Award, ArrowLeft } from 'lucide-react';
+import { Clock, BookOpen, Briefcase, Medal, ArrowLeft } from '@phosphor-icons/react/ssr';
 import './program.css';
 
 export default async function ProgramPage({ params }: { params: Promise<{ country: string, university: string, program: string }> }) {
@@ -109,7 +109,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ countr
               {/* 5. Scholarships */}
               {prog.related_scholarships.length > 0 && (
                 <div className="card bg-alt">
-                  <h3 className="mb-4 flex items-center gap-2 text-navy"><Award size={20} color="var(--premium-gold-2)"/> Related Scholarships</h3>
+                  <h3 className="mb-4 flex items-center gap-2 text-navy"><Medal size={20} color="var(--premium-gold-2)"/> Related Scholarships</h3>
                   <ul className="req-list">
                     {prog.related_scholarships.map(schol => (
                       <li key={schol} className="font-semibold text-teal">{schol}</li>

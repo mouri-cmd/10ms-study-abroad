@@ -2,23 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  Clock, 
-  ChevronRight, 
-  MapPin, 
-  DollarSign, 
-  BookOpen, 
-  Award,
-  Calendar,
-  Briefcase,
-  Users,
-  CheckCircle2,
-  BarChart2,
-  X,
-  Sparkles,
-  ArrowRight,
-  BookOpenCheck
-} from 'lucide-react';
+import { Clock, CaretRight, MapPin, CurrencyDollar, BookOpen, Medal, Calendar, Briefcase, Users, CheckCircle, ChartBar, X, Sparkle, ArrowRight, BookOpenText } from '@phosphor-icons/react';
 import './detail.css';
 
 interface ArticleData {
@@ -339,7 +323,7 @@ export default function ArticleDetailPage({ params }: { params: Promise<{ slug: 
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="card text-center max-w-md p-8 shadow-lg">
           <h2 className="text-2xl font-bold mb-4">Article Not Found</h2>
-          <p className="text-slate-500 mb-6">The article you are looking for does not exist or has been moved.</p>
+          <p className="text-[var(--fg-3)] mb-6">The article you are looking for does not exist or has been moved.</p>
           <Link href="/resources" className="btn btn-primary w-full">Back to Resources</Link>
         </div>
       </div>
@@ -386,12 +370,12 @@ export default function ArticleDetailPage({ params }: { params: Promise<{ slug: 
       <div className="container">
         <div className="takeaways-card">
           <h3 className="takeaways-title">
-            <BookOpenCheck size={20} className="text-emerald-500" /> What You Will Learn:
+            <BookOpenText size={20} className="text-emerald-500" /> What You Will Learn:
           </h3>
           <div className="takeaways-grid">
             {article.takeaways.map((item, idx) => (
               <div key={idx} className="takeaway-item">
-                <CheckCircle2 size={16} className="takeaway-icon" />
+                <CheckCircle size={16} className="takeaway-icon" />
                 <p className="takeaway-text">{item}</p>
               </div>
             ))}
@@ -440,7 +424,7 @@ export default function ArticleDetailPage({ params }: { params: Promise<{ slug: 
                     <div className="checklist-grid">
                       {sec.checklist.map((item, cIdx) => (
                         <div key={cIdx} className="checklist-item">
-                          <CheckCircle2 size={16} className="checklist-icon" />
+                          <CheckCircle size={16} className="checklist-icon" />
                           <p className="checklist-text">{item}</p>
                         </div>
                       ))}

@@ -1,0 +1,266 @@
+{
+  "id": "new_zealand",
+  "name": {
+    "en": "New Zealand",
+    "bn": ""
+  },
+  "lastVerified": "2026-07-27",
+  "levels": {
+    "bachelors": {
+      "ieltsMinOverall": 6.0,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.0,
+      "ieltsCompetitive": 7,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Bangladeshi HSC alone generally requires a 1-year foundation pathway or 1 year of completed university study in Bangladesh for direct admission at major public universities.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "masters": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 2.75,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Requires a 4-year Bachelor degree from a recognized university in Bangladesh with a minimum B average / CGPA 2.75.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    },
+    "diploma": {
+      "ieltsMinOverall": 5.5,
+      "ieltsNoBandBelow": 5.0,
+      "ieltsExpected": 6,
+      "ieltsCompetitive": 6.5,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Level 5/6 Diplomas and Level 7 Graduate Diplomas serve as common bridging options for HSC holders.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "phd": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 7.0,
+      "ieltsCompetitive": 7.5,
+      "academicIndexMin": 3.3,
+      "academicIndexCompetitive": 3.6,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Requires strong research proposal and supervisor acceptance. PhD students pay domestic tuition fees in NZ.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    }
+  },
+  "englishAlternatives": {
+    "pte": {
+      "bachelors": 55,
+      "masters": 60
+    },
+    "toefl": {
+      "bachelors": 80,
+      "masters": 90
+    },
+    "duolingo": {
+      "bachelors": null,
+      "masters": null
+    },
+    "moiAccepted": false,
+    "moiConditions": {
+      "en": "Medium of Instruction (MOI) certificates from Bangladeshi universities are not accepted by major NZ public institutions.",
+      "bn": ""
+    },
+    "ukviRequired": false,
+    "pathwayAvailable": true,
+    "pathwayMinIelts": 5.5
+  },
+  "gapTolerance": {
+    "bachelorsYears": 2,
+    "mastersYears": 5,
+    "documentationRequired": true,
+    "notes": {
+      "en": "Gaps exceeding 6 months require full documentation (employment experience, tax returns, salary bank statements). Unexplained gaps trigger visa refusals under Genuine Student criteria.",
+      "bn": ""
+    },
+    "diplomaYears": 0
+  },
+  "cost": {
+    "currency": "NZD",
+    "exchangeRateToBDT": 72,
+    "exchangeRateDate": "2026-02-15",
+    "tuitionPerYearBDT": {
+      "bachelors": {
+        "low": 2500000,
+        "typical": 3500000,
+        "high": 5000000
+      },
+      "masters": {
+        "low": 2500000,
+        "typical": 3500000,
+        "high": 5000000
+      }
+    },
+    "livingPerYearBDT": {
+      "low": 1500000,
+      "typical": 2000000,
+      "high": 2500000
+    },
+    "visaMandatedFundsBDT": 2000000,
+    "upfrontDepositBDT": 0,
+    "upfrontDepositLabel": "Full 1st Year Tuition Fee (Payable after Approval in Principle)",
+    "visaFeeBDT": 61000,
+    "healthCoverPerYearBDT": 57600,
+    "otherApplicationFeesBDT": 30000,
+    "airfareOneWayBDT": 150000,
+    "firstYearTotalBDT": {
+      "minimumViable": 3500000,
+      "typical": 4500000
+    }
+  },
+  "scholarships": {
+    "rating": "limited",
+    "typicalMeritWaiverPercent": {
+      "min": 10,
+      "max": 25
+    },
+    "meritThresholdNote": {
+      "en": "Institutional scholarships usually offer flat NZD $5,000--$10,000 fee discounts requiring CGPA 3.5/4.0 or HSC GPA 4.8+.",
+      "bn": ""
+    },
+    "needBasedAvailable": false,
+    "assistantshipsAvailable": true,
+    "named": [
+      {
+        "name": "Manaaki New Zealand Scholarships",
+        "level": "both",
+        "coverage": "Full tuition, living allowance, airfare, insurance",
+        "minIelts": 6.5,
+        "minAcademic": "First Class / CGPA 3.5",
+        "deadlineWindow": "February - July",
+        "competitiveness": "Extremely High",
+        "url": "https://www.immigration.govt.nz/visas/fee-paying-student-visa/"
+      },
+      {
+        "name": "University of Auckland International Student Excellence Scholarship",
+        "level": "both",
+        "coverage": "Up to NZD $10,000 tuition reduction",
+        "minIelts": 6.5,
+        "minAcademic": "CGPA 3.5 / 4.0",
+        "deadlineWindow": "October / April",
+        "competitiveness": "High",
+        "url": "https://www.businessmasters.auckland.ac.nz/programme-information/master-of-international-business/"
+      }
+    ],
+    "notes": {
+      "en": "Full scholarships are rare outside MFAT Manaaki NZ government awards and PhD funding. Most university awards are partial tuition waivers.",
+      "bn": ""
+    }
+  },
+  "work": {
+    "termTimeHoursPerWeek": 25,
+    "holidayHoursPerWeek": 40,
+    "typicalHourlyWageLocal": 23.5,
+    "realisticMonthlyEarningsBDT": 180000,
+    "coversWhatShareOfLivingCost": "60% to 80% of living expenses; 0% of tuition fees",
+    "dependantsAllowed": true,
+    "dependantWorkRights": "Full open work rights for partners of Master's (Level 9), PhD (Level 10), or Green List Level 7/8 students; Visitor status only for general Bachelor's."
+  },
+  "postStudy": {
+    "visaName": "Post Study Work Visa",
+    "monthsByLevel": {
+      "bachelors": 36,
+      "masters": 36,
+      "phd": 36
+    },
+    "restrictions": {
+      "en": "1-year PSWV applies to non-degree Level 7 diplomas unless on the Green List or expanding eligibility criteria.",
+      "bn": ""
+    }
+  },
+  "pr": {
+    "rating": "moderate",
+    "pathwaySteps": [
+      "Fee Paying Student Visa completion",
+      "Post Study Work Visa (up to 3 years)",
+      "Skilled Employment in ANZSCO Level 1-3 paying median wage",
+      "Skilled Migrant Category (SMC) Resident Visa or Green List Straight to Residence"
+    ],
+    "realisticYearsToPR": {
+      "min": 5,
+      "max": 6
+    },
+    "mainRisk": {
+      "en": "Inability to secure an ANZSCO Level 1-3 job paying at or above the official median wage threshold within the 3-year PSWV period.",
+      "bn": ""
+    },
+    "recentChanges": "SMC shifted to a simplified 6-point system where higher qualifications (Level 9 Masters = 5 points) directly accelerate residence eligibility."
+  },
+  "visa": {
+    "name": "Fee Paying Student Visa",
+    "code": "FPSV",
+    "processingWeeks": {
+      "min": 6,
+      "max": 12
+    },
+    "interviewRequired": false,
+    "fundsHeldMonths": 6,
+    "priorRefusalImpact": "moderate",
+    "priorRefusalNote": {
+      "en": "Must be declared. Undisclosed prior refusals result in immediate character refusal under Section 53.",
+      "bn": ""
+    },
+    "commonRefusalReasons": [
+      "Unverified source of funds or recent unexplained bank deposits",
+      "Failure to meet Genuine Student criteria / weak career progression rationale",
+      "Unexplained academic study gaps exceeding 6 months"
+    ],
+    "bangladeshApprovalRate": null
+  },
+  "intakes": [
+    {
+      "month": "February",
+      "applyByMonth": "October"
+    },
+    {
+      "month": "July",
+      "applyByMonth": "March"
+    }
+  ],
+  "bangladeshNotes": {
+    "en": "INZ heavily scrutinizes Bangladeshi financial documentation. Use of ANZ Funds Transfer Scheme (FTS) and clean 6-month bank histories is strongly recommended.",
+    "bn": ""
+  },
+  "sources": [
+    {
+      "field": "livingPerYearBDT",
+      "url": "https://www.immigration.govt.nz/visas/fee-paying-student-visa/",
+      "publishedOrUpdated": "2025-11-03"
+    },
+    {
+      "field": "work.termTimeHoursPerWeek",
+      "url": "https://www.immigration.govt.nz/about-us/news-centre/apply-early-and-get-ahead-of-the-student-visa-peak/",
+      "publishedOrUpdated": "2025-11-03"
+    },
+    {
+      "field": "postStudy.monthsByLevel",
+      "url": "https://www.immigration.govt.nz/visas/post-study-work-visa/",
+      "publishedOrUpdated": "2026-01-15"
+    },
+    {
+      "field": "levels.masters.ieltsMinOverall",
+      "url": "https://www.businessmasters.auckland.ac.nz/programme-information/master-of-international-business/",
+      "publishedOrUpdated": "2025-08-01"
+    }
+  ]
+}

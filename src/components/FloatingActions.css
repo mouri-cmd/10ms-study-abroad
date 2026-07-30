@@ -12,6 +12,10 @@
   z-index: 90;
 }
 
+:root[data-theme='dark'] .mobile-sticky-cta {
+  background: rgba(27, 30, 35, 0.85);
+}
+
 .w-full {
   width: 100%;
 }

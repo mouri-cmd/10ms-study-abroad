@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, Award, FileText, ChevronRight, CheckCircle, Globe, MessageSquare } from 'lucide-react';
+import { Medal, CaretRight, Globe, ChatCircle } from '@phosphor-icons/react';
+import HomeHero from '../components/HomeHero';
 import './page.css';
 
 // Coordinates for the interactive map pins matching dest.id in destinations.ts
@@ -276,80 +277,11 @@ export default function HomeClient({ destinations }: HomeClientProps) {
 
   return (
     <div className="home">
-      {/* 1. Hero Section (Split layout inspired by upGrad) */}
-      <section className="hero-split-section">
-        <div className="container hero-split-container">
-          <div className="hero-split-left">
-            <h1 className="hero-split-title bn">
-              তোমার পথ, তোমার গন্তব্য
-            </h1>
-            <p className="hero-split-subtitle">
-              From aspirations to admissions, trusted study abroad guidance from 10 Minute School
-            </p>
-            <Link href="/counseling" className="btn btn-primary btn-pulse bn hero-split-cta">
-              ফ্রি কাউন্সেলিং বুক করো
-            </Link>
-          </div>
-          <div className="hero-split-right">
-            <div className="hero-image-wrapper">
-              <img 
-                src="/images/10ms_study_abroad_hero.jpg" 
-                alt="10MS Study Abroad Student" 
-                className="hero-img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. Hero (ported wholesale from study-abroad-matcher's homepage, incl. both CTAs) */}
+      <HomeHero />
 
-      {/* Floating Search Box Card */}
-      <div className="hero-search-wrapper container">
-        <div className="search-card card">
-          <div className="search-box-inner">
-            <Search className="search-icon" size={20} color="var(--fg-2)" />
-            <input 
-              type="text" 
-              className="search-input bn" 
-              placeholder="দেশ, বিশ্ববিদ্যালয় বা প্রোগ্রাম খোঁজো..."
-            />
-            <button className="btn btn-primary search-btn bn">খুঁজুন</button>
-          </div>
-          
-          <div className="quick-filters bn">
-            <span className="filters-label">জনপ্রিয়:</span>
-            <Link href="/destinations/united-kingdom" className="badge">UK</Link>
-            <Link href="/destinations/united-states" className="badge">USA</Link>
-            <span className="badge">IELTS ছাড়াই</span>
-            <Link href="/scholarships" className="badge">স্কলারশিপ</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Thin Stats Strip directly below Hero/Search */}
-      <section className="stats-strip-section">
-        <div className="container">
-          <div className="stats-strip-grid">
-            <div className="stats-strip-item">
-              <span className="stats-number bn">৫০০+</span>
-              <span className="stats-label bn">সফল শিক্ষার্থী</span>
-            </div>
-            <div className="stats-strip-item">
-              <span className="stats-number bn">২০+</span>
-              <span className="stats-label bn">গন্তব্য দেশ</span>
-            </div>
-            <div className="stats-strip-item">
-              <span className="stats-number bn">১৬০+</span>
-              <span className="stats-label bn">বিশ্ববিদ্যালয়</span>
-            </div>
-            <div className="stats-strip-item">
-              <span className="stats-number bn">১০০%</span>
-              <span className="stats-label bn">ফ্রি সেশন</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive World Map Section (NEW) */}
+      {/* Interactive World Map Section — "একটাই পথ, একাধিক গন্তব্য" and everything
+          below it is the main site's original content, kept as-is. */}
       <InteractiveMapSection destinations={destinations} lang={lang} />
 
       {/* 2. "THE SMARTEST WAY TO STUDY ABROAD" SECTION */}
@@ -376,7 +308,7 @@ export default function HomeClient({ destinations }: HomeClientProps) {
             
             <div className="feature-minimal-item">
               <div className="feature-icon-box">
-                <Award size={28} />
+                <Medal size={28} />
               </div>
               <h3 className="feature-title bn">Verified Universities</h3>
               <p className="feature-desc bn">বিশ্বসেরা ও ভেরিফাইড সব বিশ্ববিদ্যালয়ের সঠিক এডমিশন আপডেট।</p>
@@ -384,7 +316,7 @@ export default function HomeClient({ destinations }: HomeClientProps) {
             
             <div className="feature-minimal-item">
               <div className="feature-icon-box">
-                <MessageSquare size={28} />
+                <ChatCircle size={28} />
               </div>
               <h3 className="feature-title bn">WhatsApp Support</h3>
               <p className="feature-desc bn">ভর্তি সংক্রান্ত যেকোনো প্রয়োজনে সার্বক্ষণিক হোয়াটসঅ্যাপ সহায়তা।</p>
@@ -399,7 +331,7 @@ export default function HomeClient({ destinations }: HomeClientProps) {
           <div className="destinations-header">
             <h2 className="bn">জনপ্রিয় দেশসমূহ</h2>
             <Link href="/destinations" className="view-all-link bn">
-              সব দেখো <ChevronRight size={16}/>
+              সব দেখো <CaretRight size={16}/>
             </Link>
           </div>
 
@@ -418,7 +350,7 @@ export default function HomeClient({ destinations }: HomeClientProps) {
                   ))}
                 </div>
                 <Link href={`/destinations/${country.slug}`} className="dest-card-explore-btn bn">
-                  বিস্তারিত দেখো <ChevronRight size={16}/>
+                  বিস্তারিত দেখো <CaretRight size={16}/>
                 </Link>
               </div>
             ))}
@@ -471,7 +403,7 @@ export default function HomeClient({ destinations }: HomeClientProps) {
               </Link>
             </div>
             <div className="quiz-visual-restyle">
-              <Award size={64} color="var(--premium-gold-2)" />
+              <Medal size={64} color="var(--premium-gold-2)" />
             </div>
           </div>
         </div>
@@ -513,11 +445,6 @@ export default function HomeClient({ destinations }: HomeClientProps) {
             })}
           </div>
           
-          <div className="more-stories-wrapper">
-            <Link href="/resources" className="more-stories-link bn">
-              সব সফলতার গল্প দেখো <ChevronRight size={16}/>
-            </Link>
-          </div>
         </div>
       </section>
 

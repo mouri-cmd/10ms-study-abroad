@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Video, MessageCircle, Phone, Star } from 'lucide-react';
+import { Calendar, VideoCamera, ChatCircleDots, Phone, Star } from '@phosphor-icons/react/ssr';
 import './counseling.css';
 
 export default function CounselingPage() {
@@ -53,7 +53,7 @@ export default function CounselingPage() {
             <div className="mb-4">
               <label className="block mb-2 font-semibold">Preferred Format</label>
               <div className="flex gap-4">
-                <label className="flex items-center gap-2"><input type="radio" name="format" defaultChecked /> Video Call</label>
+                <label className="flex items-center gap-2"><input type="radio" name="format" defaultChecked /> VideoCamera Call</label>
                 <label className="flex items-center gap-2"><input type="radio" name="format" /> Phone Call</label>
                 <label className="flex items-center gap-2"><input type="radio" name="format" /> WhatsApp</label>
               </div>

@@ -1,0 +1,271 @@
+{
+  "id": "malta",
+  "name": {
+    "en": "Malta",
+    "bn": ""
+  },
+  "lastVerified": "2026-07-27",
+  "levels": {
+    "bachelors": {
+      "ieltsMinOverall": 6.0,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "HSC from Bangladesh requires a 1-year Foundation course. Direct entry requires A-Levels (min CC).",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "masters": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 2.75,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Second Class (Honours) or Category II minimum. Highly competitive for IT and Business. Backlogs heavily scrutinized.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    },
+    "diploma": {
+      "ieltsMinOverall": 5.5,
+      "ieltsNoBandBelow": 5.0,
+      "ieltsExpected": 6.0,
+      "ieltsCompetitive": 6.0,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Often mapped to MQF Level 4 or 5. Foundation studies serve as a bridge to UG.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "phd": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 7.0,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 3.0,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "optional",
+      "notes": {
+        "en": "Admissions rely heavily on research proposals and securing a faculty supervisor.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    }
+  },
+  "englishAlternatives": {
+    "pte": {
+      "bachelors": null,
+      "masters": null
+    },
+    "toefl": {
+      "bachelors": null,
+      "masters": null
+    },
+    "duolingo": {
+      "bachelors": 110,
+      "masters": 115
+    },
+    "moiAccepted": true,
+    "moiConditions": {
+      "en": "MOI accepted for Master's applicants only if the Bachelor's degree was",
+      "bn": ""
+    },
+    "ukviRequired": false,
+    "pathwayAvailable": true,
+    "pathwayMinIelts": 5.5
+  },
+  "gapTolerance": {
+    "bachelorsYears": 3,
+    "mastersYears": 7,
+    "documentationRequired": true,
+    "notes": {
+      "en": "Gaps must be entirely justified with verifiable employment records and tax returns to pass the genuine student test.",
+      "bn": ""
+    },
+    "diplomaYears": 0
+  },
+  "cost": {
+    "currency": "EUR",
+    "exchangeRateToBDT": 129,
+    "exchangeRateDate": "2026-07-27",
+    "tuitionPerYearBDT": {
+      "bachelors": {
+        "low": 600000,
+        "typical": 700000,
+        "high": 1000000
+      },
+      "masters": {
+        "low": 600000,
+        "typical": 700000,
+        "high": 1000000
+      }
+    },
+    "livingPerYearBDT": {
+      "low": 1000000,
+      "typical": 1500000,
+      "high": 2000000
+    },
+    "visaMandatedFundsBDT": 1500000,
+    "upfrontDepositBDT": 400000,
+    "upfrontDepositLabel": "50% of first year tuition required for Final Acceptance Letter",
+    "visaFeeBDT": 14000,
+    "healthCoverPerYearBDT": 30000,
+    "otherApplicationFeesBDT": 15000,
+    "airfareOneWayBDT": 100000,
+    "firstYearTotalBDT": {
+      "minimumViable": 1000000,
+      "typical": 1500000
+    }
+  },
+  "scholarships": {
+    "rating": "very_limited",
+    "typicalMeritWaiverPercent": {
+      "min": 10,
+      "max": 20
+    },
+    "meritThresholdNote": {
+      "en": "Requires CGPA 3.5+ and early application; applies only to tuition, not living costs.",
+      "bn": ""
+    },
+    "needBasedAvailable": false,
+    "assistantshipsAvailable": true,
+    "named": [
+      {
+        "name": "Erasmus Mundus Joint Master Degrees",
+        "level": "masters",
+        "coverage": "Full tuition, travel, and living stipend",
+        "minIelts": 6.5,
+        "minAcademic": "First Class / CGPA 3.5",
+        "deadlineWindow": "January to March",
+        "competitiveness": "Extremely high",
+        "url": "https://www.um.edu.mt/study/admissionsadvice/international/"
+      },
+      {
+        "name": "Endeavour Scholarship Scheme",
+        "level": "both",
+        "coverage": "Partial up to 12,000 EUR/year",
+        "minIelts": 6.5,
+        "minAcademic": "Second Class Upper",
+        "deadlineWindow": "Varies by cohort",
+        "competitiveness": "High",
+        "url": "https://educationvibes.in/study-in-malta"
+      }
+    ],
+    "notes": {
+      "en": "Bangladeshi students should not rely on institutional funding to clear the visa financial requirements. Loans must be secured in Bangladesh.",
+      "bn": ""
+    }
+  },
+  "work": {
+    "termTimeHoursPerWeek": 20,
+    "holidayHoursPerWeek": 40,
+    "typicalHourlyWageLocal": 10,
+    "realisticMonthlyEarningsBDT": 120000,
+    "coversWhatShareOfLivingCost": "60-70%",
+    "dependantsAllowed": false,
+    "dependantWorkRights": "None"
+  },
+  "postStudy": {
+    "visaName": "Graduate Job Search Permit",
+    "monthsByLevel": {
+      "bachelors": 9,
+      "masters": 12,
+      "phd": 12
+    },
+    "restrictions": {
+      "en": "Must hold an MQF Level 7/8 for 12 months. Application must be lodged within 60 days of course completion. Unrestricted work rights.",
+      "bn": ""
+    }
+  },
+  "pr": {
+    "rating": "moderate",
+    "pathwaySteps": [
+      "Graduate Job Search Permit (1 year)",
+      "Single Work Permit (1-3 years renewable)",
+      "Long-Term Residence (after 5 years on Single Permit)"
+    ],
+    "realisticYearsToPR": {
+      "min": 6,
+      "max": 7
+    },
+    "mainRisk": {
+      "en": "Time on student visa does not count towards the 5-year requirement. Loss of employment on a Single Permit jeopardizes residency.",
+      "bn": ""
+    },
+    "recentChanges": "Introduction of mandatory Pre-Departure Course and live English interviews for initial Single Permit applicants (TCNs) in 2026."
+  },
+  "visa": {
+    "name": "National Long-Stay Visa",
+    "code": "Type D",
+    "processingWeeks": {
+      "min": 8,
+      "max": 12
+    },
+    "interviewRequired": true,
+    "fundsHeldMonths": 3,
+    "priorRefusalImpact": "high",
+    "priorRefusalNote": {
+      "en": "Schengen Information System (SIS) logs previous EU refusals. Will trigger elevated scrutiny.",
+      "bn": ""
+    },
+    "commonRefusalReasons": [
+      "Sudden unseasoned bank deposits",
+      "Incomplete apostilled documentation",
+      "Lack of clear academic progression",
+      "Failure to meet 75% minimum wage living cost formula"
+    ],
+    "bangladeshApprovalRate": null
+  },
+  "intakes": [
+    {
+      "month": "October",
+      "applyByMonth": "July"
+    },
+    {
+      "month": "February",
+      "applyByMonth": "October"
+    }
+  ],
+  "bangladeshNotes": {
+    "en": "All original certificates require MOFA attestation prior to VFS submission. High risk of refusal if financial documents show unseasoned funds.",
+    "bn": ""
+  },
+  "sources": [
+    {
+      "field": "visaMandatedFunds",
+      "url": "https://identita.gov.mt/wp-content/uploads/2025/08/03a.-List-of-Required-Documents-Student_National_Visa.pdf",
+      "publishedOrUpdated": "2025-08-01"
+    },
+    {
+      "field": "minimumWage2026",
+      "url": "https://gbs.edu.mt/blog/2026-malta-student-visa-updates-what-changed-for-international-students/",
+      "publishedOrUpdated": "2026-01-01"
+    },
+    {
+      "field": "postStudyWork",
+      "url": "https://aaraconsultancy.com/malta-post-study-work-visa-2025/",
+      "publishedOrUpdated": "2025-01-01"
+    },
+    {
+      "field": "ieltsRequirements",
+      "url": "https://www.um.edu.mt/study/admissionsadvice/international/englishlanguagerequirements/",
+      "publishedOrUpdated": "2025-07-01"
+    },
+    {
+      "field": "vfsDhakaFees",
+      "url": "https://visa.vfsglobal.com/bgd/en/aut/attend-centre/dhaka",
+      "publishedOrUpdated": "2026-05-20"
+    }
+  ]
+}

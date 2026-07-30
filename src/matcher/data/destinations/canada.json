@@ -1,0 +1,271 @@
+{
+  "id": "canada",
+  "name": {
+    "en": "Canada",
+    "bn": ""
+  },
+  "lastVerified": "2026-07-27",
+  "levels": {
+    "bachelors": {
+      "ieltsMinOverall": 6,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "optional",
+      "notes": {
+        "en": "HSC GPA out of 5.0 accepted directly. PAL required for study permit. Mandatory CLB 7 for PGWP upon graduation.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "masters": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 7.0,
+      "ieltsCompetitive": 7.5,
+      "academicIndexMin": 2.5,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "optional",
+      "notes": {
+        "en": "CGPA out of 4.0 from recognized Bangladeshi university. GRE/GMAT required for top tier. Exempt from PAL cap. Retains spousal work privileges and 3-year PGWP.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    },
+    "diploma": {
+      "ieltsMinOverall": 5.5,
+      "ieltsNoBandBelow": 5,
+      "ieltsExpected": 6,
+      "ieltsCompetitive": 7,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 4.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "PAL required. Effective Nov 1, 2024, PGWP eligibility tied to 900+ labor shortage fields of study and CLB 5 language score. Spousal work permit excluded.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "phd": {
+      "ieltsMinOverall": 7.0,
+      "ieltsNoBandBelow": 6.5,
+      "ieltsExpected": 7.5,
+      "ieltsCompetitive": 7.5,
+      "academicIndexMin": 3.3,
+      "academicIndexCompetitive": 3.7,
+      "standardisedTest": "optional",
+      "notes": {
+        "en": "Thesis supervisor approval required. Fully funded packages common via assistantships and external scholarships. Exempt from PAL cap.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    }
+  },
+  "englishAlternatives": {
+    "pte": {
+      "bachelors": 58,
+      "masters": 65
+    },
+    "toefl": {
+      "bachelors": 83,
+      "masters": 88
+    },
+    "duolingo": {
+      "bachelors": 115,
+      "masters": 125
+    },
+    "moiAccepted": false,
+    "moiConditions": {
+      "en": "MOI certificates from Bangladeshi institutions are generally rejected by IRCC and Canadian DLIs. Standardized tests (IELTS/PTE/TOEFL) are required.",
+      "bn": ""
+    },
+    "ukviRequired": false,
+    "pathwayAvailable": true,
+    "pathwayMinIelts": 6
+  },
+  "gapTolerance": {
+    "bachelorsYears": 3,
+    "mastersYears": 5,
+    "documentationRequired": true,
+    "notes": {
+      "en": "Gaps over 6 months require clear explanations. Master's gaps must be backed by verifiable employment (bank-paid salary, tax returns). Gaps over 2 years post-HSC heavily increase undergraduate visa refusal risk.",
+      "bn": ""
+    },
+    "diplomaYears": 0
+  },
+  "cost": {
+    "currency": "CAD",
+    "exchangeRateToBDT": 87.5,
+    "exchangeRateDate": "2026-03-24",
+    "tuitionPerYearBDT": {
+      "bachelors": {
+        "low": 2500000,
+        "typical": 3000000,
+        "high": 5000000
+      },
+      "masters": {
+        "low": 2500000,
+        "typical": 3000000,
+        "high": 5000000
+      }
+    },
+    "livingPerYearBDT": {
+      "low": 1000000,
+      "typical": 1500000,
+      "high": 2200000
+    },
+    "visaMandatedFundsBDT": 2000000,
+    "upfrontDepositBDT": 1200000,
+    "upfrontDepositLabel": "Guaranteed Investment Certificate (GIC) / 1st Year Living Fund Deposit",
+    "visaFeeBDT": 13050,
+    "healthCoverPerYearBDT": 7482,
+    "otherApplicationFeesBDT": 78300,
+    "airfareOneWayBDT": 131250,
+    "firstYearTotalBDT": {
+      "minimumViable": 2430082,
+      "typical": 3630082
+    }
+  },
+  "scholarships": {
+    "rating": "limited",
+    "typicalMeritWaiverPercent": {
+      "min": 10,
+      "max": 30
+    },
+    "meritThresholdNote": {
+      "en": "Automatic entrance scholarships trigger at HSC GPA 4.80+ or A Level AAB+ (CAD 1,000 - 10,000 waiver). Full ride options are extremely rare.",
+      "bn": ""
+    },
+    "needBasedAvailable": false,
+    "assistantshipsAvailable": true,
+    "named": [
+      {
+        "name": "Lester B. Pearson International Scholarship",
+        "level": "bachelors",
+        "coverage": "Full tuition, living expenses, books, and incidental fees for 4 years (100%)",
+        "minIelts": 7.5,
+        "minAcademic": "HSC GPA 5.00 / A*A*A profile",
+        "deadlineWindow": "November - December",
+        "competitiveness": "Extremely High (fewer than 40 awarded globally)",
+        "url": "https://www.utoronto.ca"
+      },
+      {
+        "name": "Vanier Canada Graduate Scholarships",
+        "level": "phd",
+        "coverage": "CAD 50,000 per year for 3 years",
+        "minIelts": 7.0,
+        "minAcademic": "CGPA 3.7+ out of 4.0",
+        "deadlineWindow": "July - November",
+        "competitiveness": "Extremely High",
+        "url": "https://vanier.gc.ca"
+      }
+    ],
+    "notes": {
+      "en": "Undergraduate applicants must plan for full self-funding. Research-based graduate students receive assistantships (TA/RA) covering tuition plus stipend.",
+      "bn": ""
+    }
+  },
+  "work": {
+    "termTimeHoursPerWeek": 24,
+    "holidayHoursPerWeek": 40,
+    "typicalHourlyWageLocal": 18,
+    "realisticMonthlyEarningsBDT": 250560,
+    "coversWhatShareOfLivingCost": "Covers 50% - 65% of living costs; cannot pay for tuition fees.",
+    "dependantsAllowed": true,
+    "dependantWorkRights": "Spousal Open Work Permit limited to spouses of students in Master's (16+ months), PhD, or professional programs. Excluded for college diploma and undergraduate degree spouses."
+  },
+  "postStudy": {
+    "visaName": "Post-Graduation Work Permit (PGWP)",
+    "monthsByLevel": {
+      "bachelors": 36,
+      "masters": 36,
+      "phd": 36
+    },
+    "restrictions": {
+      "en": "College graduates must graduate from a labor shortage field of study and achieve CLB 5. University graduates require CLB 7 in language test.",
+      "bn": ""
+    }
+  },
+  "pr": {
+    "rating": "strong",
+    "pathwaySteps": [
+      "Graduate from PGWP eligible program",
+      "Obtain 1 year TEER 0, 1, 2, or 3 skilled Canadian work experience",
+      "Submit Express Entry CEC or Provincial Nominee Program (PNP) profile",
+      "Receive ITA and apply for Permanent Residence"
+    ],
+    "realisticYearsToPR": {
+      "min": 5,
+      "max": 8
+    },
+    "mainRisk": {
+      "en": "High Express Entry CRS score cut-offs (500+), temporary resident volume reductions, failure to meet CLB 7, or non-skilled employment.",
+      "bn": ""
+    },
+    "recentChanges": "National cap on study permit intake, PGWP field of study restrictions for college programs, CLB 7/5 language benchmark requirements, and restriction of spousal work permits."
+  },
+  "visa": {
+    "name": "Study Permit and Temporary Resident Visa",
+    "code": "Subclass SP / TRV",
+    "processingWeeks": {
+      "min": 8,
+      "max": 16
+    },
+    "interviewRequired": false,
+    "fundsHeldMonths": 6,
+    "priorRefusalImpact": "moderate",
+    "priorRefusalNote": {
+      "en": "Prior refusals must be fully disclosed. Hiding a refusal leads to a 5-year ban under misrepresentation. Refusals require GCMS notes and new corrective evidence.",
+      "bn": ""
+    },
+    "commonRefusalReasons": [
+      "Insufficient unverified liquid funds or lack of 4-month bank statement history",
+      "Weak ties to Bangladesh and failure to demonstrate intent to depart",
+      "Illogical program choice not aligned with academic/career background",
+      "Unexplained study gaps"
+    ],
+    "bangladeshApprovalRate": null
+  },
+  "intakes": [
+    {
+      "month": "September (Fall)",
+      "applyByMonth": "January - March"
+    },
+    {
+      "month": "January (Winter)",
+      "applyByMonth": "July - September"
+    },
+    {
+      "month": "May (Spring/Summer)",
+      "applyByMonth": "November - December"
+    }
+  ],
+  "bangladeshNotes": {
+    "en": "Requires Provincial Attestation Letter (PAL) for undergraduate entry. IRCC heavily scrutinizes land valuation certificates and third-party sponsors; liquid funds in 4-month statements are strictly enforced.",
+    "bn": ""
+  },
+  "sources": [
+    {
+      "field": "cost.livingPerYearBDT",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+      "publishedOrUpdated": "2024-12-01"
+    },
+    {
+      "field": "postStudy.restrictions",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cimm-nov-25-2024/post-graduation-work-permit-program-labour-market-impact.html",
+      "publishedOrUpdated": "2024-11-25"
+    },
+    {
+      "field": "work.dependantWorkRights",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/transparency/committees/cow-jun-9-2025/temporary-resident-reductions.html",
+      "publishedOrUpdated": "2025-06-09"
+    },
+    {
+      "field": "visa.processingWeeks",
+      "url": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=486&top=15",
+      "publishedOrUpdated": "2025-01-15"
+    }
+  ]
+}

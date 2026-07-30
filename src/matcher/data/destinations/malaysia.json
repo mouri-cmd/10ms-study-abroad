@@ -1,0 +1,270 @@
+{
+  "id": "malaysia",
+  "name": {
+    "en": "Malaysia",
+    "bn": ""
+  },
+  "lastVerified": "2026-07-27",
+  "levels": {
+    "bachelors": {
+      "ieltsMinOverall": 5.0,
+      "ieltsNoBandBelow": 5.0,
+      "ieltsExpected": 5.5,
+      "ieltsCompetitive": 6.0,
+      "academicIndexMin": 3,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Standard academic HSC from Bangladesh requires a minimum GPA of 2.50 to 3.00 for admission. GPA 4.50-5.00 is required to trigger institutional merit waivers at private universities.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "masters": {
+      "ieltsMinOverall": 6.0,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.0,
+      "ieltsCompetitive": 6.5,
+      "academicIndexMin": 2.5,
+      "academicIndexCompetitive": 3.0,
+      "standardisedTest": "optional",
+      "notes": {
+        "en": "Public universities demand a minimum 2.75 CGPA. Private universities accept down to 2.50, or 2.00 with 5+ years of demonstrable work experience.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    },
+    "diploma": {
+      "ieltsMinOverall": 4.5,
+      "ieltsNoBandBelow": 4.0,
+      "ieltsExpected": 5,
+      "ieltsCompetitive": 5.0,
+      "academicIndexMin": 3,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Accepts SSC or equivalent with minimum GPA 2.0. Serves as a pathway for students who do not meet Bachelor's requirements.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "phd": {
+      "ieltsMinOverall": 5.5,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 3.0,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Requires Master's CGPA of 3.00+. Strict evaluation of research proposals alongside academic pedigree.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    }
+  },
+  "englishAlternatives": {
+    "pte": {
+      "bachelors": null,
+      "masters": null
+    },
+    "toefl": {
+      "bachelors": null,
+      "masters": null
+    },
+    "duolingo": {
+      "bachelors": null,
+      "masters": null
+    },
+    "moiAccepted": true,
+    "moiConditions": {
+      "en": "Accepted by some private universities for academic entry, but heavily scrutinized by EMGS. Students must often take internal placement tests and risk mandatory pre-sessional English upon arrival.",
+      "bn": ""
+    },
+    "ukviRequired": false,
+    "pathwayAvailable": true,
+    "pathwayMinIelts": 4.5
+  },
+  "gapTolerance": {
+    "bachelorsYears": 3,
+    "mastersYears": 5,
+    "documentationRequired": true,
+    "notes": {
+      "en": "EMGS scrutinizes gaps over 12 months for Bangladeshi applicants heavily. Solid employment documentation or proof of retakes is absolutely mandatory to prevent visa refusal.",
+      "bn": ""
+    }
+  },
+  "cost": {
+    "currency": "MYR",
+    "exchangeRateToBDT": 30,
+    "exchangeRateDate": "2026-07-27",
+    "tuitionPerYearBDT": {
+      "bachelors": {
+        "low": 400000,
+        "typical": 500000,
+        "high": 800000
+      },
+      "masters": {
+        "low": 400000,
+        "typical": 500000,
+        "high": 800000
+      }
+    },
+    "livingPerYearBDT": {
+      "low": 300000,
+      "typical": 500000,
+      "high": 700000
+    },
+    "visaMandatedFundsBDT": 25000,
+    "upfrontDepositBDT": 120520,
+    "upfrontDepositLabel": "EMGS Processing, Insurance & Registration Fees",
+    "visaFeeBDT": 2400,
+    "healthCoverPerYearBDT": 30130,
+    "otherApplicationFeesBDT": 8000,
+    "airfareOneWayBDT": 40000,
+    "firstYearTotalBDT": {
+      "minimumViable": 1000000,
+      "typical": 1500000
+    }
+  },
+  "scholarships": {
+    "rating": "limited",
+    "typicalMeritWaiverPercent": {
+      "min": 20,
+      "max": 50
+    },
+    "meritThresholdNote": {
+      "en": "Triggered by achieving GPA 4.50 to 5.00 in HSC.",
+      "bn": ""
+    },
+    "needBasedAvailable": false,
+    "assistantshipsAvailable": true,
+    "named": [
+      {
+        "name": "Malaysia International Scholarship (MIS)",
+        "level": "masters",
+        "coverage": "Full Tuition + Stipend",
+        "minIelts": 6.0,
+        "minAcademic": "CGPA 3.5",
+        "deadlineWindow": "May-June",
+        "competitiveness": "Extremely High",
+        "url": "https://mohe.gov.my/hebahan/banner/semakan-temu-duga-malaysia-international-scholarship-mis-2027"
+      },
+      {
+        "name": "Malaysian Technical Cooperation Programme (MTCP)",
+        "level": "masters",
+        "coverage": "Full Tuition + Stipend + Flights",
+        "minIelts": 6.0,
+        "minAcademic": "CGPA 3.0",
+        "deadlineWindow": "May 4 - June 12",
+        "competitiveness": "Extremely High",
+        "url": "https://mtcp.kln.gov.my/scholarship"
+      }
+    ],
+    "notes": {
+      "en": "Full scholarships are essentially restricted to elite postgraduate applicants via government schemes. Undergraduates should only expect partial waivers.",
+      "bn": ""
+    }
+  },
+  "work": {
+    "termTimeHoursPerWeek": 0,
+    "holidayHoursPerWeek": 20,
+    "typicalHourlyWageLocal": 6,
+    "realisticMonthlyEarningsBDT": 20000,
+    "coversWhatShareOfLivingCost": "10-20% at maximum. Work is strictly forbidden during term time. Part-time work cannot sustain living costs.",
+    "dependantsAllowed": true,
+    "dependantWorkRights": "Dependants have absolutely no work rights. They must secure an independent Employment Pass (EP) to work legally."
+  },
+  "postStudy": {
+    "visaName": "Employment Pass (EP)",
+    "monthsByLevel": {
+      "bachelors": 0,
+      "masters": 0,
+      "phd": 0
+    },
+    "restrictions": {
+      "en": "Bangladeshi citizens are completely excluded from the 12-month Graduate Pass available to 32 other nationalities. Graduates must secure direct employer sponsorship before their student pass expires.",
+      "bn": ""
+    }
+  },
+  "pr": {
+    "rating": "very_weak",
+    "pathwaySteps": [
+      "Student Pass",
+      "Employment Pass (Category I/II)",
+      "Resident Pass-Talent (RP-T)",
+      "Permanent Residency"
+    ],
+    "realisticYearsToPR": {
+      "min": 10,
+      "max": 15
+    },
+    "mainRisk": {
+      "en": "Securing an employer willing to sponsor an EP for a fresh graduate is exceedingly difficult due to stringent expatriate hiring quotas.",
+      "bn": ""
+    },
+    "recentChanges": "Implementation of MIDA Expatriate System (MES) in mid-2026 streamlines EP processing but does not ease the core requirements for the candidate."
+  },
+  "visa": {
+    "name": "Student Pass",
+    "code": "IMM.42",
+    "processingWeeks": {
+      "min": 4,
+      "max": 8
+    },
+    "interviewRequired": false,
+    "fundsHeldMonths": 3,
+    "priorRefusalImpact": "high",
+    "priorRefusalNote": {
+      "en": "Must be disclosed. Heightens scrutiny from EMGS significantly, but can be mitigated with flawless financial documentation and a strong SOP.",
+      "bn": ""
+    },
+    "commonRefusalReasons": [
+      "Insufficient or forged financial documents",
+      "Unexplained study gaps",
+      "Failure of mandatory TB/Hepatitis medical screening",
+      "Suspected non-genuine intent"
+    ],
+    "bangladeshApprovalRate": null
+  },
+  "intakes": [
+    {
+      "month": "February",
+      "applyByMonth": "November"
+    },
+    {
+      "month": "July",
+      "applyByMonth": "April"
+    },
+    {
+      "month": "September",
+      "applyByMonth": "June"
+    }
+  ],
+  "bangladeshNotes": {
+    "en": "Consultants must correct the false narrative regarding the Graduate Pass. Ensure students are warned about stringent post-arrival medical screenings which deport students immediately for latent tuberculosis.",
+    "bn": ""
+  },
+  "sources": [
+    {
+      "field": "Graduate Pass Restrictions",
+      "url": "https://www.studiesinmalaysia.com/blogs/career/malaysia-graduate-pass-eligible-countries-2026-guide",
+      "publishedOrUpdated": "2026-07-01"
+    },
+    {
+      "field": "Work Rights",
+      "url": "https://educationmalaysia.gov.my/get-in-touch/faq",
+      "publishedOrUpdated": "2026-01-01"
+    },
+    {
+      "field": "MTCP Scholarship",
+      "url": "https://mtcp.kln.gov.my/storage/scholarship/admin/1777383818_APPLICATION%20GUIDELINES%20FOR%20MTCP%20SCHOLARSHIP%202026.pdf",
+      "publishedOrUpdated": "2026-05-04"
+    },
+    {
+      "field": "Tuition and Living Costs",
+      "url": "https://www.easyuni.com/advice/study-in-malaysia-from-bangladesh-3469/",
+      "publishedOrUpdated": "2026-06-16"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "id": "uk",
+  "name": {
+    "en": "United Kingdom",
+    "bn": ""
+  },
+  "lastVerified": "2026-07-27",
+  "levels": {
+    "bachelors": {
+      "ieltsMinOverall": 6.0,
+      "ieltsNoBandBelow": 5.5,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "HSC (12 years) requires a 1-year International Foundation Year for entry into a 3-year Bachelor degree at major UK universities. Direct entry requires GCE A-Levels or recognized 13th-year equivalent.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "masters": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 6.5,
+      "ieltsCompetitive": 7.0,
+      "academicIndexMin": 2.5,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Requires a UGC-recognized 4-year Bachelor degree from Bangladesh. GMAT/GRE optional except for select elite MBA and Finance courses.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    },
+    "diploma": {
+      "ieltsMinOverall": 5.5,
+      "ieltsNoBandBelow": 5.0,
+      "ieltsExpected": 6,
+      "ieltsCompetitive": 6.5,
+      "academicIndexMin": 3.5,
+      "academicIndexCompetitive": 5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Must take IELTS UKVI / SELT for sub-degree programmes.",
+        "bn": ""
+      },
+      "academicScale": "gpa5"
+    },
+    "phd": {
+      "ieltsMinOverall": 6.5,
+      "ieltsNoBandBelow": 6.0,
+      "ieltsExpected": 7.0,
+      "ieltsCompetitive": 7.5,
+      "academicIndexMin": 3.2,
+      "academicIndexCompetitive": 3.5,
+      "standardisedTest": "not_required",
+      "notes": {
+        "en": "Requires Master degree with strong research proposal and supervisor pre-approval.",
+        "bn": ""
+      },
+      "academicScale": "cgpa4"
+    }
+  },
+  "englishAlternatives": {
+    "pte": {
+      "bachelors": 59,
+      "masters": 62
+    },
+    "toefl": {
+      "bachelors": null,
+      "masters": null
+    },
+    "duolingo": {
+      "bachelors": 105,
+      "masters": 115
+    },
+    "moiAccepted": false,
+    "moiConditions": {
+      "en": "Top UK universities explicitly reject MOI certificates from Bangladeshi institutions. Select post-1992 universities consider MOI subject to internal interview.",
+      "bn": ""
+    },
+    "ukviRequired": false,
+    "pathwayAvailable": true,
+    "pathwayMinIelts": 5.5
+  },
+  "gapTolerance": {
+    "bachelorsYears": 3,
+    "mastersYears": 7,
+    "documentationRequired": true,
+    "notes": {
+      "en": "Gaps over 6 months require verifiable work experience letters, salary bank statements, or tax files.",
+      "bn": ""
+    },
+    "diplomaYears": 0
+  },
+  "cost": {
+    "currency": "GBP",
+    "exchangeRateToBDT": 165,
+    "exchangeRateDate": "2025-03-01",
+    "tuitionPerYearBDT": {
+      "bachelors": {
+        "low": 2000000,
+        "typical": 2500000,
+        "high": 5000000
+      },
+      "masters": {
+        "low": 2000000,
+        "typical": 2500000,
+        "high": 5000000
+      }
+    },
+    "livingPerYearBDT": {
+      "low": 1500000,
+      "typical": 1800000,
+      "high": 2500000
+    },
+    "visaMandatedFundsBDT": 2000000,
+    "upfrontDepositBDT": 1500000,
+    "upfrontDepositLabel": "CAS Tuition Deposit",
+    "visaFeeBDT": 92000,
+    "healthCoverPerYearBDT": 120000,
+    "otherApplicationFeesBDT": 50000,
+    "airfareOneWayBDT": 110000,
+    "firstYearTotalBDT": {
+      "minimumViable": 3500000,
+      "typical": 4000000
+    }
+  },
+  "scholarships": {
+    "rating": "moderate",
+    "typicalMeritWaiverPercent": {
+      "min": 10,
+      "max": 25
+    },
+    "meritThresholdNote": {
+      "en": "Triggers automatically at CGPA 3.30+ for PG or HSC GPA 4.80+ for UG foundation.",
+      "bn": ""
+    },
+    "needBasedAvailable": false,
+    "assistantshipsAvailable": false,
+    "named": [
+      {
+        "name": "Commonwealth Shared Scholarships",
+        "level": "masters",
+        "coverage": "Full tuition, monthly stipend, airfare, visa fees",
+        "minIelts": 6.5,
+        "minAcademic": "First Class or Upper Second Class (2:1) Bachelor degree",
+        "deadlineWindow": "September - December",
+        "competitiveness": "Extremely High",
+        "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-shared-scholarships-applications/"
+      }
+    ],
+    "notes": {
+      "en": "Full scholarships are highly competitive; partial merit bursaries (£1,000-£4,000) are widely available.",
+      "bn": ""
+    }
+  },
+  "work": {
+    "termTimeHoursPerWeek": 20,
+    "holidayHoursPerWeek": 40,
+    "typicalHourlyWageLocal": 11.44,
+    "realisticMonthlyEarningsBDT": 130050,
+    "coversWhatShareOfLivingCost": "50% to 70% of living expenses only; cannot cover tuition fees.",
+    "dependantsAllowed": true,
+    "dependantWorkRights": "Allowed only for PhD and research-based Master's programmes."
+  },
+  "postStudy": {
+    "visaName": "Graduate Visa",
+    "monthsByLevel": {
+      "bachelors": 24,
+      "masters": 24,
+      "phd": 36
+    },
+    "restrictions": {
+      "en": "Duration reduces from 24 months to 18 months for UG/Master graduates applying on or after 1 January 2027.",
+      "bn": ""
+    }
+  },
+  "pr": {
+    "rating": "weak",
+    "pathwaySteps": [
+      "Student Visa",
+      "Graduate Visa",
+      "Skilled Worker Visa (RQF 6+)",
+      "Indefinite Leave to Remain (5 years on Skilled Worker)"
+    ],
+    "realisticYearsToPR": {
+      "min": 8,
+      "max": 10
+    },
+    "mainRisk": {
+      "en": "High Skilled Worker salary threshold (£41,700) and strict employer sponsorship requirements.",
+      "bn": ""
+    },
+    "recentChanges": "Skilled worker threshold raised to £41,700; RQF level raised to level 6; care worker switching banned."
+  },
+  "visa": {
+    "name": "Student Visa",
+    "code": "Student route",
+    "processingWeeks": {
+      "min": 8,
+      "max": 16
+    },
+    "interviewRequired": true,
+    "fundsHeldMonths": 1,
+    "priorRefusalImpact": "severe",
+    "priorRefusalNote": {
+      "en": "All prior refusals must be declared. Undisclosed refusals result in a 10-year ban under deception rules.",
+      "bn": ""
+    },
+    "commonRefusalReasons": [
+      "Failure to hold funds for 28 consecutive days",
+      "Failed credibility interview / Genuine Student assessment",
+      "Unverifiable financial sponsor documents"
+    ],
+    "bangladeshApprovalRate": null
+  },
+  "intakes": [
+    {
+      "month": "September",
+      "applyByMonth": "June"
+    },
+    {
+      "month": "January",
+      "applyByMonth": "October"
+    }
+  ],
+  "bangladeshNotes": {
+    "en": "High financial verification scrutiny by UKVI on Bangladeshi bank statements; mandatory 28-day fund rule adherence.",
+    "bn": ""
+  },
+  "sources": [
+    {
+      "field": "Living Costs Requirement",
+      "url": "https://www.gov.uk/guidance/financial-evidence-for-student-and-child-student-route-applicants",
+      "publishedOrUpdated": "2025-01-02"
+    },
+    {
+      "field": "Student Visa Fee & Rules",
+      "url": "https://www.gov.uk/student-visa",
+      "publishedOrUpdated": "2025-01-02"
+    },
+    {
+      "field": "Graduate Visa Policy & Duration Change",
+      "url": "https://www.gov.uk/graduate-visa",
+      "publishedOrUpdated": "2025-01-02"
+    },
+    {
+      "field": "Skilled Worker Salary Thresholds",
+      "url": "https://assets.publishing.service.gov.uk/media/696f89a5c0f4afaa9536a0c3/Salaries_Requirements_Review_Report_-_Jan_2026.pdf",
+      "publishedOrUpdated": "2026-01-15"
+    },
+    {
+      "field": "Academic Entry Requirements Bangladesh",
+      "url": "https://www.manchester.ac.uk/study/international/country-specific-information/bangladesh/entry-requirements/",
+      "publishedOrUpdated": "2025-01-10"
+    }
+  ]
+}

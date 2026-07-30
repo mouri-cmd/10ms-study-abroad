@@ -1,13 +1,13 @@
 /* Scholarship Page Visual Overhaul */
 
 .bg-light-upgrade {
-  background-color: #F9FAFB;
-  font-family: var(--font-inter, 'Inter', sans-serif);
+  background-color: var(--surface-subtle);
+  font-family: var(--font-sans);
 }
 
 /* 1. Dark Gradient Hero Section */
 .dark-hero-style-upgrade {
-  background: linear-gradient(135deg, #022C22 0%, #064E3B 40%, #0F172A 100%);
+  background: linear-gradient(135deg, #16181C 0%, #2A1512 45%, #101114 100%);
   position: relative;
   overflow: hidden;
   padding: 80px 0 120px 0;
@@ -21,15 +21,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 50%);
+  background: radial-gradient(circle at 80% 20%, rgba(235, 100, 60, 0.18) 0%, transparent 50%);
   pointer-events: none;
 }
 
 /* 2. Announcement Shimmer Badge */
 .announcement-shimmer {
-  background: rgba(34, 197, 94, 0.15);
-  border: 1px solid rgba(34, 197, 94, 0.4);
-  color: #4ADE80;
+  background: rgba(255, 98, 89, 0.15);
+  border: 1px solid rgba(255, 98, 89, 0.4);
+  color: #FF8079;
   font-size: 13px;
   font-weight: 700;
   padding: 8px 18px;
@@ -39,7 +39,7 @@
   gap: 8px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 98, 89, 0.12);
 }
 
 .announcement-shimmer::after {
@@ -77,7 +77,7 @@
 }
 
 .highlight-green {
-  color: #22C55E;
+  color: #4FD3A5;
 }
 
 .body-upgrade {
@@ -95,7 +95,7 @@
 .search-input-wrapper-upgrade {
   position: relative;
   width: 100%;
-  background: #ffffff;
+  background: var(--surface-card);
   border-radius: 14px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
   border: 2px solid transparent;
@@ -107,8 +107,8 @@
 }
 
 .search-input-wrapper-upgrade:focus-within {
-  border-color: #22C55E;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2), 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  border-color: var(--success);
+  box-shadow: 0 0 0 4px rgba(28, 171, 85, 0.2), 0 10px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
 .search-icon-upgrade {
@@ -127,11 +127,11 @@
   padding-right: 24px;
   font-size: 15px;
   font-weight: 500;
-  color: #1E293B;
+  color: var(--fg-1);
 }
 
 .input-search-upgrade::placeholder {
-  color: #94A3B8;
+  color: var(--fg-muted);
 }
 
 /* Results Header */
@@ -143,7 +143,7 @@
 .filtered-results-count-upgrade {
   font-size: 20px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--fg-1);
   margin: 0;
 }
 
@@ -153,14 +153,14 @@
   left: 0;
   width: 48px;
   height: 3.5px;
-  background-color: #22C55E;
+  background-color: var(--success);
   border-radius: 20px;
 }
 
 /* 4. Scholarship Cards Refined Design */
 .scholarship-card-upgrade {
-  background: #ffffff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
@@ -172,21 +172,21 @@
 
 .hover-lift-upgrade:hover {
   transform: translateY(-6px);
-  border-color: #22C55E;
-  box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.08), 0 10px 10px -5px rgba(34, 197, 94, 0.04);
+  border-color: var(--success);
+  box-shadow: 0 20px 25px -5px rgba(28, 171, 85, 0.08), 0 10px 10px -5px rgba(28, 171, 85, 0.04);
 }
 
 .scholarship-card-title-upgrade {
   font-size: 18px;
   font-weight: 800;
-  color: #1E293B;
+  color: var(--fg-1);
   line-height: 1.35;
   margin: 0;
 }
 
 .degree-pill-upgrade {
-  background: #FEF3C7;
-  color: #D97706;
+  background: rgba(164, 104, 12, 0.12);
+  color: var(--warn);
   font-size: 11px;
   font-weight: 700;
   padding: 4px 10px;
@@ -198,20 +198,20 @@
   align-items: center;
   gap: 6px;
   padding: 4px 12px;
-  background: #F1F5F9;
+  background: var(--gray-100);
   border-radius: 50px;
-  color: #475569;
+  color: var(--fg-2);
   font-size: 12px;
   font-weight: 600;
 }
 
 /* 5. Funding Badge Box */
 .funding-box-upgrade {
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
+  background: rgba(28, 171, 85, 0.09);
+  border: 1px solid rgba(28, 171, 85, 0.3);
   border-radius: 10px;
   padding: 12px 14px;
-  color: #047857;
+  color: var(--success-dark);
   font-size: 14px;
   font-weight: 700;
 }
@@ -226,7 +226,7 @@
 
 .description-text-upgrade {
   font-size: 13.5px;
-  color: #475569;
+  color: var(--fg-2);
   line-height: 1.5;
 }
 
@@ -238,14 +238,14 @@
 
 .eligibility-item-text {
   font-size: 13.5px;
-  color: #334155;
+  color: var(--fg-2);
   line-height: 1.4;
 }
 
 /* Divider line */
 .divider {
   height: 1px;
-  background-image: linear-gradient(to right, #E2E8F0 50%, transparent 50%);
+  background-image: linear-gradient(to right, var(--border) 50%, transparent 50%);
   background-size: 8px 1px;
   background-repeat: repeat-x;
   opacity: 0.6;
@@ -265,15 +265,15 @@
 
 /* Deadline within 3 months: Amber/orange highlight */
 .deadline-danger {
-  background: #FFFBEB;
-  color: #D97706;
-  border: 1px solid #FDE68A;
+  background: rgba(164, 104, 12, 0.1);
+  color: var(--warn);
+  border: 1px solid rgba(164, 104, 12, 0.35);
 }
 
 .deadline-normal {
-  background: #F1F5F9;
-  color: #64748B;
-  border: 1px solid #E2E8F0;
+  background: var(--gray-100);
+  color: var(--fg-3);
+  border: 1px solid var(--border);
 }
 
 /* 8. "দেখুন" button outlines on hover */
@@ -281,7 +281,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #22C55E;
+  color: var(--success);
   font-weight: 700;
   font-size: 13px;
   text-decoration: none;
@@ -292,9 +292,9 @@
 }
 
 .view-country-link-upgrade:hover {
-  background-color: #ECFDF5;
-  border-color: #22C55E;
-  color: #047857;
+  background-color: rgba(28, 171, 85, 0.09);
+  border-color: var(--success);
+  color: var(--success-dark);
 }
 
 .view-country-link-upgrade .arrow-icon {
@@ -325,8 +325,8 @@
 }
 
 .filter-sidebar-inner {
-  background: #fff;
-  border: 1px solid #E2E8F0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
   max-height: calc(100vh - 140px);
@@ -340,7 +340,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid var(--gray-100);
   margin-bottom: 16px;
 }
 
@@ -363,12 +363,12 @@
   width: 4px;
 }
 .filter-scroll-area::-webkit-scrollbar-thumb {
-  background-color: #E2E8F0;
+  background-color: var(--border);
   border-radius: 4px;
 }
 
 .filter-section-block {
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid var(--gray-100);
   padding-bottom: 16px;
   margin-bottom: 16px;
 }
@@ -388,7 +388,7 @@
   border: none;
   font-weight: 700;
   font-size: 14px;
-  color: #1E293B;
+  color: var(--fg-1);
   padding: 8px 0;
   cursor: pointer;
   text-align: left;
@@ -412,21 +412,21 @@
   width: 16px;
   height: 16px;
   border-radius: 4px;
-  border: 1px solid #CBD5E1;
-  accent-color: #22C55E;
+  border: 1px solid var(--border-strong);
+  accent-color: var(--success);
   margin-top: 2px;
   flex-shrink: 0;
 }
 
 .checkbox-text-custom {
   font-size: 13px;
-  color: #475569;
+  color: var(--fg-2);
   line-height: 1.4;
   font-weight: 500;
 }
 
 .checkbox-text-custom:hover {
-  color: #1E293B;
+  color: var(--fg-1);
 }
 
 .months-grid-chips {
@@ -436,27 +436,27 @@
 }
 
 .month-chip-button {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: var(--gray-50);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 6px 0;
   font-size: 11px;
   font-weight: 600;
-  color: #475569;
+  color: var(--fg-2);
   cursor: pointer;
   transition: all 0.2s;
   text-align: center;
 }
 
 .month-chip-button:hover {
-  background: #F1F5F9;
-  color: #1E293B;
+  background: var(--gray-100);
+  color: var(--fg-1);
 }
 
 .month-chip-button.active {
-  background: #22C55E;
+  background: var(--success);
   color: #fff;
-  border-color: #22C55E;
+  border-color: var(--success);
 }
 
 .filtered-content-area {
@@ -510,7 +510,7 @@
     left: 0;
     width: 300px;
     height: 100vh;
-    background: #fff;
+    background: var(--surface-card);
     z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -558,18 +558,18 @@
   left: 0;
   width: 100%;
   height: 160%;
-  background: radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.08), transparent 65%);
+  background: radial-gradient(circle at 50% 30%, rgba(235, 100, 60, 0.12), transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
 
-.geo-watermark { 
-  position: absolute; 
-  pointer-events: none; 
-  stroke: rgba(34, 197, 94, 0.3); 
-  fill: none; 
+.geo-watermark {
+  position: absolute;
+  pointer-events: none;
+  stroke: rgba(255, 98, 89, 0.3);
+  fill: none;
   stroke-width: 2;
-  opacity: 0.15; 
+  opacity: 0.15;
   z-index: 1;
 }
 

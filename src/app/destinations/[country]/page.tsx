@@ -1,20 +1,7 @@
 import React from 'react';
 import { destinations, universities } from '../../../data/destinations';
 import Link from 'next/link';
-import { 
-  MapPin, 
-  DollarSign, 
-  BookOpen, 
-  Clock, 
-  ChevronRight, 
-  GraduationCap,
-  Award,
-  Calendar,
-  Briefcase,
-  Users,
-  CheckCircle2,
-  BarChart2
-} from 'lucide-react';
+import { MapPin, CurrencyDollar, BookOpen, Clock, CaretRight, GraduationCap, Medal, Calendar, Briefcase, Users, CheckCircle, ChartBar } from '@phosphor-icons/react/ssr';
 import './country.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ country: string }> }) {
@@ -77,7 +64,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
             </div>
             <div>
               <button className="hero-btn-compare">
-                <BarChart2 size={16} /> Add to Compare
+                <ChartBar size={16} /> Add to Compare
               </button>
             </div>
           </div>
@@ -89,7 +76,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
         <div className="stats-grid">
           <div className="stat-card-custom">
             <div className="stat-icon-wrapper tuition">
-              <DollarSign size={18} />
+              <CurrencyDollar size={18} />
             </div>
             <div className="stat-info-wrapper">
               <span className="stat-label-custom">Avg Tuition/yr</span>
@@ -99,7 +86,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
 
           <div className="stat-card-custom">
             <div className="stat-icon-wrapper living">
-              <DollarSign size={18} />
+              <CurrencyDollar size={18} />
             </div>
             <div className="stat-info-wrapper">
               <span className="stat-label-custom">Cost of Living/mo</span>
@@ -142,7 +129,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                 <div className="why-study-list">
                   {country.whyStudyHere.map((reason, index) => (
                     <div key={index} className="why-study-item">
-                      <CheckCircle2 className="why-study-icon-check" size={20} />
+                      <CheckCircle className="why-study-icon-check" size={20} />
                       <p className="why-study-text">{reason}</p>
                     </div>
                   ))}
@@ -155,10 +142,10 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
               <h2 className="section-title-custom">Top Universities</h2>
               
               {countryUniversities.length === 0 ? (
-                <div className="text-center py-12 bg-white rounded-xl shadow-sm border border-slate-100">
-                  <BookOpen size={48} className="mx-auto text-slate-300 mb-4" />
-                  <h3 className="text-lg font-bold mb-2 text-slate-700">Universities updating soon</h3>
-                  <p className="text-sm text-slate-500">We are curating the best options for you.</p>
+                <div className="card text-center py-12 animate-fade-in-up">
+                  <BookOpen size={48} className="mx-auto text-[var(--border-strong)] mb-4" />
+                  <h3 className="text-lg font-bold mb-2 text-[var(--fg-1)]">Universities updating soon</h3>
+                  <p className="text-sm text-[var(--fg-2)]">We are curating the best options for you.</p>
                 </div>
               ) : (
                 <div className="uni-list-container">
@@ -188,7 +175,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                       
                       <span className="uni-card-rank-badge">#{uni.world_ranking}</span>
                       <Link href={`/destinations/${country.slug}/${uni.slug}`} className="uni-card-view-link">
-                        View <ChevronRight size={14} />
+                        View <CaretRight size={14} />
                       </Link>
                     </div>
                   ))}
@@ -200,7 +187,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
             {country.scholarships_list && country.scholarships_list.length > 0 && (
               <div className="content-section-card">
                 <h2 className="section-title-custom">
-                  <Award className="text-amber-500 shrink-0" size={22} /> Available Scholarships
+                  <Medal className="text-amber-500 shrink-0" size={22} /> Available Scholarships
                 </h2>
                 <div className="schol-list-container">
                   {country.scholarships_list.map((schol, idx) => (
@@ -221,7 +208,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
                 </div>
                 
                 <Link href="/scholarships" className="schol-view-all-link">
-                  View all scholarships <ChevronRight size={14} />
+                  View all scholarships <CaretRight size={14} />
                 </Link>
               </div>
             )}
@@ -243,7 +230,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
             ) : (
               <div className="content-section-card">
                 <h2 className="section-title-custom">Visa Overview</h2>
-                <p className="text-sm text-slate-600 leading-relaxed">{country.visa_description}</p>
+                <p className="text-sm text-[var(--fg-2)] leading-relaxed">{country.visa_description}</p>
               </div>
             )}
 

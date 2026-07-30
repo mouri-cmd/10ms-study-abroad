@@ -1,0 +1,1616 @@
+{
+  "rulesVersion": "0.1.0-draft",
+  "dataStatus": "DRAFT — indicative figures only. Every field must be replaced with verified, sourced data (see gemini-deep-research-prompt.md) and signed off by senior counselling before this site advises real students.",
+  "currencyNote": "All BDT figures are indicative and use approximate mid-2026 exchange rates. Rates must be refreshed at each data review.",
+  "destinations": [
+    {
+      "id": "australia",
+      "flag": "🇦🇺",
+      "name": {
+        "en": "Australia",
+        "bn": "অস্ট্রেলিয়া"
+      },
+      "lastVerified": null,
+      "levels": {
+        "diploma": {
+          "ieltsMinOverall": 5.5,
+          "ieltsNoBandBelow": 5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 50,
+          "academicIndexCompetitive": 65,
+          "standardisedTest": "not_required"
+        },
+        "bachelors": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 60,
+          "academicIndexCompetitive": 76,
+          "standardisedTest": "not_required"
+        },
+        "masters": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 65,
+          "academicIndexCompetitive": 75,
+          "standardisedTest": "not_required"
+        },
+        "phd": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 7,
+          "ieltsCompetitive": 7.5,
+          "academicIndexMin": 70,
+          "academicIndexCompetitive": 80,
+          "standardisedTest": "not_required"
+        }
+      },
+      "englishAlternatives": {
+        "pte": {
+          "bachelors": 50,
+          "masters": 58
+        },
+        "toefl": {
+          "bachelors": 60,
+          "masters": 79
+        },
+        "duolingo": {
+          "bachelors": 95,
+          "masters": 105
+        },
+        "moiAccepted": false,
+        "ukviRequired": false,
+        "pathwayAvailable": true,
+        "pathwayMinIelts": 5
+      },
+      "gapTolerance": {
+        "diplomaYears": 3,
+        "bachelorsYears": 2,
+        "mastersYears": 5,
+        "phdYears": 6,
+        "documentationRequired": true
+      },
+      "cost": {
+        "currency": "AUD",
+        "exchangeRateToBDT": 80,
+        "tuitionPerYearBDT": {
+          "diploma": {
+            "low": 1200000,
+            "typical": 1700000,
+            "high": 2400000
+          },
+          "bachelors": {
+            "low": 2000000,
+            "typical": 2560000,
+            "high": 3600000
+          },
+          "masters": {
+            "low": 2240000,
+            "typical": 3040000,
+            "high": 4000000
+          },
+          "phd": {
+            "low": 2400000,
+            "typical": 3200000,
+            "high": 4200000
+          }
+        },
+        "livingPerYearBDT": {
+          "low": 1920000,
+          "typical": 2380000,
+          "high": 2880000
+        },
+        "visaMandatedFundsBDT": 2380000,
+        "upfrontDepositBDT": 800000,
+        "upfrontDepositLabel": {
+          "en": "First semester tuition, paid before visa lodgement",
+          "bn": "ভিসা আবেদনের আগে প্রথম সেমিস্টারের টিউশন"
+        },
+        "visaFeeBDT": 128000,
+        "healthCoverPerYearBDT": 52000,
+        "otherApplicationFeesBDT": 60000,
+        "airfareOneWayBDT": 75000,
+        "firstYearTotalBDT": {
+          "minimumViable": 4200000,
+          "typical": 5250000
+        }
+      },
+      "scholarships": {
+        "rating": "moderate",
+        "typicalMeritWaiverPercent": {
+          "min": 10,
+          "max": 30
+        },
+        "needBasedAvailable": false,
+        "assistantshipsAvailable": true,
+        "named": [
+          {
+            "name": "Australia Awards Scholarships",
+            "level": "masters",
+            "coverage": "Full tuition, living stipend, airfare",
+            "minIelts": 6.5,
+            "competitiveness": "Very high",
+            "url": null
+          },
+          {
+            "name": "Research Training Program (RTP)",
+            "level": "phd",
+            "coverage": "Full tuition plus stipend",
+            "minIelts": 6.5,
+            "competitiveness": "High",
+            "url": null
+          },
+          {
+            "name": "University international merit scholarships",
+            "level": "both",
+            "coverage": "10–30% tuition reduction",
+            "minIelts": 6.5,
+            "competitiveness": "Moderate",
+            "url": null
+          }
+        ],
+        "notes": {
+          "en": "Full scholarships are rare and highly competitive. Most Bangladeshi students receive a partial tuition waiver of 10–30% and self-fund the rest.",
+          "bn": ""
+        }
+      },
+      "work": {
+        "termTimeHoursPerWeek": 24,
+        "holidayHoursPerWeek": 40,
+        "realisticMonthlyEarningsBDT": 180000,
+        "coversWhatShareOfLivingCost": {
+          "en": "Most of living costs, but not tuition. Do not plan on it for the first semester.",
+          "bn": ""
+        },
+        "dependantsAllowed": true
+      },
+      "postStudy": {
+        "visaName": "Temporary Graduate visa (Subclass 485)",
+        "monthsByLevel": {
+          "diploma": 18,
+          "bachelors": 24,
+          "masters": 24,
+          "phd": 48
+        }
+      },
+      "pr": {
+        "rating": "strong",
+        "pathwaySteps": [
+          "Student visa 500",
+          "Temporary Graduate 485",
+          "Skilled Nominated 190 / Skilled Independent 189",
+          "Permanent residency"
+        ],
+        "realisticYearsToPR": {
+          "min": 4,
+          "max": 7
+        },
+        "mainRisk": {
+          "en": "Points-based selection favours specific occupations. If your field is not on the skilled occupation list, the pathway effectively closes.",
+          "bn": ""
+        }
+      },
+      "visa": {
+        "name": "Student visa",
+        "code": "Subclass 500",
+        "processingWeeks": {
+          "min": 4,
+          "max": 16
+        },
+        "interviewRequired": false,
+        "fundsHeldMonths": 3,
+        "priorRefusalImpact": "moderate",
+        "priorRefusalNote": {
+          "en": "Prior refusals must be declared and will be scrutinised. Overcome with strong documentation and a clear study rationale.",
+          "bn": ""
+        }
+      },
+      "intakes": [
+        {
+          "month": "February",
+          "applyByMonth": "October"
+        },
+        {
+          "month": "July",
+          "applyByMonth": "March"
+        }
+      ],
+      "priorityStrengths": [
+        "post_study_work",
+        "pr_pathway",
+        "ranking"
+      ],
+      "notes": {
+        "en": "Financial capacity evidence is examined closely for Bangladeshi applicants. Fund source and history matter as much as the amount.",
+        "bn": ""
+      },
+      "priorityWeaknesses": [
+        "lowest_cost"
+      ]
+    },
+    {
+      "id": "uk",
+      "flag": "🇬🇧",
+      "name": {
+        "en": "United Kingdom",
+        "bn": "যুক্তরাজ্য"
+      },
+      "lastVerified": null,
+      "levels": {
+        "diploma": {
+          "ieltsMinOverall": 5.5,
+          "ieltsNoBandBelow": 5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 48,
+          "academicIndexCompetitive": 62,
+          "standardisedTest": "not_required"
+        },
+        "bachelors": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 58,
+          "academicIndexCompetitive": 74,
+          "standardisedTest": "not_required"
+        },
+        "masters": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 65,
+          "academicIndexCompetitive": 75,
+          "standardisedTest": "not_required"
+        },
+        "phd": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 7,
+          "ieltsCompetitive": 7.5,
+          "academicIndexMin": 70,
+          "academicIndexCompetitive": 80,
+          "standardisedTest": "not_required"
+        }
+      },
+      "englishAlternatives": {
+        "pte": {
+          "bachelors": 51,
+          "masters": 59
+        },
+        "toefl": {
+          "bachelors": 72,
+          "masters": 88
+        },
+        "duolingo": {
+          "bachelors": 100,
+          "masters": 115
+        },
+        "moiAccepted": true,
+        "ukviRequired": true,
+        "pathwayAvailable": true,
+        "pathwayMinIelts": 4.5
+      },
+      "gapTolerance": {
+        "diplomaYears": 5,
+        "bachelorsYears": 3,
+        "mastersYears": 8,
+        "phdYears": 10,
+        "documentationRequired": true
+      },
+      "cost": {
+        "currency": "GBP",
+        "exchangeRateToBDT": 158,
+        "tuitionPerYearBDT": {
+          "diploma": {
+            "low": 1400000,
+            "typical": 1800000,
+            "high": 2400000
+          },
+          "bachelors": {
+            "low": 1896000,
+            "typical": 2686000,
+            "high": 4108000
+          },
+          "masters": {
+            "low": 2212000,
+            "typical": 3002000,
+            "high": 5056000
+          },
+          "phd": {
+            "low": 2500000,
+            "typical": 3300000,
+            "high": 4600000
+          }
+        },
+        "livingPerYearBDT": {
+          "low": 1500000,
+          "typical": 1900000,
+          "high": 2600000
+        },
+        "visaMandatedFundsBDT": 1500000,
+        "upfrontDepositBDT": 600000,
+        "upfrontDepositLabel": {
+          "en": "Tuition deposit to secure CAS",
+          "bn": "CAS পাওয়ার জন্য টিউশন ডিপোজিট"
+        },
+        "visaFeeBDT": 82000,
+        "healthCoverPerYearBDT": 123000,
+        "otherApplicationFeesBDT": 60000,
+        "airfareOneWayBDT": 85000,
+        "firstYearTotalBDT": {
+          "minimumViable": 3750000,
+          "typical": 4940000
+        }
+      },
+      "scholarships": {
+        "rating": "strong",
+        "typicalMeritWaiverPercent": {
+          "min": 10,
+          "max": 50
+        },
+        "needBasedAvailable": false,
+        "assistantshipsAvailable": true,
+        "named": [
+          {
+            "name": "Chevening Scholarship",
+            "level": "masters",
+            "coverage": "Full tuition, living stipend, flights",
+            "minIelts": 6.5,
+            "competitiveness": "Extremely high — requires 2+ years work experience",
+            "url": null
+          },
+          {
+            "name": "Commonwealth Shared Scholarship",
+            "level": "masters",
+            "coverage": "Full tuition and stipend",
+            "minIelts": 6.5,
+            "competitiveness": "Very high",
+            "url": null
+          },
+          {
+            "name": "GREAT Scholarships",
+            "level": "masters",
+            "coverage": "£10,000 towards tuition",
+            "minIelts": 6.5,
+            "competitiveness": "High",
+            "url": null
+          },
+          {
+            "name": "University international / Vice-Chancellor awards",
+            "level": "both",
+            "coverage": "10–50% tuition reduction",
+            "minIelts": 6.5,
+            "competitiveness": "Moderate",
+            "url": null
+          }
+        ],
+        "notes": {
+          "en": "The strongest named-scholarship landscape of the seven, especially at Master's level. Undergraduate funding is much thinner.",
+          "bn": ""
+        }
+      },
+      "work": {
+        "termTimeHoursPerWeek": 20,
+        "holidayHoursPerWeek": 40,
+        "realisticMonthlyEarningsBDT": 160000,
+        "coversWhatShareOfLivingCost": {
+          "en": "Roughly living costs in a lower-cost city. London is difficult on 20 hours a week.",
+          "bn": ""
+        },
+        "dependantsAllowed": false
+      },
+      "postStudy": {
+        "visaName": "Graduate Route",
+        "monthsByLevel": {
+          "diploma": 0,
+          "bachelors": 24,
+          "masters": 24,
+          "phd": 36
+        }
+      },
+      "pr": {
+        "rating": "moderate",
+        "pathwaySteps": [
+          "Student visa",
+          "Graduate Route (2 years)",
+          "Skilled Worker visa with sponsoring employer",
+          "Indefinite Leave to Remain after 5 qualifying years"
+        ],
+        "realisticYearsToPR": {
+          "min": 5,
+          "max": 8
+        },
+        "mainRisk": {
+          "en": "The Graduate Route does not lead anywhere without a licensed sponsor employer offering a role above the salary threshold. Many graduates leave when it expires.",
+          "bn": ""
+        }
+      },
+      "visa": {
+        "name": "Student visa",
+        "code": "Student route",
+        "processingWeeks": {
+          "min": 3,
+          "max": 8
+        },
+        "interviewRequired": true,
+        "fundsHeldMonths": 1,
+        "priorRefusalImpact": "moderate",
+        "priorRefusalNote": {
+          "en": "Declarable. A credibility interview is standard for Bangladeshi applicants and prior refusals raise the bar in it.",
+          "bn": ""
+        }
+      },
+      "intakes": [
+        {
+          "month": "September",
+          "applyByMonth": "May"
+        },
+        {
+          "month": "January",
+          "applyByMonth": "September"
+        }
+      ],
+      "priorityStrengths": [
+        "scholarship",
+        "ranking",
+        "fast_processing",
+        "post_study_work"
+      ],
+      "notes": {
+        "en": "Master's degrees are typically one year, which makes the UK the cheapest of the high-cost destinations on a total-degree basis even though the annual cost is high.",
+        "bn": ""
+      },
+      "priorityWeaknesses": [
+        "lowest_cost"
+      ]
+    },
+    {
+      "id": "canada",
+      "flag": "🇨🇦",
+      "name": {
+        "en": "Canada",
+        "bn": "কানাডা"
+      },
+      "lastVerified": null,
+      "levels": {
+        "diploma": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 55,
+          "academicIndexCompetitive": 68,
+          "standardisedTest": "not_required"
+        },
+        "bachelors": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 65,
+          "academicIndexCompetitive": 78,
+          "standardisedTest": "not_required"
+        },
+        "masters": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 7,
+          "ieltsCompetitive": 7.5,
+          "academicIndexMin": 70,
+          "academicIndexCompetitive": 80,
+          "standardisedTest": "optional"
+        },
+        "phd": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 7,
+          "ieltsCompetitive": 7.5,
+          "academicIndexMin": 72,
+          "academicIndexCompetitive": 82,
+          "standardisedTest": "optional"
+        }
+      },
+      "englishAlternatives": {
+        "pte": {
+          "bachelors": 60,
+          "masters": 65
+        },
+        "toefl": {
+          "bachelors": 80,
+          "masters": 90
+        },
+        "duolingo": {
+          "bachelors": 110,
+          "masters": 120
+        },
+        "moiAccepted": false,
+        "ukviRequired": false,
+        "pathwayAvailable": true,
+        "pathwayMinIelts": 5.5
+      },
+      "gapTolerance": {
+        "diplomaYears": 3,
+        "bachelorsYears": 2,
+        "mastersYears": 5,
+        "phdYears": 6,
+        "documentationRequired": true
+      },
+      "cost": {
+        "currency": "CAD",
+        "exchangeRateToBDT": 89,
+        "tuitionPerYearBDT": {
+          "diploma": {
+            "low": 1200000,
+            "typical": 1500000,
+            "high": 2000000
+          },
+          "bachelors": {
+            "low": 1602000,
+            "typical": 2225000,
+            "high": 3382000
+          },
+          "masters": {
+            "low": 1424000,
+            "typical": 2136000,
+            "high": 3560000
+          },
+          "phd": {
+            "low": 1000000,
+            "typical": 1600000,
+            "high": 2500000
+          }
+        },
+        "livingPerYearBDT": {
+          "low": 1335000,
+          "typical": 1840000,
+          "high": 2314000
+        },
+        "visaMandatedFundsBDT": 1840000,
+        "upfrontDepositBDT": 1840000,
+        "upfrontDepositLabel": {
+          "en": "GIC (Guaranteed Investment Certificate) — released to you monthly after arrival",
+          "bn": "GIC — পৌঁছানোর পর মাসে মাসে ফেরত পাওয়া যায়"
+        },
+        "visaFeeBDT": 21000,
+        "healthCoverPerYearBDT": 71000,
+        "otherApplicationFeesBDT": 60000,
+        "airfareOneWayBDT": 90000,
+        "firstYearTotalBDT": {
+          "minimumViable": 3180000,
+          "typical": 4300000
+        }
+      },
+      "scholarships": {
+        "rating": "limited",
+        "typicalMeritWaiverPercent": {
+          "min": 10,
+          "max": 25
+        },
+        "needBasedAvailable": false,
+        "assistantshipsAvailable": true,
+        "named": [
+          {
+            "name": "Vanier Canada Graduate Scholarships",
+            "level": "phd",
+            "coverage": "CAD 50,000/year for 3 years",
+            "minIelts": 6.5,
+            "competitiveness": "Extremely high",
+            "url": null
+          },
+          {
+            "name": "University entrance awards",
+            "level": "bachelors",
+            "coverage": "CAD 2,000–10,000 one-off",
+            "minIelts": 6.5,
+            "competitiveness": "Moderate",
+            "url": null
+          },
+          {
+            "name": "Graduate teaching / research assistantships",
+            "level": "masters",
+            "coverage": "Partial tuition plus stipend",
+            "minIelts": 6.5,
+            "competitiveness": "Moderate — negotiated with supervisor",
+            "url": null
+          }
+        ],
+        "notes": {
+          "en": "Undergraduate international scholarships are thin and mostly small one-off awards. At Master's level, an assistantship negotiated directly with a supervisor is usually worth more than any scholarship application.",
+          "bn": ""
+        }
+      },
+      "work": {
+        "termTimeHoursPerWeek": 24,
+        "holidayHoursPerWeek": 40,
+        "realisticMonthlyEarningsBDT": 165000,
+        "coversWhatShareOfLivingCost": {
+          "en": "Most of living costs in a mid-sized city. Toronto and Vancouver rents outpace part-time earnings.",
+          "bn": ""
+        },
+        "dependantsAllowed": true
+      },
+      "postStudy": {
+        "visaName": "Post-Graduation Work Permit (PGWP)",
+        "monthsByLevel": {
+          "diploma": 12,
+          "bachelors": 36,
+          "masters": 36,
+          "phd": 36
+        }
+      },
+      "pr": {
+        "rating": "strong",
+        "pathwaySteps": [
+          "Study permit",
+          "Post-Graduation Work Permit",
+          "Canadian Experience Class or Provincial Nominee Program",
+          "Permanent residency"
+        ],
+        "realisticYearsToPR": {
+          "min": 3,
+          "max": 6
+        },
+        "mainRisk": {
+          "en": "PGWP eligibility now depends on field of study and institution type, and immigration targets have been cut. Verify your exact programme qualifies before committing.",
+          "bn": ""
+        }
+      },
+      "visa": {
+        "name": "Study Permit",
+        "code": "Study Permit",
+        "processingWeeks": {
+          "min": 6,
+          "max": 20
+        },
+        "interviewRequired": false,
+        "fundsHeldMonths": 4,
+        "priorRefusalImpact": "high",
+        "priorRefusalNote": {
+          "en": "Canada weighs prior refusals heavily, including refusals by other countries. A previous Canadian refusal needs materially changed circumstances to overcome.",
+          "bn": ""
+        }
+      },
+      "intakes": [
+        {
+          "month": "September",
+          "applyByMonth": "March"
+        },
+        {
+          "month": "January",
+          "applyByMonth": "July"
+        },
+        {
+          "month": "May",
+          "applyByMonth": "November"
+        }
+      ],
+      "priorityStrengths": [
+        "pr_pathway",
+        "post_study_work"
+      ],
+      "notes": {
+        "en": "Provincial Attestation Letters and study permit caps have made admission and visa outcomes less predictable than in previous years. Check the current position before applying.",
+        "bn": ""
+      },
+      "priorityWeaknesses": [
+        "lowest_cost",
+        "scholarship",
+        "fast_processing"
+      ]
+    },
+    {
+      "id": "new_zealand",
+      "flag": "🇳🇿",
+      "name": {
+        "en": "New Zealand",
+        "bn": "নিউজিল্যান্ড"
+      },
+      "lastVerified": null,
+      "levels": {
+        "diploma": {
+          "ieltsMinOverall": 5.5,
+          "ieltsNoBandBelow": 5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 48,
+          "academicIndexCompetitive": 62,
+          "standardisedTest": "not_required"
+        },
+        "bachelors": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 58,
+          "academicIndexCompetitive": 72,
+          "standardisedTest": "not_required"
+        },
+        "masters": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 63,
+          "academicIndexCompetitive": 75,
+          "standardisedTest": "not_required"
+        },
+        "phd": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 7,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 68,
+          "academicIndexCompetitive": 78,
+          "standardisedTest": "not_required"
+        }
+      },
+      "englishAlternatives": {
+        "pte": {
+          "bachelors": 50,
+          "masters": 58
+        },
+        "toefl": {
+          "bachelors": 60,
+          "masters": 79
+        },
+        "duolingo": {
+          "bachelors": 95,
+          "masters": 105
+        },
+        "moiAccepted": false,
+        "ukviRequired": false,
+        "pathwayAvailable": true,
+        "pathwayMinIelts": 5
+      },
+      "gapTolerance": {
+        "diplomaYears": 5,
+        "bachelorsYears": 3,
+        "mastersYears": 5,
+        "phdYears": 8,
+        "documentationRequired": true
+      },
+      "cost": {
+        "currency": "NZD",
+        "exchangeRateToBDT": 72,
+        "tuitionPerYearBDT": {
+          "diploma": {
+            "low": 1000000,
+            "typical": 1300000,
+            "high": 1700000
+          },
+          "bachelors": {
+            "low": 1584000,
+            "typical": 2016000,
+            "high": 2592000
+          },
+          "masters": {
+            "low": 1872000,
+            "typical": 2304000,
+            "high": 3024000
+          },
+          "phd": {
+            "low": 500000,
+            "typical": 800000,
+            "high": 1500000
+          }
+        },
+        "livingPerYearBDT": {
+          "low": 1296000,
+          "typical": 1440000,
+          "high": 1800000
+        },
+        "visaMandatedFundsBDT": 1440000,
+        "upfrontDepositBDT": 700000,
+        "upfrontDepositLabel": {
+          "en": "First year tuition, often payable in full before visa",
+          "bn": "ভিসার আগে প্রথম বছরের টিউশন"
+        },
+        "visaFeeBDT": 54000,
+        "healthCoverPerYearBDT": 50000,
+        "otherApplicationFeesBDT": 60000,
+        "airfareOneWayBDT": 95000,
+        "firstYearTotalBDT": {
+          "minimumViable": 3140000,
+          "typical": 3720000
+        }
+      },
+      "scholarships": {
+        "rating": "limited",
+        "typicalMeritWaiverPercent": {
+          "min": 10,
+          "max": 25
+        },
+        "needBasedAvailable": false,
+        "assistantshipsAvailable": true,
+        "named": [
+          {
+            "name": "Manaaki New Zealand Scholarships",
+            "level": "masters",
+            "coverage": "Full tuition, living allowance, airfare",
+            "minIelts": 6.5,
+            "competitiveness": "Very high",
+            "url": null
+          },
+          {
+            "name": "University international excellence awards",
+            "level": "both",
+            "coverage": "NZD 5,000–20,000",
+            "minIelts": 6,
+            "competitiveness": "Moderate",
+            "url": null
+          },
+          {
+            "name": "PhD domestic-fee status",
+            "level": "phd",
+            "coverage": "International PhD students pay domestic tuition rates",
+            "minIelts": 6.5,
+            "competitiveness": "Automatic for accepted candidates",
+            "url": null
+          }
+        ],
+        "notes": {
+          "en": "PhD is unusually good value — international doctoral candidates pay domestic fees, making New Zealand one of the cheapest research destinations.",
+          "bn": ""
+        }
+      },
+      "work": {
+        "termTimeHoursPerWeek": 20,
+        "holidayHoursPerWeek": 40,
+        "realisticMonthlyEarningsBDT": 145000,
+        "coversWhatShareOfLivingCost": {
+          "en": "Most living costs outside Auckland.",
+          "bn": ""
+        },
+        "dependantsAllowed": true
+      },
+      "postStudy": {
+        "visaName": "Post Study Work Visa",
+        "monthsByLevel": {
+          "diploma": 12,
+          "bachelors": 36,
+          "masters": 36,
+          "phd": 36
+        }
+      },
+      "pr": {
+        "rating": "moderate",
+        "pathwaySteps": [
+          "Student visa",
+          "Post Study Work Visa",
+          "Accredited Employer Work Visa",
+          "Skilled Migrant Category residence"
+        ],
+        "realisticYearsToPR": {
+          "min": 4,
+          "max": 7
+        },
+        "mainRisk": {
+          "en": "Small labour market. Fewer graduate roles than Australia or Canada, so employment is the bottleneck rather than the visa rules.",
+          "bn": ""
+        }
+      },
+      "visa": {
+        "name": "Fee Paying Student Visa",
+        "code": "Student Visa",
+        "processingWeeks": {
+          "min": 4,
+          "max": 12
+        },
+        "interviewRequired": false,
+        "fundsHeldMonths": 3,
+        "priorRefusalImpact": "moderate",
+        "priorRefusalNote": {
+          "en": "Declarable and assessed, but New Zealand is generally less severe on prior refusals than Canada.",
+          "bn": ""
+        }
+      },
+      "intakes": [
+        {
+          "month": "February",
+          "applyByMonth": "October"
+        },
+        {
+          "month": "July",
+          "applyByMonth": "April"
+        }
+      ],
+      "priorityStrengths": [
+        "pr_pathway",
+        "post_study_work"
+      ],
+      "notes": {
+        "en": "Lower application volume from Bangladesh means less competition, but also fewer alumni networks and job referrals on arrival.",
+        "bn": ""
+      },
+      "priorityWeaknesses": [
+        "lowest_cost",
+        "scholarship",
+        "ranking"
+      ]
+    },
+    {
+      "id": "usa",
+      "flag": "🇺🇸",
+      "name": {
+        "en": "United States",
+        "bn": "যুক্তরাষ্ট্র"
+      },
+      "lastVerified": null,
+      "levels": {
+        "diploma": {
+          "ieltsMinOverall": 5.5,
+          "ieltsNoBandBelow": 5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 55,
+          "academicIndexCompetitive": 70,
+          "standardisedTest": "optional"
+        },
+        "bachelors": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 65,
+          "academicIndexCompetitive": 82,
+          "standardisedTest": "optional"
+        },
+        "masters": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 7,
+          "ieltsCompetitive": 7.5,
+          "academicIndexMin": 70,
+          "academicIndexCompetitive": 82,
+          "standardisedTest": "optional"
+        },
+        "phd": {
+          "ieltsMinOverall": 7,
+          "ieltsNoBandBelow": 6.5,
+          "ieltsExpected": 7.5,
+          "ieltsCompetitive": 8,
+          "academicIndexMin": 75,
+          "academicIndexCompetitive": 85,
+          "standardisedTest": "optional"
+        }
+      },
+      "englishAlternatives": {
+        "pte": {
+          "bachelors": 53,
+          "masters": 63
+        },
+        "toefl": {
+          "bachelors": 79,
+          "masters": 90
+        },
+        "duolingo": {
+          "bachelors": 105,
+          "masters": 120
+        },
+        "moiAccepted": false,
+        "ukviRequired": false,
+        "pathwayAvailable": true,
+        "pathwayMinIelts": 5
+      },
+      "gapTolerance": {
+        "diplomaYears": 2,
+        "bachelorsYears": 1,
+        "mastersYears": 3,
+        "phdYears": 5,
+        "documentationRequired": true
+      },
+      "cost": {
+        "currency": "USD",
+        "exchangeRateToBDT": 122,
+        "tuitionPerYearBDT": {
+          "diploma": {
+            "low": 800000,
+            "typical": 1400000,
+            "high": 2200000
+          },
+          "bachelors": {
+            "low": 2196000,
+            "typical": 3904000,
+            "high": 7320000
+          },
+          "masters": {
+            "low": 2440000,
+            "typical": 4270000,
+            "high": 7930000
+          },
+          "phd": {
+            "low": 0,
+            "typical": 1200000,
+            "high": 6000000
+          }
+        },
+        "livingPerYearBDT": {
+          "low": 1342000,
+          "typical": 1830000,
+          "high": 2684000
+        },
+        "visaMandatedFundsBDT": 3800000,
+        "upfrontDepositBDT": 0,
+        "upfrontDepositLabel": {
+          "en": "No standard deposit, but full I-20 funding must be proved",
+          "bn": "নির্দিষ্ট ডিপোজিট নেই, তবে I-20 এর পূর্ণ অর্থের প্রমাণ লাগবে"
+        },
+        "visaFeeBDT": 65000,
+        "healthCoverPerYearBDT": 220000,
+        "otherApplicationFeesBDT": 90000,
+        "airfareOneWayBDT": 110000,
+        "firstYearTotalBDT": {
+          "minimumViable": 4020000,
+          "typical": 6220000
+        }
+      },
+      "scholarships": {
+        "rating": "strong",
+        "typicalMeritWaiverPercent": {
+          "min": 20,
+          "max": 100
+        },
+        "needBasedAvailable": true,
+        "assistantshipsAvailable": true,
+        "named": [
+          {
+            "name": "University need-based financial aid",
+            "level": "bachelors",
+            "coverage": "Up to full cost of attendance at well-endowed private universities",
+            "minIelts": 7,
+            "competitiveness": "Extremely high — but genuinely full-ride when awarded",
+            "url": null
+          },
+          {
+            "name": "Merit scholarships (institutional)",
+            "level": "bachelors",
+            "coverage": "20–75% tuition",
+            "minIelts": 6.5,
+            "competitiveness": "Moderate to high; SAT strengthens the case",
+            "url": null
+          },
+          {
+            "name": "Teaching / Research Assistantships",
+            "level": "masters",
+            "coverage": "Full tuition waiver plus monthly stipend",
+            "minIelts": 7,
+            "competitiveness": "High; standard at PhD level, less so at Master's",
+            "url": null
+          },
+          {
+            "name": "Fulbright Foreign Student Program",
+            "level": "masters",
+            "coverage": "Full funding",
+            "minIelts": 6.5,
+            "competitiveness": "Extremely high",
+            "url": null
+          }
+        ],
+        "notes": {
+          "en": "The highest sticker price and the best funding upside of the seven. A strong Bangladeshi student with excellent results and SAT can end up paying less in the USA than anywhere else. A mid-profile student pays the most.",
+          "bn": ""
+        }
+      },
+      "work": {
+        "termTimeHoursPerWeek": 20,
+        "holidayHoursPerWeek": 40,
+        "realisticMonthlyEarningsBDT": 130000,
+        "coversWhatShareOfLivingCost": {
+          "en": "On-campus work only in the first year, and it covers a fraction of costs. The USA cannot be self-funded through part-time work.",
+          "bn": ""
+        },
+        "dependantsAllowed": true
+      },
+      "postStudy": {
+        "visaName": "Optional Practical Training (OPT)",
+        "monthsByLevel": {
+          "diploma": 12,
+          "bachelors": 12,
+          "masters": 12,
+          "phd": 12
+        }
+      },
+      "pr": {
+        "rating": "weak",
+        "pathwaySteps": [
+          "F-1 student visa",
+          "OPT (12 months, +24 for STEM)",
+          "H-1B via annual lottery",
+          "Employment-based green card with country backlog"
+        ],
+        "realisticYearsToPR": {
+          "min": 8,
+          "max": 15
+        },
+        "mainRisk": {
+          "en": "H-1B is a lottery, not a queue — many qualified graduates never get selected. Green card backlogs add years on top. Choose the USA for the education and earnings, not the residency.",
+          "bn": ""
+        }
+      },
+      "visa": {
+        "name": "F-1 Student Visa",
+        "code": "F-1",
+        "processingWeeks": {
+          "min": 2,
+          "max": 12
+        },
+        "interviewRequired": true,
+        "fundsHeldMonths": 6,
+        "priorRefusalImpact": "moderate",
+        "priorRefusalNote": {
+          "en": "F-1 refusals are common and reapplication is permitted, often successfully, if the interview weaknesses are addressed. A refusal is not the end of the road here.",
+          "bn": ""
+        }
+      },
+      "intakes": [
+        {
+          "month": "August",
+          "applyByMonth": "January"
+        },
+        {
+          "month": "January",
+          "applyByMonth": "August"
+        }
+      ],
+      "priorityStrengths": [
+        "scholarship",
+        "ranking"
+      ],
+      "notes": {
+        "en": "Institutional variance is enormous — a community college and an Ivy League university are both 'the USA' but nothing alike in cost or entry bar. Treat any single USA figure with suspicion.",
+        "bn": ""
+      },
+      "priorityWeaknesses": [
+        "lowest_cost",
+        "pr_pathway",
+        "post_study_work"
+      ]
+    },
+    {
+      "id": "malta",
+      "flag": "🇲🇹",
+      "name": {
+        "en": "Malta",
+        "bn": "মাল্টা"
+      },
+      "lastVerified": null,
+      "levels": {
+        "diploma": {
+          "ieltsMinOverall": 5.5,
+          "ieltsNoBandBelow": 5,
+          "ieltsExpected": 5.5,
+          "ieltsCompetitive": 6,
+          "academicIndexMin": 45,
+          "academicIndexCompetitive": 58,
+          "standardisedTest": "not_required"
+        },
+        "bachelors": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 55,
+          "academicIndexCompetitive": 70,
+          "standardisedTest": "not_required"
+        },
+        "masters": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 60,
+          "academicIndexCompetitive": 72,
+          "standardisedTest": "not_required"
+        },
+        "phd": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 65,
+          "academicIndexCompetitive": 75,
+          "standardisedTest": "not_required"
+        }
+      },
+      "englishAlternatives": {
+        "pte": {
+          "bachelors": 50,
+          "masters": 50
+        },
+        "toefl": {
+          "bachelors": 60,
+          "masters": 60
+        },
+        "duolingo": {
+          "bachelors": 95,
+          "masters": 95
+        },
+        "moiAccepted": true,
+        "ukviRequired": false,
+        "pathwayAvailable": true,
+        "pathwayMinIelts": 4.5
+      },
+      "gapTolerance": {
+        "diplomaYears": 8,
+        "bachelorsYears": 4,
+        "mastersYears": 8,
+        "phdYears": 10,
+        "documentationRequired": false
+      },
+      "cost": {
+        "currency": "EUR",
+        "exchangeRateToBDT": 134,
+        "tuitionPerYearBDT": {
+          "diploma": {
+            "low": 500000,
+            "typical": 700000,
+            "high": 1000000
+          },
+          "bachelors": {
+            "low": 804000,
+            "typical": 1206000,
+            "high": 1876000
+          },
+          "masters": {
+            "low": 938000,
+            "typical": 1474000,
+            "high": 2144000
+          },
+          "phd": {
+            "low": 900000,
+            "typical": 1300000,
+            "high": 1900000
+          }
+        },
+        "livingPerYearBDT": {
+          "low": 938000,
+          "typical": 1206000,
+          "high": 1608000
+        },
+        "visaMandatedFundsBDT": 1206000,
+        "upfrontDepositBDT": 400000,
+        "upfrontDepositLabel": {
+          "en": "Tuition instalment plus accommodation booking",
+          "bn": "টিউশন কিস্তি এবং আবাসন বুকিং"
+        },
+        "visaFeeBDT": 13400,
+        "healthCoverPerYearBDT": 54000,
+        "otherApplicationFeesBDT": 55000,
+        "airfareOneWayBDT": 90000,
+        "firstYearTotalBDT": {
+          "minimumViable": 1950000,
+          "typical": 2620000
+        }
+      },
+      "scholarships": {
+        "rating": "very_limited",
+        "typicalMeritWaiverPercent": {
+          "min": 5,
+          "max": 20
+        },
+        "needBasedAvailable": false,
+        "assistantshipsAvailable": false,
+        "named": [
+          {
+            "name": "Institutional early-payment or merit discounts",
+            "level": "both",
+            "coverage": "5–20% tuition",
+            "minIelts": 6,
+            "competitiveness": "Low — often automatic",
+            "url": null
+          }
+        ],
+        "notes": {
+          "en": "Almost no scholarship ecosystem. The value proposition is low base cost rather than funding — total first-year outlay is roughly half of the UK or Australia.",
+          "bn": ""
+        }
+      },
+      "work": {
+        "termTimeHoursPerWeek": 20,
+        "holidayHoursPerWeek": 40,
+        "realisticMonthlyEarningsBDT": 95000,
+        "coversWhatShareOfLivingCost": {
+          "en": "Most of living costs, since living costs are low. Work permit is usually granted only after 90 days of study.",
+          "bn": ""
+        },
+        "dependantsAllowed": false
+      },
+      "postStudy": {
+        "visaName": "Job-seeking residence extension",
+        "monthsByLevel": {
+          "diploma": 0,
+          "bachelors": 6,
+          "masters": 9,
+          "phd": 12
+        }
+      },
+      "pr": {
+        "rating": "moderate",
+        "pathwaySteps": [
+          "Study visa",
+          "Single Work Permit with a Maltese employer",
+          "Continuous legal residence",
+          "EU long-term residence after 5 years"
+        ],
+        "realisticYearsToPR": {
+          "min": 5,
+          "max": 8
+        },
+        "mainRisk": {
+          "en": "Tiny job market of a small island economy. The residence rules are workable; finding a sponsoring employer is the hard part.",
+          "bn": ""
+        }
+      },
+      "visa": {
+        "name": "National Long-Stay Visa (Type D)",
+        "code": "Type D",
+        "processingWeeks": {
+          "min": 4,
+          "max": 10
+        },
+        "interviewRequired": false,
+        "fundsHeldMonths": 3,
+        "priorRefusalImpact": "low",
+        "priorRefusalNote": {
+          "en": "Schengen refusals matter; refusals by Australia, Canada or the USA carry comparatively little weight.",
+          "bn": ""
+        }
+      },
+      "intakes": [
+        {
+          "month": "October",
+          "applyByMonth": "June"
+        },
+        {
+          "month": "February",
+          "applyByMonth": "October"
+        }
+      ],
+      "priorityStrengths": [
+        "lowest_cost",
+        "fast_processing"
+      ],
+      "notes": {
+        "en": "English is an official language of Malta, teaching is in English, and Schengen access is a real benefit. The trade-off is a small institution set with limited global brand recognition.",
+        "bn": ""
+      },
+      "priorityWeaknesses": [
+        "ranking",
+        "scholarship",
+        "post_study_work"
+      ]
+    },
+    {
+      "id": "malaysia",
+      "flag": "🇲🇾",
+      "name": {
+        "en": "Malaysia",
+        "bn": "মালয়েশিয়া"
+      },
+      "lastVerified": null,
+      "levels": {
+        "diploma": {
+          "ieltsMinOverall": 5,
+          "ieltsNoBandBelow": 4.5,
+          "ieltsExpected": 5.5,
+          "ieltsCompetitive": 6,
+          "academicIndexMin": 40,
+          "academicIndexCompetitive": 55,
+          "standardisedTest": "not_required"
+        },
+        "bachelors": {
+          "ieltsMinOverall": 5.5,
+          "ieltsNoBandBelow": 5,
+          "ieltsExpected": 6,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 50,
+          "academicIndexCompetitive": 65,
+          "standardisedTest": "not_required"
+        },
+        "masters": {
+          "ieltsMinOverall": 6,
+          "ieltsNoBandBelow": 5.5,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 6.5,
+          "academicIndexMin": 55,
+          "academicIndexCompetitive": 68,
+          "standardisedTest": "not_required"
+        },
+        "phd": {
+          "ieltsMinOverall": 6.5,
+          "ieltsNoBandBelow": 6,
+          "ieltsExpected": 6.5,
+          "ieltsCompetitive": 7,
+          "academicIndexMin": 60,
+          "academicIndexCompetitive": 72,
+          "standardisedTest": "not_required"
+        }
+      },
+      "englishAlternatives": {
+        "pte": {
+          "bachelors": 47,
+          "masters": 50
+        },
+        "toefl": {
+          "bachelors": 46,
+          "masters": 60
+        },
+        "duolingo": {
+          "bachelors": 85,
+          "masters": 95
+        },
+        "moiAccepted": true,
+        "ukviRequired": false,
+        "pathwayAvailable": true,
+        "pathwayMinIelts": 4
+      },
+      "gapTolerance": {
+        "diplomaYears": 10,
+        "bachelorsYears": 5,
+        "mastersYears": 10,
+        "phdYears": 12,
+        "documentationRequired": false
+      },
+      "cost": {
+        "currency": "MYR",
+        "exchangeRateToBDT": 28,
+        "tuitionPerYearBDT": {
+          "diploma": {
+            "low": 220000,
+            "typical": 320000,
+            "high": 480000
+          },
+          "bachelors": {
+            "low": 336000,
+            "typical": 560000,
+            "high": 980000
+          },
+          "masters": {
+            "low": 420000,
+            "typical": 672000,
+            "high": 1120000
+          },
+          "phd": {
+            "low": 350000,
+            "typical": 560000,
+            "high": 900000
+          }
+        },
+        "livingPerYearBDT": {
+          "low": 280000,
+          "typical": 392000,
+          "high": 560000
+        },
+        "visaMandatedFundsBDT": 336000,
+        "upfrontDepositBDT": 200000,
+        "upfrontDepositLabel": {
+          "en": "First semester tuition plus EMGS processing",
+          "bn": "প্রথম সেমিস্টারের টিউশন এবং EMGS প্রসেসিং"
+        },
+        "visaFeeBDT": 42000,
+        "healthCoverPerYearBDT": 14000,
+        "otherApplicationFeesBDT": 45000,
+        "airfareOneWayBDT": 45000,
+        "firstYearTotalBDT": {
+          "minimumViable": 760000,
+          "typical": 1100000
+        }
+      },
+      "scholarships": {
+        "rating": "limited",
+        "typicalMeritWaiverPercent": {
+          "min": 10,
+          "max": 30
+        },
+        "needBasedAvailable": false,
+        "assistantshipsAvailable": true,
+        "named": [
+          {
+            "name": "University merit scholarships",
+            "level": "both",
+            "coverage": "10–30% tuition",
+            "minIelts": 6,
+            "competitiveness": "Low to moderate",
+            "url": null
+          },
+          {
+            "name": "Malaysia International Scholarship (MIS)",
+            "level": "masters",
+            "coverage": "Full tuition plus allowance",
+            "minIelts": 6.5,
+            "competitiveness": "High",
+            "url": null
+          }
+        ],
+        "notes": {
+          "en": "Scholarships are modest, but base cost is so low that a 20% waiver matters less here than anywhere else. Total first-year cost is roughly one-fifth of Australia.",
+          "bn": ""
+        }
+      },
+      "work": {
+        "termTimeHoursPerWeek": 20,
+        "holidayHoursPerWeek": 20,
+        "realisticMonthlyEarningsBDT": 35000,
+        "coversWhatShareOfLivingCost": {
+          "en": "A small share. Work is restricted mainly to semester breaks and wages are low, so do not plan to fund studies through work.",
+          "bn": ""
+        },
+        "dependantsAllowed": false
+      },
+      "postStudy": {
+        "visaName": "Graduate Pass / employment pass conversion",
+        "monthsByLevel": {
+          "diploma": 0,
+          "bachelors": 12,
+          "masters": 12,
+          "phd": 12
+        }
+      },
+      "pr": {
+        "rating": "very_weak",
+        "pathwaySteps": [
+          "Student pass",
+          "Employment pass with a Malaysian employer",
+          "Long-term residence is discretionary and rare"
+        ],
+        "realisticYearsToPR": {
+          "min": 10,
+          "max": 20
+        },
+        "mainRisk": {
+          "en": "Malaysia has no meaningful student-to-permanent-residency route. Choose it for affordable, English-taught education, not migration.",
+          "bn": ""
+        }
+      },
+      "visa": {
+        "name": "Student Pass",
+        "code": "Student Pass (EMGS)",
+        "processingWeeks": {
+          "min": 4,
+          "max": 10
+        },
+        "interviewRequired": false,
+        "fundsHeldMonths": 1,
+        "priorRefusalImpact": "low",
+        "priorRefusalNote": {
+          "en": "Refusals from Western countries have minimal effect on a Malaysian application.",
+          "bn": ""
+        }
+      },
+      "intakes": [
+        {
+          "month": "January",
+          "applyByMonth": "October"
+        },
+        {
+          "month": "May",
+          "applyByMonth": "February"
+        },
+        {
+          "month": "September",
+          "applyByMonth": "June"
+        }
+      ],
+      "priorityStrengths": [
+        "lowest_cost",
+        "fast_processing"
+      ],
+      "notes": {
+        "en": "Home to branch campuses of several Australian and British universities, which award the same degree at a fraction of the cost. Strong option for a student who wants a recognised degree but cannot fund a Western destination, and a realistic route to transferring later.",
+        "bn": ""
+      },
+      "priorityWeaknesses": [
+        "ranking",
+        "scholarship",
+        "post_study_work",
+        "pr_pathway"
+      ]
+    }
+  ]
+}
