@@ -691,7 +691,7 @@
 /* Final CTA Band                                                             */
 /* -------------------------------------------------------------------------- */
 .final-cta-band-green {
-  background-color: var(--success);
+  background-color: var(--ten-red);
   padding: 64px 0;
   color: var(--ten-white);
   position: relative;
@@ -728,7 +728,7 @@
 
 .final-cta-band-btn {
   background: var(--ten-white);
-  color: var(--success-dark);
+  color: var(--ten-red-dark);
   font-weight: 700;
   border-radius: var(--r-pill);
   padding: 16px 40px;
@@ -741,7 +741,7 @@
   background: var(--gray-50);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  color: var(--success);
+  color: var(--ten-red);
 }
 
 /* -------------------------------------------------------------------------- */

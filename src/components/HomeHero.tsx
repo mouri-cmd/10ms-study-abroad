@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { AppProvider, useApp } from '../matcher/app/providers';
 import { Skyline } from '../matcher/components/Skyline';
 import { FlightMap } from '../matcher/components/FlightMap';
-import { Journey } from '../matcher/components/Journey';
 import { CONFIG } from '../matcher/config';
 import { DESTINATIONS } from '../matcher/engine/match';
 import { UNIVERSITY_COUNT } from '../matcher/engine/universities';
@@ -90,33 +89,6 @@ function HeroInner() {
             <b className="num">{t('stat.free.n')}</b>
             <span>{t('stat.free.l')}</span>
           </div>
-        </div>
-
-        <div className="svc-head">
-          <div className="label">{t('journey.eyebrow')}</div>
-          <h2 className="h2">
-            <span>{t('journey.title1')}</span> <span className="heavy">{t('journey.title2')}</span>
-          </h2>
-          <p className="lede">{t('journey.lede')}</p>
-        </div>
-
-        <Journey />
-
-        <div className="svc-head" style={{ marginTop: 'var(--sam-sp-8)' }}>
-          <div className="label">{t('svc.eyebrow')}</div>
-          <h2 className="h2">
-            <span>{t('svc.title1')}</span> <span className="heavy">{t('svc.title2')}</span>
-          </h2>
-          <p className="lede">{t('svc.lede')}</p>
-        </div>
-
-        <div className="tiles tiles-svc">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div className="tile" key={i}>
-              <div className="v">{t(`svc.${i}.t`)}</div>
-              <div className="d">{t(`svc.${i}.d`)}</div>
-            </div>
-          ))}
         </div>
 
         <div className="cta-row" style={{ justifyContent: 'center', marginTop: 'var(--sam-sp-6)' }}>

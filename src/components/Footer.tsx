@@ -23,22 +23,6 @@ export default function Footer() {
         
         <div className="footer-links-grid">
           <div className="footer-col">
-            <h3>Destinations </h3>
-            <Link href="/destinations/united-kingdom">UK</Link>
-            <Link href="/destinations/united-states">USA</Link>
-            <Link href="/destinations/canada">Canada</Link>
-            <Link href="/destinations/australia">Australia</Link>
-          </div>
-          
-          <div className="footer-col">
-            <h3>Resources</h3>
-            <Link href="/programs">Explore Programs</Link>
-            <Link href="/scholarships">Scholarships</Link>
-            <Link href="/compare">Compare Universities</Link>
-            <Link href="/quiz">Study Abroad Quiz</Link>
-          </div>
-          
-          <div className="footer-col">
             <h3>Support</h3>
             <Link href="/counseling">Book Counseling</Link>
             <Link href="/contact">Contact Us</Link>

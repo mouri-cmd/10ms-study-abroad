@@ -18,13 +18,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script
-          // Applied before first paint so there is no theme flash.
+          // Dark mode is temporarily disabled site-wide — always light,
+          // regardless of any previously stored preference or OS setting.
           dangerouslySetInnerHTML={{
             __html: `(function () {
               try {
-                var t = localStorage.getItem('theme');
-                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', t);
+                document.documentElement.setAttribute('data-theme', 'light');
               } catch (e) {}
             })()`,
           }}
