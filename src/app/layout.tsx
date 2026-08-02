@@ -28,6 +28,22 @@ export default function RootLayout({
             })()`,
           }}
         />
+        <script
+          // Applied before first paint so Navbar and the matcher's
+          // AppProvider (src/matcher/app/providers.tsx) agree on the
+          // language from the first frame — both read data-lang, and
+          // without this they'd desync whenever localStorage already
+          // holds a saved preference on load.
+          dangerouslySetInnerHTML={{
+            __html: `(function () {
+              try {
+                var l = localStorage.getItem('lang') || 'en';
+                document.documentElement.setAttribute('data-lang', l);
+                document.documentElement.setAttribute('lang', l);
+              } catch (e) {}
+            })()`,
+          }}
+        />
       </head>
       <body>
         <Navbar />
