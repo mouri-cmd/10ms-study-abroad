@@ -58,8 +58,8 @@ html[data-theme='light'] {
   --sam-bad: #b3352e;
   --sam-bad-wash: rgba(179, 53, 46, 0.08);
 
-  --sam-glow-1: rgba(255, 214, 168, 0.85);
-  --sam-glow-2: rgba(255, 244, 232, 0.9);
+  --sam-glow-1: rgba(255, 172, 99, 0.95);
+  --sam-glow-2: rgba(255, 214, 168, 0.92);
 
   --sam-shadow-soft: 0 1px 2px rgba(22, 24, 28, 0.04), 0 8px 24px -12px rgba(22, 24, 28, 0.14);
   --sam-shadow-lift: 0 2px 6px rgba(22, 24, 28, 0.05), 0 24px 56px -24px rgba(22, 24, 28, 0.26);
@@ -245,9 +245,9 @@ html[data-lang='bn'] .sam-ui .h2 .heavy { font-style: normal; }
 
 .sam-ui .hero { position: relative; overflow: hidden; padding: var(--sam-sp-8) 0 0; }
 .sam-ui .hero-glow {
-  position: absolute; left: 50%; top: 38%; transform: translate(-50%, -50%);
-  width: min(1500px, 155vw); height: 800px; pointer-events: none;
-  background: radial-gradient(ellipse 50% 50% at 50% 50%, var(--sam-glow-1) 0%, var(--sam-glow-2) 42%, transparent 72%);
+  position: absolute; left: 50%; top: 44%; transform: translate(-50%, -50%);
+  width: min(1700px, 165vw); height: 1050px; pointer-events: none;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, var(--sam-glow-1) 0%, var(--sam-glow-2) 48%, transparent 82%);
 }
 .sam-ui .hero-in { position: relative; text-align: center; }
 .sam-ui .hero .display { margin: var(--sam-sp-5) 0 0; }
