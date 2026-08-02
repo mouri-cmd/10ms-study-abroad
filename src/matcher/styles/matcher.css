@@ -254,6 +254,26 @@ html[data-lang='bn'] .sam-ui .h2 .heavy { font-style: normal; }
 .sam-ui .hero .lede { max-width: 600px; margin: var(--sam-sp-5) auto 0; }
 .sam-ui .hero .cta-row { justify-content: center; margin-top: var(--sam-sp-6); }
 
+.sam-ui .hero-featured {
+  display: inline-flex; align-items: flex-start; gap: 12px;
+  margin: var(--sam-sp-6) auto 0; padding: 14px 18px;
+  background: var(--sam-surface); border: 1px solid var(--sam-line);
+  border-radius: var(--sam-r-lg); box-shadow: var(--sam-shadow-soft);
+  text-align: left; max-width: 380px;
+}
+.sam-ui .hero-featured-flag { font-size: 26px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+.sam-ui .hero-featured-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sam-ui .hero-featured-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
+.sam-ui .hero-featured-tag {
+  font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
+  padding: 3px 9px; border-radius: var(--sam-r-full);
+  background: var(--sam-brand-wash); color: var(--sam-brand-ink);
+}
+.sam-ui .hero-featured-note { font-size: 13px; color: var(--sam-ink-2); margin-top: 3px; line-height: 1.5; }
+@media (min-width: 920px) {
+  .sam-ui .hero-cols .hero-featured { margin-left: 0; }
+}
+
 .sam-ui .stats {
   display: grid; grid-template-columns: repeat(4, 1fr);
   margin-top: var(--sam-sp-7);

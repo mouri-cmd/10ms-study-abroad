@@ -44,6 +44,17 @@ function HeroInner() {
                 {t('btn.bookLong')}
               </a>
             </div>
+
+            <div className="hero-featured">
+              <span className="hero-featured-flag" aria-hidden="true">🇬🇧</span>
+              <div className="hero-featured-body">
+                <div className="hero-featured-top">
+                  <span className="hero-featured-name">{t('hero.featured.name')}</span>
+                  <span className="hero-featured-tag">{t('hero.featured.tag')}</span>
+                </div>
+                <p className="hero-featured-note">{t('hero.featured.note')}</p>
+              </div>
+            </div>
           </div>
 
           <div className="hero-visual">

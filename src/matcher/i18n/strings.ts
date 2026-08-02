@@ -22,8 +22,8 @@ export const strings: Record<string, Pair> = {
 
   // ---------- Hero ----------
   'hero.eyebrow': { en: 'Free destination matcher', bn: 'ফ্রি ডেস্টিনেশন ম্যাচার' },
-  'hero.title1': { en: 'Find the country', bn: 'খুঁজে নিন সেই দেশ' },
-  'hero.title2': { en: 'that fits you', bn: 'যেটি আপনার জন্য' },
+  'hero.title1': { en: 'Find the country', bn: 'আপনার স্বপ্নের দেশ কোনটি?' },
+  'hero.title2': { en: 'that fits you', bn: 'খুঁজে নিন আজই!' },
   'hero.lede': {
     en: 'Answer a few quick questions about your results, IELTS and budget. We will show you which destinations you qualify for right now, and exactly what is holding back the rest.',
     bn: 'আপনার রেজাল্ট, IELTS এবং বাজেট নিয়ে কয়েকটি সহজ প্রশ্নের উত্তর দিন। কোন দেশগুলোতে আপনি এখনই যোগ্য, এবং বাকিগুলোতে ঠিক কী আটকে রাখছে, সব দেখিয়ে দেব।',
@@ -43,6 +43,12 @@ export const strings: Record<string, Pair> = {
   'chip.destinations': { en: '7 destinations', bn: '৭টি দেশ' },
   'chip.visa': { en: 'Visa support', bn: 'ভিসা সাপোর্ট' },
   'chip.free': { en: 'Free counselling', bn: 'ফ্রি কাউন্সেলিং' },
+  'hero.featured.tag': { en: 'Top choice', bn: 'সেরা পছন্দ' },
+  'hero.featured.name': { en: 'United Kingdom', bn: 'যুক্তরাজ্য' },
+  'hero.featured.note': {
+    en: 'Most in-demand for Computer Science & Business',
+    bn: 'কম্পিউটার সায়েন্স ও বিজনেসের জন্য সবচেয়ে জনপ্রিয়',
+  },
   'hero.mapNote': {
     en: 'These 7 destinations are available today. More are being added.',
     bn: 'এই ৭টি গন্তব্য এখন চালু আছে। আরও যুক্ত হচ্ছে।',
