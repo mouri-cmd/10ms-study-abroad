@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -27,31 +28,29 @@ const Ctx = createContext<AppCtx | null>(null)
 // site-wide theme toggle, so this context stays in sync with them without a
 // shared React tree.
 //
-// The initializers read straight from <html>'s current attributes rather
-// than localStorage. That attribute is always authoritative by the time this
-// component's JS runs — layout.tsx's no-flash script sets it before first
-// paint on a full page load, and it simply persists across client-side route
-// changes. Deriving from localStorage instead (as an effect, running after
-// mount) raced the *other* effect that writes the attribute from state,
-// which could stomp an already-correct 'dark' attribute with the stale
-// 'light' default for the rest of the session. `document` is guarded for
-// SSR, where this mounts server-side with no DOM; since neither value is
-// rendered into JSX (only applied via effect), the client/server difference
-// never surfaces as a hydration mismatch.
-
-function initialLang(): Lang {
-  if (typeof document === 'undefined') return 'en'
-  return (document.documentElement.getAttribute('data-lang') as Lang | null) || 'en'
-}
-
+// `lang` renders straight into text (headlines, labels via t()), so it must
+// start at the same value the server rendered ('en' — the server has no
+// localStorage to read) or React throws a hydration mismatch and discards
+// the SSR-ed markup for this subtree. The real value is read from <html>'s
+// data-lang attribute (set before first paint by layout.tsx's no-flash
+// script) in a layout effect, which only runs after hydration completes —
+// so the correction happens in a normal client-only commit, synchronously
+// before the browser paints, rather than during hydration itself.
 function initialTheme(): Theme {
   if (typeof document === 'undefined') return 'light'
   return (document.documentElement.getAttribute('data-theme') as Theme | null) || 'light'
 }
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(initialLang)
+  const [lang, setLangState] = useState<Lang>('en')
   const [theme, setThemeState] = useState<Theme>(initialTheme)
+
+  useLayoutEffect(() => {
+    const attr = document.documentElement.getAttribute('data-lang') as Lang | null
+    if (attr && attr !== lang) setLangState(attr)
+    // Runs once, right after hydration — not a reactive sync on `lang`.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     const onLangChange = () => {

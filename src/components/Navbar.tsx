@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
 import { List, X, Globe } from '@phosphor-icons/react';
 import { LogoFull, LogoFullWhite } from './Logo';
@@ -8,13 +8,19 @@ import './Navbar.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  // Starts at the same default the server rendered ('en' — the server has
+  // no localStorage), then corrects from the data-lang attribute (set
+  // before first paint by layout.tsx's no-flash script, same source the
+  // matcher AppProvider reads) in a layout effect, once hydration is done.
+  // Reading that attribute during the initial render instead would make
+  // the client's first hydration pass disagree with the server-rendered
+  // HTML and throw a hydration mismatch.
   const [lang, setLang] = useState('en');
 
-  useEffect(() => {
-    const saved = localStorage.getItem('lang');
-    if (saved) {
-      setLang(saved);
-    }
+  useLayoutEffect(() => {
+    const attr = document.documentElement.getAttribute('data-lang');
+    if (attr && attr !== lang) setLang(attr);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleLang = () => {
