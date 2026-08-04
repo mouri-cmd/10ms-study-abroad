@@ -24,9 +24,9 @@ function HeroInner() {
 
   return (
     <section className="hero">
-      <div className="hero-glow" aria-hidden="true" />
       <div className="wrap hero-in">
         <div className="hero-cols">
+          <div className="hero-glow" aria-hidden="true" />
           <div className="hero-text">
             <h1 className="display">
               <span>{t('hero.title1')}</span>
@@ -43,17 +43,6 @@ function HeroInner() {
               <a className="btn btn-ghost btn-lg" href={bookHref} target="_blank" rel="noreferrer">
                 {t('btn.bookLong')}
               </a>
-            </div>
-
-            <div className="hero-featured">
-              <span className="hero-featured-flag" aria-hidden="true">🇬🇧</span>
-              <div className="hero-featured-body">
-                <div className="hero-featured-top">
-                  <span className="hero-featured-name">{t('hero.featured.name')}</span>
-                  <span className="hero-featured-tag">{t('hero.featured.tag')}</span>
-                </div>
-                <p className="hero-featured-note">{t('hero.featured.note')}</p>
-              </div>
             </div>
           </div>
 

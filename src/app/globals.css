@@ -270,16 +270,16 @@ button, input, select, textarea {
 }
 
 .btn-primary {
-  background: var(--success);
-  border: 1px solid var(--success-dark);
-  box-shadow: var(--sh-inset-btn);
-  color: var(--ten-white);
+  background: var(--ten-ink);
+  border: 1px solid var(--ten-ink);
+  box-shadow: var(--sh-raised);
+  color: var(--on-solid);
   font-weight: 700;
   border-radius: var(--r-pill);
   padding: 14px 28px;
-  transition: background var(--dur-base) var(--ease-out), transform var(--dur-base);
+  transition: filter var(--dur-base) var(--ease-out), transform var(--dur-base);
 }
-.btn-primary:hover { background: #0C6349; }
+.btn-primary:hover { filter: brightness(1.2); transform: translateY(-2px); }
 .btn-primary:active { transform: scale(0.98); }
 
 .btn-secondary {

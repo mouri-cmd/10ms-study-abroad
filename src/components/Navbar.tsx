@@ -43,8 +43,6 @@ export default function Navbar() {
         </Link>
 
         <nav className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <Link href="/destinations" className="nav-link bn">দেশসমূহ</Link>
-
           <div className="nav-actions">
             <button onClick={toggleLang} className="lang-toggle bn">
               <Globe size={18} />

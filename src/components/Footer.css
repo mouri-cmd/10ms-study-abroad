@@ -28,6 +28,26 @@
   line-height: 1.6;
 }
 
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  border-radius: 50%;
+  background: #1877F2;
+  color: var(--ten-white);
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.35);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.footer-social-link:hover {
+  background: #0C5DC7;
+  box-shadow: 0 6px 18px rgba(24, 119, 242, 0.5);
+  transform: translateY(-3px);
+}
+
 .footer-links-grid {
   display: flex;
   gap: 64px;

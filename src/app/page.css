@@ -613,7 +613,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--success) 0%, var(--success-dark) 100%);
+  background: linear-gradient(135deg, var(--ten-red) 0%, var(--ten-red-dark) 100%);
   color: var(--ten-white);
   font-weight: 700;
   font-size: 1.15rem;
@@ -621,7 +621,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(15, 122, 87, 0.2);
+  box-shadow: 0 4px 10px rgba(229, 50, 45, 0.2);
 }
 
 .test-student-meta {
@@ -691,22 +691,11 @@
 /* Final CTA Band                                                             */
 /* -------------------------------------------------------------------------- */
 .final-cta-band-green {
-  background-color: var(--ten-red);
+  background-color: var(--surface-subtle);
   padding: 64px 0;
-  color: var(--ten-white);
+  color: var(--fg-1);
   position: relative;
   overflow: hidden;
-}
-
-.final-cta-band-green::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
-  pointer-events: none;
 }
 
 .final-cta-band-container {
@@ -722,7 +711,7 @@
 .final-cta-band-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--ten-white);
+  color: var(--ten-ink);
   max-width: 700px;
 }
 
@@ -766,7 +755,7 @@
 }
 
 .map-section-heading h2 span {
-  color: var(--success);
+  color: var(--ten-red);
 }
 
 .map-section-heading p {
@@ -777,118 +766,49 @@
   line-height: 1.6;
 }
 
-.map-grid-container {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: center;
-}
-
-/* Left Column - SVG Map */
-.map-left-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.svg-map-wrapper {
-  width: 100%;
-  position: relative;
-  background: var(--surface-subtle);
-  border: 1px solid var(--border);
-  border-radius: var(--r-xl);
-  padding: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-.world-map-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Map paths and pins */
-.map-landmass {
-  fill: #E5E7EB;
-  transition: fill 0.3s ease;
-}
-
-.map-origin-pin {
-  fill: var(--success);
-  stroke: var(--ten-white);
-  stroke-width: 2px;
-}
-
-.map-origin-ring {
-  stroke: var(--success);
-  stroke-width: 1px;
-  fill: none;
-  animation: pulse-ring 2s infinite;
-  transform-origin: center;
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
-}
-
-.map-dest-pin {
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-.map-dest-pin-circle {
-  fill: var(--gray-400);
-  stroke: var(--ten-white);
-  stroke-width: 1.5px;
-  transition: var(--transition-smooth);
-}
-
-.map-dest-pin:hover .map-dest-pin-circle,
-.map-dest-pin.active .map-dest-pin-circle {
-  fill: var(--success);
-  r: 9px;
-}
-
-/* Curve lines drawing from origin outward */
-.map-curve-line {
-  fill: none;
-  stroke: var(--gray-400);
-  stroke-width: 1.5px;
-  stroke-dasharray: 4 4;
-  opacity: 0.5;
-  transition: var(--transition-smooth);
-}
-
-.map-curve-line.active {
-  stroke: var(--success);
-  stroke-width: 2px;
-  opacity: 0.9;
-  stroke-dasharray: 6 3;
-}
-
-.map-caption {
-  margin-top: 16px;
-  font-size: 0.8rem;
-  color: var(--fg-3);
-  font-style: italic;
-}
-
-/* Right Column - Country Card */
-.map-right-col {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Country carousel: replaces the old world-map + single-card layout. The
+   carousel spans the full section width now that the map column is gone. */
 .country-card-container {
   width: 100%;
+}
+
+.cs-viewport {
+  width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.cs-viewport:active {
+  cursor: grabbing;
+}
+
+.cs-track {
+  display: flex;
+  gap: 24px;
+  will-change: transform;
+}
+
+.cs-card-slot {
+  flex: 0 0 auto;
+  /* vw-based fallback for browsers without container query units */
+  width: calc(100vw / 1.15 - 24px);
+  width: calc(100cqw / 1.15 - 24px);
+}
+
+@media (min-width: 700px) {
+  .cs-card-slot {
+    width: calc((100vw - 24px) / 2);
+    width: calc((100cqw - 24px) / 2);
+  }
+}
+
+@media (min-width: 1100px) {
+  .cs-card-slot {
+    width: calc((100vw - 48px) / 3);
+    width: calc((100cqw - 48px) / 3);
+  }
 }
 
 .country-map-card {
@@ -899,6 +819,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  height: 496px;
   transition: var(--transition-smooth);
 }
 
@@ -909,10 +830,18 @@
   overflow: hidden;
 }
 
+.country-card-image-box picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .country-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
+  z-index: 0;
   transition: var(--transition-smooth);
 }
 
@@ -920,10 +849,23 @@
   transform: scale(1.05);
 }
 
+/* Uniform scrim behind the flag chip so it stays legible over any photo's
+   top-left content, regardless of how busy that corner is. Applied to every
+   card, not just the ones that need it, so the treatment reads as consistent. */
+.country-card-image-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.22) 25%, transparent 50%);
+}
+
 .country-card-badge {
   position: absolute;
   top: 16px;
   left: 16px;
+  z-index: 2;
   background-color: var(--ten-black);
   color: var(--ten-white);
   font-size: 0.75rem;
@@ -936,14 +878,14 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.country-card-badge svg {
-  color: var(--premium-gold-2);
-}
-
 .country-card-info-box {
   background-color: var(--gray-900);
   color: var(--ten-white);
   padding: 28px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .country-card-title-row {
@@ -978,7 +920,7 @@
 }
 
 .country-card-detail-item svg {
-  color: var(--success);
+  color: var(--ten-red-soft);
   margin-top: 3px;
   flex-shrink: 0;
 }
@@ -986,12 +928,17 @@
 .country-card-detail-text {
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .country-card-buttons-row {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 16px;
+  margin-top: auto;
 }
 
 .country-card-btn-outline {
@@ -1016,8 +963,8 @@
 }
 
 .country-card-btn-filled {
-  background-color: var(--success);
-  border: 1px solid var(--success-dark);
+  background-color: var(--ten-red);
+  border: 1px solid var(--ten-red-dark);
   color: var(--ten-white);
   font-weight: 700;
   padding: 12px 16px;
@@ -1032,7 +979,7 @@
 }
 
 .country-card-btn-filled:hover {
-  background-color: #0C6349;
+  background-color: var(--ten-red-dark);
   transform: translateY(-1px);
 }
 
@@ -1060,9 +1007,9 @@
 }
 
 .carousel-arrow-btn:hover {
-  border-color: var(--success);
-  color: var(--success);
-  box-shadow: 0 4px 10px rgba(15, 122, 87, 0.1);
+  border-color: var(--ten-red);
+  color: var(--ten-red);
+  box-shadow: 0 4px 10px rgba(229, 50, 45, 0.15);
 }
 
 .carousel-progress-wrapper {
@@ -1077,40 +1024,14 @@
 
 .carousel-progress-bar {
   height: 100%;
-  background-color: var(--success);
+  background-color: var(--ten-red);
   border-radius: 2px;
   transition: width 0.3s ease;
-}
-
-/* Animations for drawing lines */
-.map-curve-line {
-  stroke-dasharray: 6 3;
-  stroke-dashoffset: 200;
-  animation: slide-dash 20s linear infinite, draw-path 1.5s ease-out forwards;
-}
-
-@keyframes slide-dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes draw-path {
-  from {
-    stroke-dasharray: 0 200;
-  }
-  to {
-    stroke-dasharray: 6 3;
-  }
 }
 
 @media (max-width: 768px) {
   .map-section {
     padding: 56px 0;
-  }
-  .map-grid-container {
-    grid-template-columns: 1fr;
-    gap: 36px;
   }
   .map-section-heading h2 {
     font-size: 2rem;
@@ -1118,12 +1039,14 @@
   .map-section-heading p {
     font-size: 1rem;
   }
-  .svg-map-wrapper {
-    padding: 12px;
-  }
   .country-card-buttons-row {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+  /* Buttons stack to two rows at this width, so cards need more height
+     to stay uniform without clipping the footer. */
+  .country-map-card {
+    height: 580px;
   }
 }
 

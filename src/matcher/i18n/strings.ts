@@ -43,12 +43,6 @@ export const strings: Record<string, Pair> = {
   'chip.destinations': { en: '7 destinations', bn: '৭টি দেশ' },
   'chip.visa': { en: 'Visa support', bn: 'ভিসা সাপোর্ট' },
   'chip.free': { en: 'Free counselling', bn: 'ফ্রি কাউন্সেলিং' },
-  'hero.featured.tag': { en: 'Top choice', bn: 'সেরা পছন্দ' },
-  'hero.featured.name': { en: 'United Kingdom', bn: 'যুক্তরাজ্য' },
-  'hero.featured.note': {
-    en: 'Most in-demand for Computer Science & Business',
-    bn: 'কম্পিউটার সায়েন্স ও বিজনেসের জন্য সবচেয়ে জনপ্রিয়',
-  },
   'hero.mapNote': {
     en: 'These 7 destinations are available today. More are being added.',
     bn: 'এই ৭টি গন্তব্য এখন চালু আছে। আরও যুক্ত হচ্ছে।',

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { FacebookLogo } from '@phosphor-icons/react/ssr';
 import { LogoFullWhite } from './Logo';
 import './Footer.css';
 
@@ -19,6 +20,15 @@ export default function Footer() {
           <p className="footer-desc">
             Your trusted partner in navigating the path to higher education overseas.
           </p>
+          <a
+            href="https://www.facebook.com/10ms.ielts/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-social-link"
+            aria-label="10 Minute School Study Abroad on Facebook"
+          >
+            <FacebookLogo size={22} weight="fill" />
+          </a>
         </div>
         
         <div className="footer-links-grid">

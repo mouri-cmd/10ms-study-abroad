@@ -58,8 +58,8 @@ html[data-theme='light'] {
   --sam-bad: #b3352e;
   --sam-bad-wash: rgba(179, 53, 46, 0.08);
 
-  --sam-glow-1: rgba(255, 172, 99, 0.95);
-  --sam-glow-2: rgba(255, 214, 168, 0.92);
+  --sam-glow-1: rgba(255, 190, 140, 0.45);
+  --sam-glow-2: rgba(255, 224, 198, 0.4);
 
   --sam-shadow-soft: 0 1px 2px rgba(22, 24, 28, 0.04), 0 8px 24px -12px rgba(22, 24, 28, 0.14);
   --sam-shadow-lift: 0 2px 6px rgba(22, 24, 28, 0.05), 0 24px 56px -24px rgba(22, 24, 28, 0.26);
@@ -89,8 +89,8 @@ html[data-theme='dark'] {
   --sam-bad: #ff7c73;
   --sam-bad-wash: rgba(255, 124, 115, 0.12);
 
-  --sam-glow-1: rgba(120, 72, 40, 0.7);
-  --sam-glow-2: rgba(40, 30, 26, 0.9);
+  --sam-glow-1: rgba(110, 85, 65, 0.32);
+  --sam-glow-2: rgba(52, 46, 42, 0.4);
 
   --sam-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px -12px rgba(0, 0, 0, 0.7);
   --sam-shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.5), 0 24px 56px -24px rgba(0, 0, 0, 0.9);
@@ -243,36 +243,16 @@ html[data-lang='bn'] .sam-ui .h2 .heavy { font-style: normal; }
 
 .sam-ui.sam-home-hero { background: var(--sam-canvas); }
 
-.sam-ui .hero { position: relative; overflow: hidden; padding: var(--sam-sp-8) 0 0; }
+.sam-ui .hero { position: relative; z-index: 0; overflow: hidden; padding: var(--sam-sp-8) 0 0; }
 .sam-ui .hero-glow {
-  position: absolute; left: 50%; top: 44%; transform: translate(-50%, -50%);
-  width: min(1700px, 165vw); height: 1050px; pointer-events: none;
-  background: radial-gradient(ellipse 50% 50% at 50% 50%, var(--sam-glow-1) 0%, var(--sam-glow-2) 48%, transparent 82%);
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(1300px, 140vw); height: 640px; pointer-events: none; z-index: -1;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, var(--sam-glow-1) 0%, var(--sam-glow-2) 35%, transparent 88%);
 }
 .sam-ui .hero-in { position: relative; text-align: center; }
 .sam-ui .hero .display { margin: var(--sam-sp-5) 0 0; }
 .sam-ui .hero .lede { max-width: 600px; margin: var(--sam-sp-5) auto 0; }
 .sam-ui .hero .cta-row { justify-content: center; margin-top: var(--sam-sp-6); }
-
-.sam-ui .hero-featured {
-  display: inline-flex; align-items: flex-start; gap: 12px;
-  margin: var(--sam-sp-6) auto 0; padding: 14px 18px;
-  background: var(--sam-surface); border: 1px solid var(--sam-line);
-  border-radius: var(--sam-r-lg); box-shadow: var(--sam-shadow-soft);
-  text-align: left; max-width: 380px;
-}
-.sam-ui .hero-featured-flag { font-size: 26px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
-.sam-ui .hero-featured-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.sam-ui .hero-featured-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
-.sam-ui .hero-featured-tag {
-  font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
-  padding: 3px 9px; border-radius: var(--sam-r-full);
-  background: var(--sam-brand-wash); color: var(--sam-brand-ink);
-}
-.sam-ui .hero-featured-note { font-size: 13px; color: var(--sam-ink-2); margin-top: 3px; line-height: 1.5; }
-@media (min-width: 920px) {
-  .sam-ui .hero-cols .hero-featured { margin-left: 0; }
-}
 
 .sam-ui .stats {
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -308,7 +288,7 @@ html[data-lang='bn'] .sam-ui .h2 .heavy { font-style: normal; }
 
 .sam-ui .flightmap { width: 100%; height: auto; display: block; margin-top: var(--sam-sp-6); overflow: visible; }
 
-.sam-ui .hero-cols { display: grid; gap: var(--sam-sp-7); align-items: center; }
+.sam-ui .hero-cols { position: relative; display: grid; gap: var(--sam-sp-7); align-items: center; }
 @media (min-width: 920px) {
   .sam-ui .hero-cols { grid-template-columns: 1.05fr 0.95fr; }
   .sam-ui .hero-cols .hero-text { text-align: left; }
