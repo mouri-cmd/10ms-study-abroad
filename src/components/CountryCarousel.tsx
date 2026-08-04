@@ -331,6 +331,10 @@ export default function CountryCarousel({ lang }: CountryCarouselProps) {
 
   const onPointerDown = (e: React.PointerEvent) => {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
+    // Don't hijack pointer capture when starting on a link/button — capturing
+    // it here retargets the click away from the anchor and silently eats
+    // its navigation, even for a plain tap with no drag movement.
+    if ((e.target as HTMLElement).closest('a, button')) return;
     draggingRef.current = true;
     hasDraggedRef.current = false;
     dragStartXRef.current = e.clientX;
